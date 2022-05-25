@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageUIs.CreateAccountPageUI;
-import pageUIs.HomePageUI;
-import pageUIs.LoginPageUI;
 
 public class CreateAccountPageObject extends BasePage {
 	WebDriver driver;

@@ -18,7 +18,7 @@ public class BasePage {
 	public static BasePage getBasePageInstance() {
 		return new BasePage();
 	}
-	
+
 	/* Web Browser */
 	public void openPageUrl(WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
