@@ -1,5 +1,6 @@
 package commons;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -12,7 +13,7 @@ public class BaseTest {
 
 	public WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
-		
+
 		switch (browserList) {
 		case FIREFOX:
 			driver = WebDriverManager.firefoxdriver().create();
@@ -26,14 +27,19 @@ public class BaseTest {
 		case OPERA:
 			driver = WebDriverManager.operadriver().create();
 			break;
-			
+
 		default:
 			throw new RuntimeException("Browser is NOT supported");
 		}
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://live.techpanda.org/");
-		
+
 		return driver;
+	}
+
+	protected int getRandomNumber() {
+		Random rand = new Random();
+		return rand.nextInt(999999);
 	}
 }

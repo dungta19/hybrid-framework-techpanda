@@ -6,7 +6,7 @@
 	<test name="Run on CHROME browser">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.techpanda.account.Level_05_Selenium_Page_Factory" />
+			<class name="com.techpanda.account.Level_06_Page_Generator_Manager_III" />
 		</classes>
 	</test>
 
