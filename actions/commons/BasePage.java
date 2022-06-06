@@ -14,6 +14,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.AccountInfoPageObject;
+import pageObjects.BillingAgreementsPageObject;
+import pageObjects.MyAddressBookPageObject;
+import pageObjects.MyApplicationsPageObject;
+import pageObjects.MyDownloadableProductsPageObject;
+import pageObjects.MyOrdersPageObject;
+import pageObjects.MyProductReviewsPageObject;
+import pageObjects.MyWishlistPageObject;
+import pageObjects.NewsletterSubscriptionsPageObject;
+import pageObjects.PageGeneratorManager;
+import pageObjects.RecurringProfilesPageObject;
+import pageUIs.BasePageUI;
+
 public class BasePage {
 	public static BasePage getBasePageInstance() {
 		return new BasePage();
@@ -351,5 +364,71 @@ public class BasePage {
 	}
 
 	private long longTimeout = 30;
+
+	public pageObjects.MyDashboardPageObject clickToMyDashboardLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_DASHBOARD_LINK);
+		clickToElement(driver, BasePageUI.MY_DASHBOARD_LINK);
+		return PageGeneratorManager.getMyDashboardPage(driver);
+	}
+
+	public AccountInfoPageObject clickToMyAccountInfoLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_ACCOUNT_INFO_LINK);
+		clickToElement(driver, BasePageUI.MY_ACCOUNT_INFO_LINK);
+		return PageGeneratorManager.getAccountInfoPage(driver);
+	}
+
+	public MyAddressBookPageObject clickToMyAddressBookLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_ADDRESS_BOOK_LINK);
+		clickToElement(driver, BasePageUI.MY_ADDRESS_BOOK_LINK);
+		return PageGeneratorManager.getMyAddressBookPage(driver);
+	}
+
+	public MyOrdersPageObject clickToMyOrdersLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_ORDERS_LINK);
+		clickToElement(driver, BasePageUI.MY_ORDERS_LINK);
+		return PageGeneratorManager.getMyOrdersPage(driver);
+	}
+
+	public BillingAgreementsPageObject clickToBillingAgreementsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.BILLING_AGREEMENTS_LINK);
+		clickToElement(driver, BasePageUI.BILLING_AGREEMENTS_LINK);
+		return PageGeneratorManager.getBillingAgreementsPage(driver);
+	}
+
+	public RecurringProfilesPageObject clickToRecurringProfilesLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.RECURRING_PROFILES_LINK);
+		clickToElement(driver, BasePageUI.RECURRING_PROFILES_LINK);
+		return PageGeneratorManager.getRecurringProfilesPage(driver);
+	}
+
+	public MyProductReviewsPageObject clickToyProductReviewsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		return PageGeneratorManager.getMyProdcutReviewsPage(driver);
+	}
+
+	public MyWishlistPageObject clickToMyWishlistLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_WISHLIST_LINK);
+		clickToElement(driver, BasePageUI.MY_WISHLIST_LINK);
+		return PageGeneratorManager.getMyWishlistPage(driver);
+	}
+
+	public MyApplicationsPageObject clickToMyApplicationsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_APPLICATIONS_LINK);
+		clickToElement(driver, BasePageUI.MY_APPLICATIONS_LINK);
+		return PageGeneratorManager.getMyApplicationsPage(driver);
+	}
+
+	public NewsletterSubscriptionsPageObject clickToNewsletterSubscriptionsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.NEWSLETTER_SUBSCRIPTIONS_LINK);
+		clickToElement(driver, BasePageUI.NEWSLETTER_SUBSCRIPTIONS_LINK);
+		return PageGeneratorManager.getNewsletterSubscriptionsPage(driver);
+	}
+
+	public MyDownloadableProductsPageObject clickToMyDownloadableProductsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_DOWNLOADABLE_PRODUCTS_LINK);
+		clickToElement(driver, BasePageUI.MY_DOWNLOADABLE_PRODUCTS_LINK);
+		return PageGeneratorManager.getMyDownloadableProductsPage(driver);
+	}
 
 }

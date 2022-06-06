@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.MyDashboardPageUI;
 
-public class MyDashboardPageObject extends BasePage {
+public class MyApplicationsPageObject extends BasePage {
 	WebDriver driver;
 
-	public MyDashboardPageObject(WebDriver driver) {
+	public MyApplicationsPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -29,9 +29,5 @@ public class MyDashboardPageObject extends BasePage {
 		clickToElement(driver, MyDashboardPageUI.LOGOUT_BUTTON);
 	}
 
-	public boolean isAccountInformationMessageSavedDisplayed() {
-		waitForElementVisible(driver, MyDashboardPageUI.SUCCESS_SAVED_MESSAGE);
-		return isElementDisplayed(driver, MyDashboardPageUI.SUCCESS_SAVED_MESSAGE);
-	}
-
+	
 }
