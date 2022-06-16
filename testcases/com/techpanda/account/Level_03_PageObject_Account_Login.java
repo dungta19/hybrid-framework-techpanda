@@ -14,10 +14,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageObjects.CreateAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyDashboardPageObject;
+import pageObjects.user.CreateAccountPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.LoginPageObject;
+import pageObjects.user.MyDashboardPageObject;
 
 public class Level_03_PageObject_Account_Login {
 	WebDriver driver;
@@ -38,7 +38,7 @@ public class Level_03_PageObject_Account_Login {
 
 	@BeforeMethod
 	public void beforeMethod() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 	}
 
 	@Test
@@ -103,7 +103,6 @@ public class Level_03_PageObject_Account_Login {
 		myDashboardPage = new MyDashboardPageObject(driver);
 		assertTrue(myDashboardPage.getUserInfoText().contains("Automation FC"));
 		assertTrue(myDashboardPage.getUserInfoText().contains("automationfc.vn@gmail.com"));
-		myDashboardPage.clickToLogoutButton();
 	}
 
 	@AfterClass

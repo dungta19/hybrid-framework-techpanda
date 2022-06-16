@@ -10,16 +10,16 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.AccountInfoPageObject;
-import pageObjects.BillingAgreementsPageObject;
-import pageObjects.CreateAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyDashboardPageObject;
-import pageObjects.MyDownloadableProductsPageObject;
-import pageObjects.MyOrdersPageObject;
-import pageObjects.MyWishlistPageObject;
-import pageObjects.PageGeneratorManager;
+import pageObjects.navigation.PageGeneratorManager;
+import pageObjects.user.CreateAccountPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.LoginPageObject;
+import pageObjects.user.MyDashboardPageObject;
+import pageObjects.user.sideBar.AccountInfoPageObject;
+import pageObjects.user.sideBar.BillingAgreementsPageObject;
+import pageObjects.user.sideBar.MyDownloadableProductsPageObject;
+import pageObjects.user.sideBar.MyOrdersPageObject;
+import pageObjects.user.sideBar.MyWishlistPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
 	WebDriver driver;
@@ -42,7 +42,7 @@ public class Level_07_Switch_Page extends BaseTest {
 
 	@Test
 	public void Login_06_Valid_Email_And_Password() {
-		loginPage = homePage.clickToMyAccountLink();
+		loginPage = homePage.openLoginPage();
 		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		loginPage.inputToPasswordTextbox("123456789");
 
@@ -53,7 +53,7 @@ public class Level_07_Switch_Page extends BaseTest {
 
 	@Test
 	public void Login_07_Update_Account_Information() {
-		myAccountinforPage = myDashboardPage.clickToMyAccountInfoLink(driver);
+		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
 		myAccountinforPage.enterToFirstNameTextBox("WebDriver" + getRandomNumber());
 		myAccountinforPage.enterToLastNameTextBox("Testing" + getRandomNumber());
@@ -67,20 +67,20 @@ public class Level_07_Switch_Page extends BaseTest {
 	}
 
 	@Test
-	public void Page_Navigator() {
-		myAccountinforPage = myDashboardPage.clickToMyAccountInfoLink(driver);
+	public void Switch_Page() {
+		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-		myWishlistPage = myAccountinforPage.clickToMyWishlistLink(driver);
+		myWishlistPage = getSideBarMyAccountPage(driver).clickToMyWishlistLink();
 
-		myOrdersPage = myWishlistPage.clickToMyOrdersLink(driver);
+		myOrdersPage = getSideBarMyAccountPage(driver).clickToMyOrdersLink();
 
-		billingAgreementsPage = myOrdersPage.clickToBillingAgreementsLink(driver);
+		billingAgreementsPage = getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
 
-		myDownloadableProductsPage = billingAgreementsPage.clickToMyDownloadableProductsLink(driver);
+		myDownloadableProductsPage = getSideBarMyAccountPage(driver).clickToMyDownloadableProductsLink();
 
-		myAccountinforPage = myDownloadableProductsPage.clickToMyAccountInfoLink(driver);
+		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-		myDashboardPage = myAccountinforPage.clickToMyDashboardLink(driver);
+		myDashboardPage = getSideBarMyAccountPage(driver).clickToMyDashboardLink();
 	}
 
 	@AfterClass

@@ -14,10 +14,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.CreateAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyDashboardPageObject;
+import pageObjects.user.CreateAccountPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.LoginPageObject;
+import pageObjects.user.MyDashboardPageObject;
 
 public class Level_04_MultipleBrowser_Account_Login extends BaseTest {
 	WebDriver driver;
@@ -35,7 +35,7 @@ public class Level_04_MultipleBrowser_Account_Login extends BaseTest {
 
 	@BeforeMethod
 	public void beforeMethod() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 	}
 
 	@Test
@@ -100,7 +100,6 @@ public class Level_04_MultipleBrowser_Account_Login extends BaseTest {
 		myDashboardPage = new MyDashboardPageObject(driver);
 		assertTrue(myDashboardPage.getUserInfoText().contains("Automation FC"));
 		assertTrue(myDashboardPage.getUserInfoText().contains("automationfc.vn@gmail.com"));
-		myDashboardPage.clickToLogoutButton();
 	}
 
 	@AfterClass

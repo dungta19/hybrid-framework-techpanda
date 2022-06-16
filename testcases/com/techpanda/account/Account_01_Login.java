@@ -2,10 +2,10 @@ package com.techpanda.account;
 
 import org.testng.annotations.Test;
 
-import pageObjects.CreateAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyDashboardPageObject;
+import pageObjects.user.CreateAccountPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.LoginPageObject;
+import pageObjects.user.MyDashboardPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -36,7 +36,7 @@ public class Account_01_Login {
 
 	@Test
 	public void Login_01_Empty_Data() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("");
 		loginPage.inputToPasswordTextbox("");
@@ -47,7 +47,7 @@ public class Account_01_Login {
 
 	@Test
 	public void Login_02_Invalid_Email() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("123434@1234.456");
 		loginPage.inputToPasswordTextbox("123456");
@@ -58,7 +58,7 @@ public class Account_01_Login {
 
 	@Test
 	public void Login_03_Invalid_Password() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("automation@gmail.com");
@@ -70,7 +70,7 @@ public class Account_01_Login {
 
 	@Test
 	public void Login_04_Incorrect_Email_Password() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("automation@gmail.com");
@@ -81,7 +81,7 @@ public class Account_01_Login {
 
 	@Test
 	public void Login_06_Create_New_Account() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 
 		loginPage = new LoginPageObject(driver);
 		loginPage.clickToCreateAccountButton();
@@ -103,7 +103,7 @@ public class Account_01_Login {
 
 	@Test
 	public void Login_05_Correct_Email_Password() {
-		homePage.clickToMyAccountLink();
+		homePage.openLoginPage();
 
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("automationfullstack1234324@gmail.com");

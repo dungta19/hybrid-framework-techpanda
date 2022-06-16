@@ -12,10 +12,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.CreateAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyDashboardPageObject;
+import pageObjects.user.CreateAccountPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.LoginPageObject;
+import pageObjects.user.MyDashboardPageObject;
 
 public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	WebDriver driver;
@@ -33,7 +33,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@BeforeMethod
 	public void beforeMethod() {
-		loginPage = homePage.clickToMyAccountLink();
+		loginPage = homePage.openLoginPage();
 	}
 
 	@Test
@@ -90,7 +90,6 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 		myDashboardPage = loginPage.clickToLoginButton();
 
 		assertTrue(myDashboardPage.getUserInfoText().contains("automationfc.vn@gmail.com"));
-		myDashboardPage.clickToLogoutButton();
 	}
 
 	@AfterClass

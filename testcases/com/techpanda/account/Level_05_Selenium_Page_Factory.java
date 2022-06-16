@@ -14,10 +14,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageFactory.CreateAccountPageObject;
-import pageFactory.HomePageObject;
-import pageFactory.LoginPageObject;
-import pageFactory.MyDashboardPageObject;
+import pageFactory.user.CreateAccountPageObject;
+import pageFactory.user.HomePageObject;
+import pageFactory.user.LoginPageObject;
+import pageFactory.user.MyDashboardPageObject;
 
 public class Level_05_Selenium_Page_Factory extends BaseTest {
 	WebDriver driver;
