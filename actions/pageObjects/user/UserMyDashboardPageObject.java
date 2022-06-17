@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.user.MyDashboardPageUI;
 
-public class MyDashboardPageObject extends BasePage {
+public class UserMyDashboardPageObject extends BasePage {
 	WebDriver driver;
 
-	public MyDashboardPageObject(WebDriver driver) {
+	public UserMyDashboardPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="false" name="Tech Panda">
+	<parameter name="userURL" value="http://live.techpanda.org/index.php/" />
+	<parameter name="adminURL" value="http://live.techpanda.org/index.php/backendlogin" />
 
 
 	<test name="Run on CHROME browser">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.techpanda.account.Level_08_Page_Navigation" />
+			<class name="com.techpanda.account.Level_09_Switch_Role" />
 		</classes>
 	</test>
 
-	
+
 </suite> 

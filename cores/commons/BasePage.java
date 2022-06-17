@@ -14,9 +14,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.navigation.FooterContainerPageObject;
 import pageObjects.navigation.HeaderContainerPageObject;
+import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
+import pageObjects.user.UserHomePageObject;
 
 public class BasePage {
 	public static BasePage getBasePageInstance() {
@@ -368,4 +371,13 @@ public class BasePage {
 		return new HeaderContainerPageObject(driver);
 	}
 
+	public UserHomePageObject openUserHomePage(WebDriver driver, String userURL) {
+		openPageUrl(driver, userURL);
+		return PageGeneratorManager.getUserHomePage(driver);
+	}
+
+	public AdminLoginPageObject openAdminLoginPage(WebDriver driver, String adminURL) {
+		openPageUrl(driver, adminURL);
+		return PageGeneratorManager.getAdminLoginPage(driver);
+	}
 }

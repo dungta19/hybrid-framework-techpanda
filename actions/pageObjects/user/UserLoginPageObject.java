@@ -6,10 +6,10 @@ import commons.BasePage;
 import pageObjects.navigation.PageGeneratorManager;
 import pageUIs.user.LoginPageUI;
 
-public class LoginPageObject extends BasePage {
+public class UserLoginPageObject extends BasePage {
 	WebDriver driver;
 
-	public LoginPageObject(WebDriver driver) {
+	public UserLoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -23,10 +23,10 @@ public class LoginPageObject extends BasePage {
 		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public MyDashboardPageObject clickToLoginButton() {
+	public UserMyDashboardPageObject clickToLoginButton() {
 		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getMyDashboardPage(driver);
+		return PageGeneratorManager.getUserMyDashboardPage(driver);
 	}
 
 	public String getEmailAddressEmptyErrorMessage() {

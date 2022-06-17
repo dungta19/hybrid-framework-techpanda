@@ -2,10 +2,10 @@ package com.techpanda.account;
 
 import org.testng.annotations.Test;
 
-import pageObjects.user.CreateAccountPageObject;
-import pageObjects.user.HomePageObject;
-import pageObjects.user.LoginPageObject;
-import pageObjects.user.MyDashboardPageObject;
+import pageObjects.user.UserCreateAccountPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserMyDashboardPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -20,10 +20,10 @@ import org.testng.annotations.AfterClass;
 public class Account_01_Login {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
-	HomePageObject homePage;
-	LoginPageObject loginPage;
-	MyDashboardPageObject myDashboardPage;
-	CreateAccountPageObject createAccountPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
+	UserCreateAccountPageObject createAccountPage;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -31,13 +31,13 @@ public class Account_01_Login {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://live.techpanda.org/");
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
 	public void Login_01_Empty_Data() {
 		homePage.openLoginPage();
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("");
 		loginPage.inputToPasswordTextbox("");
 		loginPage.clickToLoginButton();
@@ -48,7 +48,7 @@ public class Account_01_Login {
 	@Test
 	public void Login_02_Invalid_Email() {
 		homePage.openLoginPage();
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("123434@1234.456");
 		loginPage.inputToPasswordTextbox("123456");
 		loginPage.clickToLoginButton();
@@ -60,7 +60,7 @@ public class Account_01_Login {
 	public void Login_03_Invalid_Password() {
 		homePage.openLoginPage();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("automation@gmail.com");
 		loginPage.inputToPasswordTextbox("1234");
 		loginPage.clickToLoginButton();
@@ -72,7 +72,7 @@ public class Account_01_Login {
 	public void Login_04_Incorrect_Email_Password() {
 		homePage.openLoginPage();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("automation@gmail.com");
 		loginPage.inputToPasswordTextbox("1234asdv");
 		loginPage.clickToLoginButton();
@@ -83,10 +83,10 @@ public class Account_01_Login {
 	public void Login_06_Create_New_Account() {
 		homePage.openLoginPage();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.clickToCreateAccountButton();
 
-		createAccountPage = new CreateAccountPageObject(driver);
+		createAccountPage = new UserCreateAccountPageObject(driver);
 		createAccountPage.inputToFirstNameTextbox("Automation");
 		createAccountPage.inputToMiddleNameTextbox("S");
 		createAccountPage.inputToLastNameTextbox("T");
@@ -95,24 +95,24 @@ public class Account_01_Login {
 		createAccountPage.inputToPasswordConfirmTextbox("123456");
 		createAccountPage.clickToRegisterButton();
 
-		myDashboardPage = new MyDashboardPageObject(driver);
+		myDashboardPage = new UserMyDashboardPageObject(driver);
 		Assert.assertEquals(myDashboardPage.getSuccessRegisterMessage(),
 				"Thank you for registering with Main Website Store.");
-		myDashboardPage.clickToLogoutButton();
+		myDashboardPage.clickToUserLogoutButton();
 	}
 
 	@Test
 	public void Login_05_Correct_Email_Password() {
 		homePage.openLoginPage();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailAddressTextbox("automationfullstack1234324@gmail.com");
 		loginPage.inputToPasswordTextbox("123456");
 		loginPage.clickToLoginButton();
 
-		myDashboardPage = new MyDashboardPageObject(driver);
+		myDashboardPage = new UserMyDashboardPageObject(driver);
 		Assert.assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack"));
-		myDashboardPage.clickToLogoutButton();
+		myDashboardPage.clickToUserLogoutButton();
 	}
 
 	@AfterClass

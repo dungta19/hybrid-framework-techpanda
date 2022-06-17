@@ -12,23 +12,23 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.user.CreateAccountPageObject;
-import pageObjects.user.HomePageObject;
-import pageObjects.user.LoginPageObject;
-import pageObjects.user.MyDashboardPageObject;
+import pageObjects.user.UserCreateAccountPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserMyDashboardPageObject;
 
 public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	WebDriver driver;
-	HomePageObject homePage;
-	LoginPageObject loginPage;
-	MyDashboardPageObject myDashboardPage;
-	CreateAccountPageObject registerPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
+	UserCreateAccountPageObject registerPage;
 
 	@Parameters({ "browser" })
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@BeforeMethod

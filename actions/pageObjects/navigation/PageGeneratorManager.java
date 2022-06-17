@@ -2,9 +2,11 @@ package pageObjects.navigation;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.user.HomePageObject;
-import pageObjects.user.LoginPageObject;
-import pageObjects.user.MyDashboardPageObject;
+import pageObjects.admin.AdminLoginPageObject;
+import pageObjects.admin.AdminManageCustomerPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.footer.AboutUsPageObject;
 import pageObjects.user.footer.AdvancedSearchPageObject;
 import pageObjects.user.footer.ContactUsPageObject;
@@ -25,16 +27,16 @@ import pageObjects.user.sideBar.NewsletterSubscriptionsPageObject;
 import pageObjects.user.sideBar.RecurringProfilesPageObject;
 
 public class PageGeneratorManager {
-	public static HomePageObject getHomePage(WebDriver driver) {
-		return new HomePageObject(driver);
+	public static UserHomePageObject getUserHomePage(WebDriver driver) {
+		return new UserHomePageObject(driver);
 	}
 
-	public static LoginPageObject getLoginPage(WebDriver driver) {
-		return new LoginPageObject(driver);
+	public static UserLoginPageObject getUserLoginPage(WebDriver driver) {
+		return new UserLoginPageObject(driver);
 	}
 
-	public static MyDashboardPageObject getMyDashboardPage(WebDriver driver) {
-		return new MyDashboardPageObject(driver);
+	public static UserMyDashboardPageObject getUserMyDashboardPage(WebDriver driver) {
+		return new UserMyDashboardPageObject(driver);
 	}
 
 	public static AccountInfoPageObject getAccountInfoPage(WebDriver driver) {
@@ -107,6 +109,14 @@ public class PageGeneratorManager {
 
 	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
 		return new MyAccountPageObject(driver);
+	}
+
+	public static AdminLoginPageObject getAdminLoginPage(WebDriver driver) {
+		return new AdminLoginPageObject(driver);
+	}
+
+	public static AdminManageCustomerPageObject getAdminManageCustomer(WebDriver driver) {
+		return new AdminManageCustomerPageObject(driver);
 	}
 
 }

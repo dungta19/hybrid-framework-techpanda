@@ -3,7 +3,7 @@ package pageObjects.navigation;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageObjects.user.LoginPageObject;
+import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.footer.AboutUsPageObject;
 import pageObjects.user.footer.AdvancedSearchPageObject;
 import pageObjects.user.footer.ContactUsPageObject;
@@ -27,10 +27,10 @@ public class FooterContainerPageObject extends BasePage {
 		return PageGeneratorManager.getMyAccountPage(driver);
 	}
 
-	public LoginPageObject openLoginPage() {
+	public UserLoginPageObject openLoginPage() {
 		waitForElementClickable(driver, FooterContainerPageUIs.MY_ACCOUNT_LINK);
 		clickToElement(driver, FooterContainerPageUIs.MY_ACCOUNT_LINK);
-		return PageGeneratorManager.getLoginPage(driver);
+		return PageGeneratorManager.getUserLoginPage(driver);
 	}
 
 	public AboutUsPageObject openAboutUsPage() {

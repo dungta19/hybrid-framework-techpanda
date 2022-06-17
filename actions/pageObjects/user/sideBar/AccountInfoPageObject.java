@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
-import pageObjects.user.MyDashboardPageObject;
+import pageObjects.user.UserMyDashboardPageObject;
 import pageUIs.user.AccountInforPageUI;
 
 public class AccountInfoPageObject extends SideBarContainerPageObject {
@@ -35,10 +35,10 @@ public class AccountInfoPageObject extends SideBarContainerPageObject {
 		sendkeyToElement(driver, AccountInforPageUI.CURRENT_PASSWORD_TEXTBOX, password);
 	}
 
-	public MyDashboardPageObject clickToSaveButton() {
+	public UserMyDashboardPageObject clickToSaveButton() {
 		waitForElementClickable(driver, AccountInforPageUI.SAVE_BUTTON);
 		clickToElement(driver, AccountInforPageUI.SAVE_BUTTON);
-		return PageGeneratorManager.getMyDashboardPage(driver);
+		return PageGeneratorManager.getUserMyDashboardPage(driver);
 	}
 
 }

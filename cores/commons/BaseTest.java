@@ -38,6 +38,33 @@ public class BaseTest extends BasePage {
 		return driver;
 	}
 
+	public WebDriver getBrowserDriver(String browserName, String urlValue) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+
+		switch (browserList) {
+		case FIREFOX:
+			driver = WebDriverManager.firefoxdriver().create();
+			break;
+		case CHROME:
+			driver = WebDriverManager.chromedriver().create();
+			break;
+		case EDGE:
+			driver = WebDriverManager.edgedriver().create();
+			break;
+		case OPERA:
+			driver = WebDriverManager.operadriver().create();
+			break;
+
+		default:
+			throw new RuntimeException("Browser is NOT supported");
+		}
+
+		driver.get(urlValue);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		return driver;
+	}
+
 	protected int getRandomNumber() {
 		Random rand = new Random();
 		return rand.nextInt(999999);

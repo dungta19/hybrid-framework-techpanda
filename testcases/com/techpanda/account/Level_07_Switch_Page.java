@@ -11,10 +11,10 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import pageObjects.navigation.PageGeneratorManager;
-import pageObjects.user.CreateAccountPageObject;
-import pageObjects.user.HomePageObject;
-import pageObjects.user.LoginPageObject;
-import pageObjects.user.MyDashboardPageObject;
+import pageObjects.user.UserCreateAccountPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.sideBar.AccountInfoPageObject;
 import pageObjects.user.sideBar.BillingAgreementsPageObject;
 import pageObjects.user.sideBar.MyDownloadableProductsPageObject;
@@ -23,10 +23,10 @@ import pageObjects.user.sideBar.MyWishlistPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
 	WebDriver driver;
-	HomePageObject homePage;
-	LoginPageObject loginPage;
-	MyDashboardPageObject myDashboardPage;
-	CreateAccountPageObject registerPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
+	UserCreateAccountPageObject registerPage;
 	AccountInfoPageObject myAccountinforPage;
 	MyWishlistPageObject myWishlistPage;
 	MyOrdersPageObject myOrdersPage;
@@ -37,7 +37,7 @@ public class Level_07_Switch_Page extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 	}
 
 	@Test

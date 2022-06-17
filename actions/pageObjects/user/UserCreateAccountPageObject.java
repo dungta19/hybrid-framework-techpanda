@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.user.CreateAccountPageUI;
 
-public class CreateAccountPageObject extends BasePage {
+public class UserCreateAccountPageObject extends BasePage {
 	WebDriver driver;
 
-	public CreateAccountPageObject(WebDriver driver) {
+	public UserCreateAccountPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

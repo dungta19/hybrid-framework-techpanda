@@ -3,7 +3,7 @@ package pageObjects.navigation;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageObjects.user.MyDashboardPageObject;
+import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.sideBar.AccountInfoPageObject;
 import pageObjects.user.sideBar.BillingAgreementsPageObject;
 import pageObjects.user.sideBar.AddressBookPageObject;
@@ -24,10 +24,10 @@ public class SideBarContainerPageObject extends BasePage {
 	}
 
 	// Open Page link
-	public MyDashboardPageObject clickToMyDashboardLink() {
+	public UserMyDashboardPageObject clickToMyDashboardLink() {
 		waitForElementClickable(driver, SideBarMyAccountPageUIs.MY_DASHBOARD_LINK);
 		clickToElement(driver, SideBarMyAccountPageUIs.MY_DASHBOARD_LINK);
-		return PageGeneratorManager.getMyDashboardPage(driver);
+		return PageGeneratorManager.getUserMyDashboardPage(driver);
 	}
 
 	public AccountInfoPageObject clickToMyAccountInfoLink() {

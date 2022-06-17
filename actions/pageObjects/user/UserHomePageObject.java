@@ -6,17 +6,17 @@ import commons.BasePage;
 import pageObjects.navigation.PageGeneratorManager;
 import pageUIs.navigation.FooterContainerPageUIs;
 
-public class HomePageObject extends BasePage {
+public class UserHomePageObject extends BasePage {
 	WebDriver driver;
 
-	public HomePageObject(WebDriver driver) {
+	public UserHomePageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public LoginPageObject openLoginPage() {
+	public UserLoginPageObject openLoginPage() {
 		waitForElementClickable(driver, FooterContainerPageUIs.MY_ACCOUNT_LINK);
 		clickToElement(driver, FooterContainerPageUIs.MY_ACCOUNT_LINK);
-		return PageGeneratorManager.getLoginPage(driver);
+		return PageGeneratorManager.getUserLoginPage(driver);
 	}
 
 }
