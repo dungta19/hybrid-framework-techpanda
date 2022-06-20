@@ -14,12 +14,12 @@ import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.UserCreateAccountPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.sideBar.AccountInfoPageObject;
 import pageObjects.user.sideBar.BillingAgreementsPageObject;
 import pageObjects.user.sideBar.MyDownloadableProductsPageObject;
 import pageObjects.user.sideBar.MyOrdersPageObject;
 import pageObjects.user.sideBar.MyWishlistPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
 	WebDriver driver;

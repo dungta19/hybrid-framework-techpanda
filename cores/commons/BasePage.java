@@ -21,6 +21,9 @@ import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
 import pageObjects.user.UserHomePageObject;
 
+/**
+ * @author Dung Ta - ttdung1901@gmail.com @
+ */
 public class BasePage {
 	public static BasePage getBasePageInstance() {
 		return new BasePage();
@@ -113,38 +116,182 @@ public class BasePage {
 	}
 
 	/* Web Element */
-	public By getByXpath(String locator) {
-		return By.xpath(locator);
+	/**
+	 * Define locator by using REST PARAMETER
+	 * 
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public String castRestParameter(String locator, String... locatorValues) {
+		return locator = String.format(locator, (Object[]) locatorValues);
 	}
 
+	/**
+	 * @implNote Using for: id/ class/ name/ xpath/ css.
+	 * @implNote Locator conventions: id=/ class=/ name=/ xpath=/ css=.
+	 * @implSpec Access Modifier: private
+	 * @param locator
+	 * @return by
+	 */
+	private By getByLocator(String locator) {
+		By by = null;
+		if (locator.startsWith("id=") || locator.startsWith("ID=") || locator.startsWith("Id=")) {
+			by = By.id(locator.substring(3));
+		} else if (locator.startsWith("class=") || locator.startsWith("CLASS=") || locator.startsWith("Class=")) {
+			by = By.className(locator.substring(6));
+		} else if (locator.startsWith("name=") || locator.startsWith("NAME=") || locator.startsWith("Name=")) {
+			by = By.name(locator.substring(5));
+		} else if (locator.startsWith("css=") || locator.startsWith("CSS=") || locator.startsWith("Css=")) {
+			by = By.cssSelector(locator.substring(4));
+		} else if (locator.startsWith("xpath=") || locator.startsWith("Xpath=") || locator.startsWith("XPATH=")) {
+			by = By.xpath(locator.substring(6));
+		} else {
+			throw new RuntimeException("Locator is invalid!");
+		}
+		return by;
+	}
+
+	/**
+	 * Return an element
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public WebElement getWebElement(WebDriver driver, String locator) {
-		return driver.findElement(getByXpath(locator));
+		return driver.findElement(getByLocator(locator));
 	}
 
+	/**
+	 * Return a list of elements
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public List<WebElement> getListElement(WebDriver driver, String locator) {
-		return driver.findElements(getByXpath(locator));
+		return driver.findElements(getByLocator(locator));
 	}
 
+	/**
+	 * Click to Element by FIXED LOCATOR
+	 * 
+	 * @param driver
+	 * @param locator
+	 */
 	public void clickToElement(WebDriver driver, String locator) {
 		getWebElement(driver, locator).click();
 	}
 
+	/**
+	 * Click to Element by using locator REST PARAMETER values
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public void clickToElement(WebDriver driver, String locator, String... locatorValues) {
+		getWebElement(driver, castRestParameter(locator, locatorValues)).click();
+	}
+
+	/**
+	 * Send key to Element by using FIXED LOCATOR
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param valueToInput
+	 */
 	public void sendkeyToElement(WebDriver driver, String locator, String valueToInput) {
 		getWebElement(driver, locator).clear();
 		getWebElement(driver, locator).sendKeys(valueToInput);
 	}
 
+	/**
+	 * Send key to Element by using locator REST PARAMETER values
+	 * 
+	 * @param driver
+	 * @param valueToInput
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public void sendkeyToElement(WebDriver driver, String valueToInput, String locator, String... locatorValues) {
+		getWebElement(driver, castRestParameter(locator, locatorValues)).clear();
+		getWebElement(driver, castRestParameter(locator, locatorValues)).sendKeys(valueToInput);
+	}
+
+	/**
+	 * Get texts in Element by using FIXED LOCATOR
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public String getElementText(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).getText();
 	}
 
+	/**
+	 * Get texts in Element by using locator REST PARAMETER values
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 * @return
+	 */
+	public String getElementText(WebDriver driver, String locator, String... locatorValues) {
+		return getWebElement(driver, castRestParameter(locator, locatorValues)).getText();
+	}
+
+	/**
+	 * Select an item in a default drop down by using FIXED LOCATOR.
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param itemText
+	 */
 	public void selectItemInDefaultDropDown(WebDriver driver, String locator, String itemText) {
 		Select select = new Select(getWebElement(driver, locator));
 		select.selectByVisibleText(itemText);
 	}
 
+	/**
+	 * Select an item in a default drop down by using locator REST PARAMETER values
+	 * 
+	 * @param driver
+	 * @param itemText
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public void selectItemInDefaultDropDown(WebDriver driver, String itemText, String locator,
+			String... locatorValues) {
+		Select select = new Select(getWebElement(driver, castRestParameter(locator, locatorValues)));
+		select.selectByVisibleText(itemText);
+	}
+
+	/**
+	 * Get text from the FIRST SELECTED item in drop down list by using FIXED
+	 * LOCATOR
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public String getFirstSelectedTextItem(WebDriver driver, String locator) {
 		Select select = new Select(getWebElement(driver, locator));
+		return select.getFirstSelectedOption().getText();
+	}
+
+	/**
+	 * Get text from the FIRST SELECTED item in drop down list by using locator REST
+	 * PARAMETER values
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 * @return
+	 */
+	public String getFirstSelectedTextItem(WebDriver driver, String locator, String... locatorValues) {
+		Select select = new Select(getWebElement(driver, castRestParameter(locator, locatorValues)));
 		return select.getFirstSelectedOption().getText();
 	}
 
@@ -159,7 +306,7 @@ public class BasePage {
 		sleepInSecond(2);
 
 		List<WebElement> childItems = new WebDriverWait(driver, longTimeout)
-				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(childLocator)));
+				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childLocator)));
 		for (WebElement tempElement : childItems) {
 
 			if (tempElement.getText().equals(selectItemText)) {
@@ -172,8 +319,29 @@ public class BasePage {
 		}
 	}
 
-	public String getElementAttributte(WebDriver driver, String locator, String attributeName) {
+	/**
+	 * Get a WebElement attribute value by using FIXED LOCATOR
+	 * 
+	 * @param driver
+	 * @param attributeName
+	 * @param locator
+	 * @return
+	 */
+	public String getElementAttribute(WebDriver driver, String attributeName, String locator) {
 		return getWebElement(driver, locator).getAttribute(attributeName);
+	}
+
+	/**
+	 * Get a WebElement attribute value by using locator REST PARAMETER values.
+	 * 
+	 * @param driver
+	 * @param attributeName
+	 * @param locator
+	 * @param locatorValues
+	 * @return
+	 */
+	public String getElementAttribute(WebDriver driver, String attributeName, String locator, String... locatorValues) {
+		return getWebElement(driver, castRestParameter(locator, locatorValues)).getAttribute(attributeName);
 	}
 
 	public String getElementCssValue(WebDriver driver, String locator, String propertyName) {
@@ -197,12 +365,50 @@ public class BasePage {
 		}
 	}
 
+	/**
+	 * Verify whether the element is displayed by using FIXED LOCATOR
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public boolean isElementDisplayed(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).isDisplayed();
 	}
 
+	/**
+	 * Verify whether the element is DISABLED by using locator REST PARAMETER values
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 * @return Boolean
+	 */
+	public boolean isElementDisplayed(WebDriver driver, String locator, String... locatorValues) {
+		return getWebElement(driver, castRestParameter(locator, locatorValues)).isDisplayed();
+	}
+
+	/**
+	 * Verify whether the element is ENABLED by using FIXED LOCATOR
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return Boolean
+	 */
 	public boolean isElementEnabled(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).isEnabled();
+	}
+
+	/**
+	 * Verify whether the element is ENABLED by using locator REST PARAMETER values
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 * @return Boolean
+	 */
+	public boolean isElementEnabled(WebDriver driver, String locator, String... locatorValues) {
+		return getWebElement(driver, castRestParameter(locator, locatorValues)).isEnabled();
 	}
 
 	public boolean isElementSelected(WebDriver driver, String locator) {
@@ -264,6 +470,13 @@ public class BasePage {
 		((JavascriptExecutor) driver).executeScript("window.location = '" + url + "'");
 	}
 
+	/**
+	 * Highlight the active element by using FIXED LOCATOR
+	 * 
+	 * @implSpec Java script Executor
+	 * @param driver
+	 * @param locator
+	 */
 	public void hightlightElement(WebDriver driver, String locator) {
 		WebElement element = getWebElement(driver, locator);
 		String originalStyle = element.getAttribute("style");
@@ -274,8 +487,46 @@ public class BasePage {
 		jsExecutor.executeScript("arguments[0].setAttribute('style', arguments[1])", element, originalStyle);
 	}
 
+	/**
+	 * Highlight the active element by using locator REST PARAMETER values.
+	 * 
+	 * @implSpec Java script Executor
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public void hightlightElement(WebDriver driver, String locator, String... locatorValues) {
+		WebElement element = getWebElement(driver, castRestParameter(locator, locatorValues));
+		String originalStyle = element.getAttribute("style");
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("arguments[0].setAttribute('style', arguments[1])", element,
+				"border: 2px solid red; border-style: dashed;");
+		sleepInSecond(1);
+		jsExecutor.executeScript("arguments[0].setAttribute('style', arguments[1])", element, originalStyle);
+	}
+
+	/**
+	 * Click to WebElement by using FIXED LOCATOR.
+	 * 
+	 * @implSpec Java script Executor
+	 * @param driver
+	 * @param locator
+	 */
 	public void clickToElementByJS(WebDriver driver, String locator) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", getWebElement(driver, locator));
+	}
+
+	/**
+	 * Click to WebElement by using locator REST PARAMETER values.
+	 * 
+	 * @implSpec Java script Executor
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public void clickToElementByJS(WebDriver driver, String locator, String... locatorValues) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				getWebElement(driver, castRestParameter(locator, locatorValues)));
 	}
 
 	public void scrollToElementOnTop(WebDriver driver, String locator) {
@@ -323,16 +574,34 @@ public class BasePage {
 
 	public void waitForElementVisible(WebDriver driver, String locator) {
 		new WebDriverWait(driver, longTimeout)
-				.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
+				.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
 	}
 
 	public void waitForElementInvisible(WebDriver driver, String locator) {
 		new WebDriverWait(driver, longTimeout)
-				.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+				.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
 	}
 
+	/**
+	 * Wait for WebElement clickable by using FIXED LOCATOR.
+	 * 
+	 * @param driver
+	 * @param locator
+	 */
 	public void waitForElementClickable(WebDriver driver, String locator) {
-		new WebDriverWait(driver, longTimeout).until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
+		new WebDriverWait(driver, longTimeout).until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
+	}
+
+	/**
+	 * Wait for WebElement clickable by using locator REST PARAMETER values.
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @param locatorValues
+	 */
+	public void waitForElementClickable(WebDriver driver, String locator, String... locatorValues) {
+		new WebDriverWait(driver, longTimeout).until(
+				ExpectedConditions.elementToBeClickable(getByLocator(castRestParameter(locator, locatorValues))));
 	}
 
 	public void checkCheckboxOrRadioButtonByJS(WebDriver driver, String locator) {
@@ -359,23 +628,55 @@ public class BasePage {
 
 	private long longTimeout = 30;
 
+	/**
+	 * Call out pages in Side Bar menu
+	 * 
+	 * @param driver
+	 * @return
+	 */
 	public SideBarContainerPageObject getSideBarMyAccountPage(WebDriver driver) {
 		return new SideBarContainerPageObject(driver);
 	}
 
+	/**
+	 * Call out pages in Footer menu
+	 * 
+	 * @param driver
+	 * @return
+	 */
 	public FooterContainerPageObject getFooterContainerPage(WebDriver driver) {
 		return new FooterContainerPageObject(driver);
 	}
 
+	/**
+	 * Call out pages in Header menu
+	 * 
+	 * @param driver
+	 * @return
+	 */
 	public HeaderContainerPageObject getHeaderContainerPage(WebDriver driver) {
 		return new HeaderContainerPageObject(driver);
 	}
 
+	/**
+	 * Open User Login Page
+	 * 
+	 * @param driver
+	 * @param userURL
+	 * @return
+	 */
 	public UserHomePageObject openUserHomePage(WebDriver driver, String userURL) {
 		openPageUrl(driver, userURL);
 		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
+	/**
+	 * Open Admin Login Page
+	 * 
+	 * @param driver
+	 * @param adminURL
+	 * @return
+	 */
 	public AdminLoginPageObject openAdminLoginPage(WebDriver driver, String adminURL) {
 		openPageUrl(driver, adminURL);
 		return PageGeneratorManager.getAdminLoginPage(driver);

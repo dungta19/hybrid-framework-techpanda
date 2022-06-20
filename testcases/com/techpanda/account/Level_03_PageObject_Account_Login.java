@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import pageObjects.user.UserCreateAccountPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 public class Level_03_PageObject_Account_Login {
 	WebDriver driver;

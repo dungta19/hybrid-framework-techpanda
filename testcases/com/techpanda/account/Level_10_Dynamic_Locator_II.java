@@ -28,7 +28,7 @@ import pageObjects.user.sideBar.MyOrdersPageObject;
 import pageObjects.user.sideBar.MyWishlistPageObject;
 import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
-public class Level_08_Page_Navigation extends BaseTest {
+public class Level_10_Dynamic_Locator_II extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
@@ -56,46 +56,59 @@ public class Level_08_Page_Navigation extends BaseTest {
 	}
 
 	@Test
-	public void SideBarContainer_Page_Navigator() {
+	public void TC_01_Login() {
 		loginPage = getFooterContainerPage(driver).openLoginPage();
 		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		loginPage.inputToPasswordTextbox("123456789");
 
 		myDashboardPage = loginPage.clickToLoginButton();
 		assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
-
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
-
-		myWishlistPage = getSideBarMyAccountPage(driver).clickToMyWishlistLink();
-
-		myOrdersPage = getSideBarMyAccountPage(driver).clickToMyOrdersLink();
-
-		billingAgreementsPage = getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
-
-		myDownloadableProductsPage = getSideBarMyAccountPage(driver).clickToMyDownloadableProductsLink();
-
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
-
-		myDashboardPage = getSideBarMyAccountPage(driver).clickToMyDashboardLink();
 	}
 
 	@Test
-	public void FooterContainer_Page_Navigator() {
-		aboutUsPage = getFooterContainerPage(driver).openAboutUsPage();
+	public void TC_02_SideBarContainer_Page_Navigator() {
+		myAccountinforPage = (AccountInfoPageObject) getSideBarMyAccountPage(driver)
+				.openSideBarLinkByPageNames("Account Information");
 
-		contactUsPage = getFooterContainerPage(driver).openContactUsPage();
+		myWishlistPage = (MyWishlistPageObject) getSideBarMyAccountPage(driver)
+				.openSideBarLinkByPageNames("My Wishlist");
 
-		customerServicePage = getFooterContainerPage(driver).openCustomerServicePage();
+		myOrdersPage = (MyOrdersPageObject) getSideBarMyAccountPage(driver).openSideBarLinkByPageNames("My Orders");
 
-		privacyPolicyPage = getFooterContainerPage(driver).openPrivacyPolicyPage();
+		billingAgreementsPage = (BillingAgreementsPageObject) getSideBarMyAccountPage(driver)
+				.openSideBarLinkByPageNames("Billing Agreements");
 
-		siteMapPage = getFooterContainerPage(driver).openSiteMapPage();
+		myDownloadableProductsPage = (MyDownloadableProductsPageObject) getSideBarMyAccountPage(driver)
+				.openSideBarLinkByPageNames("My Downloadable Products");
 
-		searchTermsPage = getFooterContainerPage(driver).openSearchTermsPage();
+		myAccountinforPage = (AccountInfoPageObject) getSideBarMyAccountPage(driver)
+				.openSideBarLinkByPageNames("Account Information");
 
-		advancedSearchPage = getFooterContainerPage(driver).openAdvancedSearchPage();
+		myDashboardPage = (UserMyDashboardPageObject) getSideBarMyAccountPage(driver)
+				.openSideBarLinkByPageNames("Account Dashboard");
+	}
 
-		myAccountPage = getFooterContainerPage(driver).openMyAccountPage();
+	@Test
+	public void TC_03_FooterContainer_Page_Navigator() {
+		aboutUsPage = (AboutUsPageObject) getFooterContainerPage(driver).openFooterLinkByPageNames("About Us");
+
+		contactUsPage = (ContactUsPageObject) getFooterContainerPage(driver).openFooterLinkByPageNames("Contact Us");
+
+		customerServicePage = (CustomerServicePageObject) getFooterContainerPage(driver)
+				.openFooterLinkByPageNames("Customer Service");
+
+		privacyPolicyPage = (PrivacyPolicyPageObject) getFooterContainerPage(driver)
+				.openFooterLinkByPageNames("Privacy Policy");
+
+		siteMapPage = (SiteMapPageObject) getFooterContainerPage(driver).openFooterLinkByPageNames("Site Map");
+
+		searchTermsPage = (SearchTermsPageObject) getFooterContainerPage(driver)
+				.openFooterLinkByPageNames("Search Terms");
+
+		advancedSearchPage = (AdvancedSearchPageObject) getFooterContainerPage(driver)
+				.openFooterLinkByPageNames("Advanced Search");
+
+		myAccountPage = (MyAccountPageObject) getFooterContainerPage(driver).openFooterLinkByPageNames("My Account");
 	}
 
 	@AfterClass

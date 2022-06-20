@@ -6,12 +6,12 @@ import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.admin.AdminManageCustomerPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.footer.AboutUsPageObject;
 import pageObjects.user.footer.AdvancedSearchPageObject;
 import pageObjects.user.footer.ContactUsPageObject;
 import pageObjects.user.footer.CustomerServicePageObject;
 import pageObjects.user.footer.MyAccountPageObject;
+import pageObjects.user.footer.OrderAndReturnsPageObject;
 import pageObjects.user.footer.PrivacyPolicyPageObject;
 import pageObjects.user.footer.SearchTermsPageObject;
 import pageObjects.user.footer.SiteMapPageObject;
@@ -25,6 +25,7 @@ import pageObjects.user.sideBar.MyProductReviewsPageObject;
 import pageObjects.user.sideBar.MyWishlistPageObject;
 import pageObjects.user.sideBar.NewsletterSubscriptionsPageObject;
 import pageObjects.user.sideBar.RecurringProfilesPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 public class PageGeneratorManager {
 	public static UserHomePageObject getUserHomePage(WebDriver driver) {
@@ -117,6 +118,10 @@ public class PageGeneratorManager {
 
 	public static AdminManageCustomerPageObject getAdminManageCustomer(WebDriver driver) {
 		return new AdminManageCustomerPageObject(driver);
+	}
+
+	public static OrderAndReturnsPageObject getOrderAndReturnsPage(WebDriver driver) {
+		return new OrderAndReturnsPageObject(driver);
 	}
 
 }

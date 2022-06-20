@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageObjects.user.UserHomePageObject;
-import pageObjects.user.UserMyDashboardPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 import pageUIs.navigation.HeaderContainerPageUIs;
 import pageUIs.user.MyDashboardPageUI;
 

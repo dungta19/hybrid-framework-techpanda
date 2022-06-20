@@ -3,7 +3,6 @@ package pageObjects.navigation;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.sideBar.AccountInfoPageObject;
 import pageObjects.user.sideBar.BillingAgreementsPageObject;
 import pageObjects.user.sideBar.AddressBookPageObject;
@@ -14,6 +13,7 @@ import pageObjects.user.sideBar.MyProductReviewsPageObject;
 import pageObjects.user.sideBar.MyWishlistPageObject;
 import pageObjects.user.sideBar.NewsletterSubscriptionsPageObject;
 import pageObjects.user.sideBar.RecurringProfilesPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 import pageUIs.navigation.SideBarMyAccountPageUIs;
 
 public class SideBarContainerPageObject extends BasePage {
@@ -90,4 +90,50 @@ public class SideBarContainerPageObject extends BasePage {
 		return PageGeneratorManager.getMyDownloadableProductsPage(driver);
 	}
 
+	/**
+	 * Open any pages in Side Bar Menu by using page name and dynamic locator method
+	 * 
+	 * @param pageName
+	 */
+	public void openSideBarLinkByPageName(String pageName) {
+		waitForElementClickable(driver, SideBarMyAccountPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+		clickToElement(driver, SideBarMyAccountPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+	}
+
+	/**
+	 * Open any pages in Side Bar Menu by using page name and dynamic locator method
+	 * 
+	 * @param pageName
+	 * @return
+	 */
+	public SideBarContainerPageObject openSideBarLinkByPageNames(String pageName) {
+		waitForElementClickable(driver, SideBarMyAccountPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+		clickToElement(driver, SideBarMyAccountPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+
+		if (pageName.equals("Account Dashboard")) {
+			return PageGeneratorManager.getUserMyDashboardPage(driver);
+		} else if (pageName.equals("Account Information")) {
+			return PageGeneratorManager.getAccountInfoPage(driver);
+		} else if (pageName.equals("Address Book")) {
+			return PageGeneratorManager.getMyAddressBookPage(driver);
+		} else if (pageName.equals("My Orders")) {
+			return PageGeneratorManager.getMyOrdersPage(driver);
+		} else if (pageName.equals("Billing Agreements")) {
+			return PageGeneratorManager.getBillingAgreementsPage(driver);
+		} else if (pageName.equals("Recurring Profiles")) {
+			return PageGeneratorManager.getRecurringProfilesPage(driver);
+		} else if (pageName.equals("My Product Reviews")) {
+			return PageGeneratorManager.getMyDownloadableProductsPage(driver);
+		} else if (pageName.equals("My Wishlist")) {
+			return PageGeneratorManager.getMyWishlistPage(driver);
+		} else if (pageName.equals("My Applications")) {
+			return PageGeneratorManager.getMyApplicationsPage(driver);
+		} else if (pageName.equals("Newsletter Subscriptions")) {
+			return PageGeneratorManager.getNewsletterSubscriptionsPage(driver);
+		} else if (pageName.equals("My Downloadable Products")) {
+			return PageGeneratorManager.getMyDownloadableProductsPage(driver);
+		} else {
+			return null;
+		}
+	}
 }

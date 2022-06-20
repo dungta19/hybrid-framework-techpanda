@@ -8,7 +8,8 @@
 	<test name="Run on CHROME browser">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.techpanda.account.Level_09_Switch_Role" />
+			<class name="com.techpanda.account.Level_10_Dynamic_Locator_I" />
+			<class name="com.techpanda.account.Level_10_Dynamic_Locator_II" />
 		</classes>
 	</test>
 

@@ -17,7 +17,7 @@ import commons.BaseTest;
 import pageObjects.user.UserCreateAccountPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 public class Level_04_MultipleBrowser_Account_Login extends BaseTest {
 	WebDriver driver;

@@ -16,7 +16,7 @@ import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.UserCreateAccountPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	WebDriver driver;

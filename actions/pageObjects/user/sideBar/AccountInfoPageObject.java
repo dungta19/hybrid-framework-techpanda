@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
 import pageUIs.user.AccountInforPageUI;
 
 public class AccountInfoPageObject extends SideBarContainerPageObject {

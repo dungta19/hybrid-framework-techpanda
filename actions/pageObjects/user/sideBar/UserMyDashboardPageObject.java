@@ -1,14 +1,15 @@
-package pageObjects.user;
+package pageObjects.user.sideBar;
 
 import org.openqa.selenium.WebDriver;
 
-import commons.BasePage;
+import pageObjects.navigation.SideBarContainerPageObject;
 import pageUIs.user.MyDashboardPageUI;
 
-public class UserMyDashboardPageObject extends BasePage {
+public class UserMyDashboardPageObject extends SideBarContainerPageObject {
 	WebDriver driver;
 
 	public UserMyDashboardPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 

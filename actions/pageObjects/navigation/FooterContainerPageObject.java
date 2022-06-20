@@ -9,6 +9,7 @@ import pageObjects.user.footer.AdvancedSearchPageObject;
 import pageObjects.user.footer.ContactUsPageObject;
 import pageObjects.user.footer.CustomerServicePageObject;
 import pageObjects.user.footer.MyAccountPageObject;
+import pageObjects.user.footer.OrderAndReturnsPageObject;
 import pageObjects.user.footer.PrivacyPolicyPageObject;
 import pageObjects.user.footer.SearchTermsPageObject;
 import pageObjects.user.footer.SiteMapPageObject;
@@ -73,6 +74,50 @@ public class FooterContainerPageObject extends BasePage {
 		waitForElementClickable(driver, FooterContainerPageUIs.ADVANCED_SEARCH_LINK);
 		clickToElement(driver, FooterContainerPageUIs.ADVANCED_SEARCH_LINK);
 		return PageGeneratorManager.getAdvancedSearchPage(driver);
+	}
+
+	public OrderAndReturnsPageObject openOrderAndReturnsPage() {
+		waitForElementClickable(driver, FooterContainerPageUIs.ORDERS_RETURNS_LINK);
+		clickToElement(driver, FooterContainerPageUIs.ORDERS_RETURNS_LINK);
+		return PageGeneratorManager.getOrderAndReturnsPage(driver);
+	}
+
+	/**
+	 * Open any pages in Footer Menu by using page name and dynamic locator method
+	 * 
+	 * @param pageName
+	 */
+	public void openFooterLinkByPageName(String pageName) {
+		waitForElementClickable(driver, FooterContainerPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+		clickToElement(driver, FooterContainerPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+	}
+
+	public FooterContainerPageObject openFooterLinkByPageNames(String pageName) {
+		waitForElementClickable(driver, FooterContainerPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+		clickToElement(driver, FooterContainerPageUIs.DYNAMIC_SIDE_BAR_LINK, pageName);
+
+		if (pageName.equals("About Us")) {
+			return PageGeneratorManager.getAboutUsPage(driver);
+		} else if (pageName.equals("Contact Us")) {
+			return PageGeneratorManager.getContactUsPage(driver);
+		} else if (pageName.equals("Customer Service")) {
+			return PageGeneratorManager.getCustomerServicePage(driver);
+		} else if (pageName.equals("Privacy Policy")) {
+			return PageGeneratorManager.getPrivacyPolicyPage(driver);
+		} else if (pageName.equals("Search Terms")) {
+			return PageGeneratorManager.getSearchTermsPage(driver);
+		} else if (pageName.equals("Advanced Search")) {
+			return PageGeneratorManager.getAdvancedSearchPage(driver);
+		} else if (pageName.equals("My Account")) {
+			return PageGeneratorManager.getMyAccountPage(driver);
+		} else if (pageName.equals("Orders and Returns")) {
+			return PageGeneratorManager.getOrderAndReturnsPage(driver);
+		} else if (pageName.equals("Site Map")) {
+			return PageGeneratorManager.getSiteMapPage(driver);
+		} else {
+			return null;
+		}
+
 	}
 
 }

@@ -16,7 +16,6 @@ import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.UserCreateAccountPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
 import pageObjects.user.footer.AboutUsPageObject;
 import pageObjects.user.footer.AdvancedSearchPageObject;
 import pageObjects.user.footer.ContactUsPageObject;
@@ -30,6 +29,7 @@ import pageObjects.user.sideBar.BillingAgreementsPageObject;
 import pageObjects.user.sideBar.MyDownloadableProductsPageObject;
 import pageObjects.user.sideBar.MyOrdersPageObject;
 import pageObjects.user.sideBar.MyWishlistPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 public class Level_09_Switch_Role extends BaseTest {
 	String userURL;
@@ -68,9 +68,12 @@ public class Level_09_Switch_Role extends BaseTest {
 		adminLoginPage = manageCustomerPage.clickToAdminLogoutLink();
 
 		// Admin -> User
-		userHomePage = adminLoginPage.openUserHomePage(driver, userURL);
+		userHomePage = openUserHomePage(driver, userURL);
 
 		userLoginPage = getFooterContainerPage(driver).openLoginPage();
+		userLoginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
+		userLoginPage.inputToPasswordTextbox("123456789");
+		assertTrue(userMyDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
 	}
 

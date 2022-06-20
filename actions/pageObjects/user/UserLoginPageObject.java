@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageObjects.navigation.PageGeneratorManager;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 import pageUIs.user.LoginPageUI;
 
 public class UserLoginPageObject extends BasePage {

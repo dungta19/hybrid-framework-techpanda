@@ -2,14 +2,14 @@ package com.techpanda.account;
 
 import org.testng.annotations.Test;
 
+import commons.BaseTest;
 import pageObjects.user.UserCreateAccountPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.UserMyDashboardPageObject;
+import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
 import org.testng.annotations.BeforeClass;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Account_01_Login {
+public class Account_01_Login extends BaseTest {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	UserHomePageObject homePage;
@@ -98,7 +98,7 @@ public class Account_01_Login {
 		myDashboardPage = new UserMyDashboardPageObject(driver);
 		Assert.assertEquals(myDashboardPage.getSuccessRegisterMessage(),
 				"Thank you for registering with Main Website Store.");
-		myDashboardPage.clickToUserLogoutButton();
+		getHeaderContainerPage(driver).clickToUserLogoutButton();
 	}
 
 	@Test
@@ -112,17 +112,12 @@ public class Account_01_Login {
 
 		myDashboardPage = new UserMyDashboardPageObject(driver);
 		Assert.assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack"));
-		myDashboardPage.clickToUserLogoutButton();
+		getHeaderContainerPage(driver).clickToUserLogoutButton();
 	}
 
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
-	}
-
-	public int getRandomNumber() {
-		Random rand = new Random();
-		return rand.nextInt(9999);
 	}
 
 }
