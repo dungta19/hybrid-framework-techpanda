@@ -32,8 +32,8 @@ public class BaseTest extends BasePage {
 			throw new RuntimeException("Browser is NOT supported");
 		}
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("http://live.techpanda.org/");
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.get(GlobalConstants.LIVE_USER_URL);
 
 		return driver;
 	}
@@ -60,7 +60,7 @@ public class BaseTest extends BasePage {
 		}
 
 		driver.get(urlValue);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 
 		return driver;
 	}

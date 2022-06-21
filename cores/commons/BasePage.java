@@ -626,7 +626,7 @@ public class BasePage {
 		}
 	}
 
-	private long longTimeout = 30;
+	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 
 	/**
 	 * Call out pages in Side Bar menu
@@ -681,4 +681,5 @@ public class BasePage {
 		openPageUrl(driver, adminURL);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
+
 }
