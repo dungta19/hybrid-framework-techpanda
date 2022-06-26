@@ -47,7 +47,7 @@ public class Level_09_Switch_Role extends BaseTest {
 
 	@Test
 	public void TC_01_Switch_Role() {
-		userLoginPage = getFooterContainerPage(driver).openLoginPage();
+		userLoginPage = userHomePage.getFooterContainerPage(driver).openLoginPage();
 		userLoginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		userLoginPage.inputToPasswordTextbox("123456789");
 
@@ -55,7 +55,7 @@ public class Level_09_Switch_Role extends BaseTest {
 		assertTrue(userMyDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
 		// Logout
-		getHeaderContainerPage(driver).clickToUserLogoutButton();
+		userMyDashboardPage.getHeaderContainerPage(driver).clickToUserLogoutButton();
 
 		// User -> Admin
 		adminLoginPage = userHomePage.openAdminLoginPage(driver, adminURL);
@@ -68,9 +68,9 @@ public class Level_09_Switch_Role extends BaseTest {
 		adminLoginPage = manageCustomerPage.clickToAdminLogoutLink();
 
 		// Admin -> User
-		userHomePage = openUserHomePage(driver, userURL);
+		userHomePage = adminLoginPage.openUserHomePage(driver, userURL);
 
-		userLoginPage = getFooterContainerPage(driver).openLoginPage();
+		userLoginPage = userHomePage.getFooterContainerPage(driver).openLoginPage();
 		userLoginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		userLoginPage.inputToPasswordTextbox("123456789");
 		assertTrue(userMyDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));

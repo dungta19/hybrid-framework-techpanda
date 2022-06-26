@@ -57,45 +57,46 @@ public class Level_08_Page_Navigation extends BaseTest {
 
 	@Test
 	public void SideBarContainer_Page_Navigator() {
-		loginPage = getFooterContainerPage(driver).openLoginPage();
+		loginPage = homePage.getFooterContainerPage(driver).openLoginPage();
 		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		loginPage.inputToPasswordTextbox("123456789");
 
 		myDashboardPage = loginPage.clickToLoginButton();
 		assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-		myWishlistPage = getSideBarMyAccountPage(driver).clickToMyWishlistLink();
+		myWishlistPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyWishlistLink();
 
-		myOrdersPage = getSideBarMyAccountPage(driver).clickToMyOrdersLink();
+		myOrdersPage = myWishlistPage.getSideBarMyAccountPage(driver).clickToMyOrdersLink();
 
-		billingAgreementsPage = getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
+		billingAgreementsPage = myOrdersPage.getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
 
-		myDownloadableProductsPage = getSideBarMyAccountPage(driver).clickToMyDownloadableProductsLink();
+		myDownloadableProductsPage = billingAgreementsPage.getSideBarMyAccountPage(driver)
+				.clickToMyDownloadableProductsLink();
 
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDownloadableProductsPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-		myDashboardPage = getSideBarMyAccountPage(driver).clickToMyDashboardLink();
+		myDashboardPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyDashboardLink();
 	}
 
 	@Test
 	public void FooterContainer_Page_Navigator() {
-		aboutUsPage = getFooterContainerPage(driver).openAboutUsPage();
+		aboutUsPage = myDashboardPage.getFooterContainerPage(driver).openAboutUsPage();
 
-		contactUsPage = getFooterContainerPage(driver).openContactUsPage();
+		contactUsPage = aboutUsPage.getFooterContainerPage(driver).openContactUsPage();
 
-		customerServicePage = getFooterContainerPage(driver).openCustomerServicePage();
+		customerServicePage = contactUsPage.getFooterContainerPage(driver).openCustomerServicePage();
 
-		privacyPolicyPage = getFooterContainerPage(driver).openPrivacyPolicyPage();
+		privacyPolicyPage = customerServicePage.getFooterContainerPage(driver).openPrivacyPolicyPage();
 
-		siteMapPage = getFooterContainerPage(driver).openSiteMapPage();
+		siteMapPage = privacyPolicyPage.getFooterContainerPage(driver).openSiteMapPage();
 
-		searchTermsPage = getFooterContainerPage(driver).openSearchTermsPage();
+		searchTermsPage = siteMapPage.getFooterContainerPage(driver).openSearchTermsPage();
 
-		advancedSearchPage = getFooterContainerPage(driver).openAdvancedSearchPage();
+		advancedSearchPage = advancedSearchPage.getFooterContainerPage(driver).openAdvancedSearchPage();
 
-		myAccountPage = getFooterContainerPage(driver).openMyAccountPage();
+		myAccountPage = myAccountPage.getFooterContainerPage(driver).openMyAccountPage();
 	}
 
 	@AfterClass

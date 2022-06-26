@@ -48,12 +48,11 @@ public class Level_07_Switch_Page extends BaseTest {
 
 		myDashboardPage = loginPage.clickToLoginButton();
 		assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
-//		myDashboardPage.clickToLogoutButton();
 	}
 
 	@Test
 	public void Login_07_Update_Account_Information() {
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
 		myAccountinforPage.enterToFirstNameTextBox("WebDriver" + getRandomNumber());
 		myAccountinforPage.enterToLastNameTextBox("Testing" + getRandomNumber());
@@ -68,19 +67,20 @@ public class Level_07_Switch_Page extends BaseTest {
 
 	@Test
 	public void Switch_Page() {
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-		myWishlistPage = getSideBarMyAccountPage(driver).clickToMyWishlistLink();
+		myWishlistPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyWishlistLink();
 
-		myOrdersPage = getSideBarMyAccountPage(driver).clickToMyOrdersLink();
+		myOrdersPage = myWishlistPage.getSideBarMyAccountPage(driver).clickToMyOrdersLink();
 
-		billingAgreementsPage = getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
+		billingAgreementsPage = myOrdersPage.getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
 
-		myDownloadableProductsPage = getSideBarMyAccountPage(driver).clickToMyDownloadableProductsLink();
+		myDownloadableProductsPage = billingAgreementsPage.getSideBarMyAccountPage(driver)
+				.clickToMyDownloadableProductsLink();
 
-		myAccountinforPage = getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDownloadableProductsPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-		myDashboardPage = getSideBarMyAccountPage(driver).clickToMyDashboardLink();
+		myDashboardPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyDashboardLink();
 	}
 
 	@AfterClass

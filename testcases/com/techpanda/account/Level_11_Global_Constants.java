@@ -48,7 +48,7 @@ public class Level_11_Global_Constants extends BaseTest {
 
 	@Test
 	public void TC_01_Switch_Role() {
-		userLoginPage = getFooterContainerPage(driver).openLoginPage();
+		userLoginPage = userHomePage.getFooterContainerPage(driver).openLoginPage();
 		userLoginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		userLoginPage.inputToPasswordTextbox("123456789");
 
@@ -56,7 +56,7 @@ public class Level_11_Global_Constants extends BaseTest {
 		assertTrue(userMyDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
 		// Logout
-		getHeaderContainerPage(driver).clickToUserLogoutButton();
+		userLoginPage.getHeaderContainerPage(driver).clickToUserLogoutButton();
 
 		// User -> Admin
 		adminLoginPage = userHomePage.openAdminLoginPage(driver, adminURL);
@@ -69,9 +69,9 @@ public class Level_11_Global_Constants extends BaseTest {
 		adminLoginPage = manageCustomerPage.clickToAdminLogoutLink();
 
 		// Admin -> User
-		userHomePage = openUserHomePage(driver, userURL);
+		userHomePage = adminLoginPage.openUserHomePage(driver, userURL);
 
-		userLoginPage = getFooterContainerPage(driver).openLoginPage();
+		userLoginPage = userHomePage.getFooterContainerPage(driver).openLoginPage();
 		userLoginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		userLoginPage.inputToPasswordTextbox("123456789");
 

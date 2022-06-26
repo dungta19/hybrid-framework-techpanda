@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseTest extends BasePage {
+public class BaseTest {
 	WebDriver driver;
 //	String projectPath = System.getProperty("user.dir");
 

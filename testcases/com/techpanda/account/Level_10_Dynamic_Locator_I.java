@@ -57,7 +57,7 @@ public class Level_10_Dynamic_Locator_I extends BaseTest {
 
 	@Test
 	public void TC_01_Login() {
-		loginPage = getFooterContainerPage(driver).openLoginPage();
+		loginPage = homePage.getFooterContainerPage(driver).openLoginPage();
 		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		loginPage.inputToPasswordTextbox("123456789");
 
@@ -67,52 +67,52 @@ public class Level_10_Dynamic_Locator_I extends BaseTest {
 
 	@Test
 	public void TC_02_SideBarContainer_Page_Navigator() {
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Account Information");
+		myDashboardPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Account Information");
 		myAccountinforPage = PageGeneratorManager.getAccountInfoPage(driver);
 
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("My Wishlist");
+		myAccountinforPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("My Wishlist");
 		myWishlistPage = PageGeneratorManager.getMyWishlistPage(driver);
 
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("My Orders");
+		myWishlistPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("My Orders");
 		myOrdersPage = PageGeneratorManager.getMyOrdersPage(driver);
 
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Billing Agreements");
+		myOrdersPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Billing Agreements");
 		billingAgreementsPage = PageGeneratorManager.getBillingAgreementsPage(driver);
 
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("My Downloadable Products");
+		billingAgreementsPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("My Downloadable Products");
 		myDownloadableProductsPage = PageGeneratorManager.getMyDownloadableProductsPage(driver);
 
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Account Information");
+		myDownloadableProductsPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Account Information");
 		myAccountinforPage = PageGeneratorManager.getAccountInfoPage(driver);
 
-		getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Account Dashboard");
+		myAccountinforPage.getSideBarMyAccountPage(driver).openSideBarLinkByPageName("Account Dashboard");
 		myDashboardPage = PageGeneratorManager.getUserMyDashboardPage(driver);
 	}
 
 	@Test
 	public void TC_03_FooterContainer_Page_Navigator() {
-		getFooterContainerPage(driver).openFooterLinkByPageName("About Us");
+		myDashboardPage.getFooterContainerPage(driver).openFooterLinkByPageName("About Us");
 		aboutUsPage = PageGeneratorManager.getAboutUsPage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("Contact Us");
+		aboutUsPage.getFooterContainerPage(driver).openFooterLinkByPageName("Contact Us");
 		contactUsPage = PageGeneratorManager.getContactUsPage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("Customer Service");
+		contactUsPage.getFooterContainerPage(driver).openFooterLinkByPageName("Customer Service");
 		customerServicePage = PageGeneratorManager.getCustomerServicePage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("Privacy Policy");
+		customerServicePage.getFooterContainerPage(driver).openFooterLinkByPageName("Privacy Policy");
 		privacyPolicyPage = PageGeneratorManager.getPrivacyPolicyPage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("Site Map");
+		privacyPolicyPage.getFooterContainerPage(driver).openFooterLinkByPageName("Site Map");
 		siteMapPage = PageGeneratorManager.getSiteMapPage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("Search Terms");
+		siteMapPage.getFooterContainerPage(driver).openFooterLinkByPageName("Search Terms");
 		searchTermsPage = PageGeneratorManager.getSearchTermsPage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("Advanced Search");
+		searchTermsPage.getFooterContainerPage(driver).openFooterLinkByPageName("Advanced Search");
 		advancedSearchPage = PageGeneratorManager.getAdvancedSearchPage(driver);
 
-		getFooterContainerPage(driver).openFooterLinkByPageName("My Account");
+		advancedSearchPage.getFooterContainerPage(driver).openFooterLinkByPageName("My Account");
 		myAccountPage = PageGeneratorManager.getMyAccountPage(driver);
 	}
 
