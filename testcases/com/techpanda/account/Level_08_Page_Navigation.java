@@ -56,7 +56,7 @@ public class Level_08_Page_Navigation extends BaseTest {
 	}
 
 	@Test
-	public void SideBarContainer_Page_Navigator() {
+	public void TC_01_SideBarContainer_Page_Navigator() {
 		loginPage = homePage.getFooterContainerPage(driver).openLoginPage();
 		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		loginPage.inputToPasswordTextbox("123456789");
@@ -81,7 +81,7 @@ public class Level_08_Page_Navigation extends BaseTest {
 	}
 
 	@Test
-	public void FooterContainer_Page_Navigator() {
+	public void TC_02_FooterContainer_Page_Navigator() {
 		aboutUsPage = myDashboardPage.getFooterContainerPage(driver).openAboutUsPage();
 
 		contactUsPage = aboutUsPage.getFooterContainerPage(driver).openContactUsPage();
@@ -94,9 +94,9 @@ public class Level_08_Page_Navigation extends BaseTest {
 
 		searchTermsPage = siteMapPage.getFooterContainerPage(driver).openSearchTermsPage();
 
-		advancedSearchPage = advancedSearchPage.getFooterContainerPage(driver).openAdvancedSearchPage();
+		advancedSearchPage = searchTermsPage.getFooterContainerPage(driver).openAdvancedSearchPage();
 
-		myAccountPage = myAccountPage.getFooterContainerPage(driver).openMyAccountPage();
+		myAccountPage = advancedSearchPage.getFooterContainerPage(driver).openMyAccountPage();
 	}
 
 	@AfterClass

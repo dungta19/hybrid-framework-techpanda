@@ -2,12 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="false" name="Tech Panda">
 
+	<parameter name="userURL" value="http://live.techpanda.org/index.php/"></parameter>
+	<parameter name="adminURL" value="http://live.techpanda.org/index.php/backendlogin"></parameter>
 
 
 	<test name="Run on CHROME browser">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.techpanda.account.Level_11_Global_Constants" />
+			<class name="com.techpanda.account.Level_09_Switch_Role" />
+	
 		</classes>
 	</test>
 

@@ -30,6 +30,7 @@ import pageObjects.user.sideBar.MyDownloadableProductsPageObject;
 import pageObjects.user.sideBar.MyOrdersPageObject;
 import pageObjects.user.sideBar.MyWishlistPageObject;
 import pageObjects.user.sideBar.UserMyDashboardPageObject;
+import pageUIs.user.LoginPageUI;
 
 public class Level_09_Switch_Role extends BaseTest {
 	String userURL;
@@ -73,6 +74,7 @@ public class Level_09_Switch_Role extends BaseTest {
 		userLoginPage = userHomePage.getFooterContainerPage(driver).openLoginPage();
 		userLoginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
 		userLoginPage.inputToPasswordTextbox("123456789");
+		userLoginPage.clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
 		assertTrue(userMyDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
 	}
