@@ -98,7 +98,7 @@ public class Account_01_Login extends BaseTest {
 		myDashboardPage = new UserMyDashboardPageObject(driver);
 		Assert.assertEquals(myDashboardPage.getSuccessRegisterMessage(),
 				"Thank you for registering with Main Website Store.");
-		getHeaderContainerPage(driver).clickToUserLogoutButton();
+		myDashboardPage.getHeaderContainerPage(driver).clickToUserLogoutButton();
 	}
 
 	@Test
@@ -112,7 +112,7 @@ public class Account_01_Login extends BaseTest {
 
 		myDashboardPage = new UserMyDashboardPageObject(driver);
 		Assert.assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack"));
-		getHeaderContainerPage(driver).clickToUserLogoutButton();
+		myDashboardPage.getHeaderContainerPage(driver).clickToUserLogoutButton();
 	}
 
 	@AfterClass

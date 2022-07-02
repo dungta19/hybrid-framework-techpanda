@@ -9,7 +9,7 @@
 	<test name="Run on CHROME browser">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.techpanda.account.Level_09_Switch_Role" />
+			<class name="com.techpanda.account.Level_11_Global_Constants" />
 	
 		</classes>
 	</test>
