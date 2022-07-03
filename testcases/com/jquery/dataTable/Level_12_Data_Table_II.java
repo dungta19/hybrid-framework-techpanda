@@ -1,7 +1,6 @@
 package com.jquery.dataTable;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -36,16 +35,6 @@ public class Level_12_Data_Table_II extends BaseTest {
 
 		homePage.enterToTextBoxByHeaderNameAndRowNumber("Album", "5", "Selenium Webdriver");
 		homePage.sleepInSecond(1);
-
-	}
-
-	@Test
-	public void TC_02_Modify_Icons() {
-
-	}
-
-	@Test
-	public void TC_03_Paging() {
 
 	}
 

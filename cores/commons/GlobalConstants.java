@@ -23,8 +23,8 @@ public class GlobalConstants {
 	public static final long LONG_TIMEOUT = 30;
 
 	// Download/ Upload files
-	public static final String UPLOAD_PATH = PROJECT_PATH + "\\uploadFiles\\";
-	public static final String DOWNLOAD_PATH = PROJECT_PATH + "\\downloadFiles\\";
+	public static final String UPLOAD_PATH = PROJECT_PATH + "/uploadFiles/";
+	public static final String DOWNLOAD_PATH = PROJECT_PATH + "/downloadFiles/";
 
 	// Retry Case failed
 	public static final int RETRY_NUMBER = 3;

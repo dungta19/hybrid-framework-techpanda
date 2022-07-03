@@ -1,7 +1,10 @@
 package pageObjects.jQuery;
 
+import java.util.List;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import commons.BasePage;
 import pageUIs.jQuery.HomePageUI;
@@ -51,6 +54,26 @@ public class HomePageObject extends BasePage {
 	public void clickToLoadDataButton() {
 		waitForElementVisible(driver, HomePageUI.LOAD_DATA);
 		clickToElement(driver, HomePageUI.LOAD_DATA);
+	}
+
+	public boolean isFileUploadedByFileName(String fileName) {
+		waitForElementVisible(driver, HomePageUI.ADDED_SUCESS_DYNAMIC_FILENAME, fileName);
+		return isElementDisplayed(driver, HomePageUI.ADDED_SUCESS_DYNAMIC_FILENAME, fileName);
+	}
+
+	public void clickToStartUploadButton() {
+		List<WebElement> startButtonElements = getListElement(driver, HomePageUI.START_UPLOAD_BUTTON);
+		for (WebElement startButton : startButtonElements) {
+			waitForElementClickable(driver, startButton);
+			startButton.click();
+			sleepInSecond(2);
+		}
+
+	}
+
+	public boolean isFileUploadedSuccessful(String fileName) {
+		waitForElementVisible(driver, HomePageUI.UPLOADED_SUCESS_DYNAMIC_FILENAME, fileName);
+		return isElementDisplayed(driver, HomePageUI.UPLOADED_SUCESS_DYNAMIC_FILENAME, fileName);
 	}
 
 }

@@ -20,6 +20,7 @@ import pageObjects.navigation.HeaderContainerPageObject;
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
 import pageObjects.user.UserHomePageObject;
+import pageUIs.jQuery.HomePageUI;
 
 /**
  * @author Dung Ta - ttdung1901@gmail.com @
@@ -652,6 +653,16 @@ public class BasePage {
 	}
 
 	/**
+	 * Use for upload file
+	 * 
+	 * @param driver
+	 * @param element
+	 */
+	public void waitForElementClickable(WebDriver driver, WebElement element) {
+		new WebDriverWait(driver, longTimeout).until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	/**
 	 * Wait for WebElement clickable by using locator REST PARAMETER values.
 	 * 
 	 * @param driver
@@ -675,6 +686,17 @@ public class BasePage {
 		if (element.isSelected()) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 		}
+	}
+
+	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+		String uploadFilePath = GlobalConstants.UPLOAD_PATH;
+		String fullFileName = "";
+
+		for (String file : fileNames) {
+			fullFileName = fullFileName + uploadFilePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getWebElement(driver, HomePageUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
 
 	public void sleepInSecond(long timeInSecond) {

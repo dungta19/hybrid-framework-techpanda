@@ -11,4 +11,9 @@ public class HomePageUI {
 	public static final String CELL_BY_HEADER_INDEX_AND_ROW_INDEX = "xpath=//tr[%s]/td[%s]/input";
 	public static final String LOAD_DATA = "xpath=//button[@id='btnLoad']";
 
+	public static final String UPLOAD_FILE = "css=input[type='file']";
+	public static final String ADDED_SUCESS_DYNAMIC_FILENAME = "xpath=//p[text()='%s']";
+	public static final String START_UPLOAD_BUTTON = "css=table button.start";
+	public static final String UPLOADED_SUCESS_DYNAMIC_FILENAME = "css=p.name a[title='%s']";
+
 }
