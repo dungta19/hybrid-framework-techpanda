@@ -4,12 +4,13 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	WebDriver driver;
-//	String projectPath = System.getProperty("user.dir");
 
 	public WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -68,5 +69,41 @@ public class BaseTest {
 	protected int getRandomNumber() {
 		Random rand = new Random();
 		return rand.nextInt(999999);
+	}
+
+	protected boolean verifyTrue(boolean condition) {
+		boolean status = true;
+		try {
+			Assert.assertTrue(condition);
+		} catch (Throwable e) {
+			status = false;
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return status;
+	}
+
+	protected boolean verifyFalse(boolean condition) {
+		boolean status = true;
+		try {
+			Assert.assertFalse(condition);
+		} catch (Throwable e) {
+			status = false;
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return status;
+	}
+
+	protected boolean verifyEquals(Object actual, Object expected) {
+		boolean status = true;
+		try {
+			Assert.assertEquals(actual, expected);
+		} catch (Throwable e) {
+			status = false;
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return status;
 	}
 }
