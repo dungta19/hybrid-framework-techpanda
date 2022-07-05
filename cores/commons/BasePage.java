@@ -2,11 +2,13 @@ package commons;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -392,7 +394,28 @@ public class BasePage {
 	 * @return
 	 */
 	public boolean isElementDisplayed(WebDriver driver, String locator) {
-		return getWebElement(driver, locator).isDisplayed();
+		try {
+			return getWebElement(driver, locator).isDisplayed();
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+
+	public boolean isElementUndisplayed(WebDriver driver, String locator) {
+		overrideGlobalTimeout(driver, shorTimeout);
+		List<WebElement> elements = getListElement(driver, locator);
+		overrideGlobalTimeout(driver, longTimeout);
+		if (elements.size() == 0) {
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void overrideGlobalTimeout(WebDriver driver, long timeOut) {
+		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
 	/**
@@ -631,6 +654,19 @@ public class BasePage {
 	}
 
 	/**
+	 * Wait for element is un-displayed by overriding short Timeout.
+	 * 
+	 * @param driver
+	 * @param locator
+	 */
+	public void waitForElementUndisplayed(WebDriver driver, String locator) {
+		overrideGlobalTimeout(driver, shorTimeout);
+		new WebDriverWait(driver, shorTimeout)
+				.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
+		overrideGlobalTimeout(driver, longTimeout);
+	}
+
+	/**
 	 * Wait for WebElement INVISIBLE by using locator REST PARAMETER values.
 	 * 
 	 * @param driver
@@ -707,7 +743,11 @@ public class BasePage {
 		}
 	}
 
+	/**
+	 * Timeout presets for Wait methods
+	 */
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
+	private long shorTimeout = GlobalConstants.SHORT_TIMEOUT;
 
 	/**
 	 * Call out pages in Side Bar menu
