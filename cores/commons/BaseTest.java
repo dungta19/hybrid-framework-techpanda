@@ -3,6 +3,8 @@ package commons;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -11,6 +13,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	WebDriver driver;
+	protected final Log log;
+
+	protected BaseTest() {
+		log = LogFactory.getLog(getClass());
+	}
 
 	public WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -75,10 +82,12 @@ public class BaseTest {
 		boolean status = true;
 		try {
 			Assert.assertTrue(condition);
+			log.info("<--------------------------------<PASSED>-------------------------------->");
 		} catch (Throwable e) {
 			status = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
+			log.info("<--------------------------------<FAILED>-------------------------------->");
 		}
 		return status;
 	}
@@ -87,10 +96,12 @@ public class BaseTest {
 		boolean status = true;
 		try {
 			Assert.assertFalse(condition);
+			log.info("<--------------------------------<PASSED>-------------------------------->");
 		} catch (Throwable e) {
 			status = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
+			log.info("<--------------------------------<FAILED>-------------------------------->");
 		}
 		return status;
 	}
@@ -99,10 +110,12 @@ public class BaseTest {
 		boolean status = true;
 		try {
 			Assert.assertEquals(actual, expected);
+			log.info("<--------------------------------<PASSED>-------------------------------->");
 		} catch (Throwable e) {
 			status = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
+			log.info("<--------------------------------<FAILED>-------------------------------->");
 		}
 		return status;
 	}

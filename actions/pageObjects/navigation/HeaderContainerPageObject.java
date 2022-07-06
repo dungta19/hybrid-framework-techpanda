@@ -22,7 +22,7 @@ public class HeaderContainerPageObject extends BasePage {
 		waitForElementClickable(driver, HeaderContainerPageUIs.LOGOUT_LINK);
 		clickToElement(driver, HeaderContainerPageUIs.LOGOUT_LINK);
 
-		waitForElementInvisible(driver, MyDashboardPageUI.LOGOUT_SUCCESS_MESSAGE);
+		waitForElementUndisplayed(driver, MyDashboardPageUI.LOGOUT_SUCCESS_MESSAGE);
 		return PageGeneratorManager.getUserHomePage(driver);
 
 	}

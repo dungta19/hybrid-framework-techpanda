@@ -1,0 +1,42 @@
+[INFO ] [2022-07-06 22:57:35,597] Login - Step 01: Navigate to 'Login' page
+[INFO ] [2022-07-06 22:57:36,563] Login - Step 02: Input to Emailaddress textbox with value is 'automationfullstack@gmail.net'
+[INFO ] [2022-07-06 22:57:36,603] Login - Step 03: Input to password textbox with value is '123456789'
+[INFO ] [2022-07-06 22:57:36,636] Login - Step 04: click to login button to navigate to 'My Dashboard' page
+[INFO ] [2022-07-06 22:57:37,933] Login - Step 05: verify user name is true
+[INFO ] [2022-07-06 22:57:37,960] Login - Step 06: verify user email is true
+[INFO ] [2022-07-06 22:57:37,981] Login - Step 07: click to logout button to navigate to home page
+[INFO ] [2022-07-06 23:31:40,628] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-06 23:31:40,660] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-06 23:31:40,691] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-06 23:31:40,928] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-06 23:31:40,952] <--------------------------------<FAILED>-------------------------------->
+[INFO ] [2022-07-06 23:31:40,952] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-06 23:31:40,972] <--------------------------------<PASSED>-------------------------------->
+[INFO ] [2022-07-06 23:31:40,974] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-06 23:31:41,006] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-06 23:31:41,033] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-06 23:31:41,265] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-06 23:31:41,284] <--------------------------------<PASSED>-------------------------------->
+[INFO ] [2022-07-06 23:31:41,285] Login_03 - Step 1: Input a never registered email address 'auto_test908911@live.com'
+[INFO ] [2022-07-06 23:31:41,316] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-06 23:31:41,348] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-06 23:31:42,517] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-06 23:31:42,537] <--------------------------------<PASSED>-------------------------------->
+[INFO ] [2022-07-06 23:31:42,538] Login_04 - Step 1: Input a never registered email address 'auto_test908911@live.com'
+[INFO ] [2022-07-06 23:31:42,607] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-06 23:31:42,634] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-06 23:31:42,870] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-06 23:31:42,892] <--------------------------------<PASSED>-------------------------------->
+[INFO ] [2022-07-06 23:31:42,893] Login_05 - Step 1: Input a never registered email address 'auto_test908911@live.com'
+[INFO ] [2022-07-06 23:31:42,933] Login_05 - Step 2: Input a well-formated password but it was never used before '668665'
+[INFO ] [2022-07-06 23:31:42,964] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-06 23:31:44,160] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-06 23:31:44,184] <--------------------------------<PASSED>-------------------------------->
+[INFO ] [2022-07-06 23:31:44,185] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-06 23:31:44,227] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-06 23:31:44,260] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-06 23:31:45,435] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-06 23:31:45,459] <--------------------------------<FAILED>-------------------------------->
+[INFO ] [2022-07-06 23:31:45,460] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-06 23:31:45,482] <--------------------------------<PASSED>-------------------------------->
+[INFO ] [2022-07-06 23:31:45,483] Login_06 - Step 6: Click to logout button
