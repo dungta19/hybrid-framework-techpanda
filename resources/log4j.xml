@@ -35,7 +35,7 @@
 		</layout>
 	</appender>
 
-	<category name="com.techpanda.account.Level_16_Log_ReportNG_Screenshot">
+	<category name="com.techpanda.account">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
