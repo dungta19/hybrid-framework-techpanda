@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="false" name="Tech Panda">
+
+	<parameter name="userURL" value="http://live.techpanda.org/index.php/"></parameter>
+	<parameter name="adminURL" value="http://live.techpanda.org/index.php/backendlogin"></parameter>
+
+	<listeners>
+		<listener class-name="commons.MethodListener"></listener>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+	</listeners>
+
+	<test name="Run on CHROME browser">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.techpanda.account.Level_16_Log_ReportNG" />
+	
+		</classes>
+	</test>
+
+</suite> 

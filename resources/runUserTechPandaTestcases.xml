@@ -7,6 +7,7 @@
 
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
+		<listener class-name="reportConfig.ReportNGListener"></listener>
 		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
 	</listeners>
@@ -14,7 +15,7 @@
 	<test name="Run on FIREFOX browser">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.techpanda.account.Level_16_Log_ReportNG" />
+			<class name="com.techpanda.account.Level_16_Log_ReportNG_Screenshot" />
 	
 		</classes>
 	</test>

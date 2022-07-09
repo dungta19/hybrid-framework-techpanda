@@ -82,12 +82,12 @@ public class BaseTest {
 		boolean status = true;
 		try {
 			Assert.assertTrue(condition);
-			log.info("<--------------------------------<PASSED>-------------------------------->");
+			log.info("--------------------------------PASSED--------------------------------");
 		} catch (Throwable e) {
 			status = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
-			log.info("<--------------------------------<FAILED>-------------------------------->");
+			log.info("--------------------------------FAILED--------------------------------");
 		}
 		return status;
 	}
@@ -96,12 +96,12 @@ public class BaseTest {
 		boolean status = true;
 		try {
 			Assert.assertFalse(condition);
-			log.info("<--------------------------------<PASSED>-------------------------------->");
+			log.info("--------------------------------PASSED--------------------------------");
 		} catch (Throwable e) {
 			status = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
-			log.info("<--------------------------------<FAILED>-------------------------------->");
+			log.info("--------------------------------FAILED--------------------------------");
 		}
 		return status;
 	}
@@ -110,13 +110,17 @@ public class BaseTest {
 		boolean status = true;
 		try {
 			Assert.assertEquals(actual, expected);
-			log.info("<--------------------------------<PASSED>-------------------------------->");
+			log.info("--------------------------------PASSED--------------------------------");
 		} catch (Throwable e) {
 			status = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
-			log.info("<--------------------------------<FAILED>-------------------------------->");
+			log.info("--------------------------------FAILED--------------------------------");
 		}
 		return status;
+	}
+
+	public WebDriver getDriverInstance() {
+		return this.driver;
 	}
 }

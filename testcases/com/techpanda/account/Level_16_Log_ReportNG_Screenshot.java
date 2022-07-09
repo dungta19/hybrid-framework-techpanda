@@ -14,7 +14,7 @@ import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.sideBar.UserMyDashboardPageObject;
 
-public class Level_16_Log_ReportNG extends BaseTest {
+public class Level_16_Log_ReportNG_Screenshot extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;

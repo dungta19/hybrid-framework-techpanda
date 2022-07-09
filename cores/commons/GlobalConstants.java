@@ -1,5 +1,7 @@
 package commons;
 
+import java.io.File;
+
 public class GlobalConstants {
 	// System information
 	public static final String PROJECT_PATH = System.getProperty("user.dir");
@@ -25,17 +27,19 @@ public class GlobalConstants {
 	// Download/ Upload files
 	public static final String UPLOAD_PATH = PROJECT_PATH + "/uploadFiles/";
 	public static final String DOWNLOAD_PATH = PROJECT_PATH + "/downloadFiles/";
+	public static final String REPORTNG_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGFailureScreenShots"
+			+ File.separator;
 
 	// Retry Case failed
 	public static final int RETRY_NUMBER = 3;
 
 	// Browser Logs
-	public static final String BROWSER_LOG_PATH = PROJECT_PATH + "\\browserLogs\\";
-	public static final String BROWSER_EXTENSION_PATH = PROJECT_PATH + "\\browserExtensions\\";
+	public static final String BROWSER_LOG_PATH = PROJECT_PATH + "/browserLogs/";
+	public static final String BROWSER_EXTENSION_PATH = PROJECT_PATH + "/browserExtensions/";
 
 	// HTML Report Folder
-	public static final String REPORTNG_PATH = PROJECT_PATH + "\\htmlReprtNG\\";
-	public static final String EXTENT_PATH = PROJECT_PATH + "\\htmlExtent\\";
-	public static final String ALLURE_PATH = PROJECT_PATH + "\\htmlAllure\\";
+	public static final String REPORTNG_PATH = PROJECT_PATH + "/htmlReprtNG/";
+	public static final String EXTENT_PATH = PROJECT_PATH + "/htmlExtent/";
+	public static final String ALLURE_PATH = PROJECT_PATH + "/htmlAllure/";
 
 }
