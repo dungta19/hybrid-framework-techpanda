@@ -3,7 +3,7 @@ package com.techpanda.account;
 import java.lang.reflect.Method;
 
 import org.openqa.selenium.WebDriver;
-
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -53,11 +53,11 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 		// Fail - 1
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_01 - Step 4: Verify whether the validate email error message is correct as expected ");
-		verifyEquals(loginPage.getEmailAddressEmptyErrorMessage(), "This is a required field...");
+		Assert.assertEquals(loginPage.getEmailAddressEmptyErrorMessage(), "This is a required field...");
 
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_01 - Step 5: Verify whether the validate password error message is correct as expected ");
-		verifyEquals(loginPage.getPasswordEmptyErrorMessage(), "This is a required field.");
+		Assert.assertEquals(loginPage.getPasswordEmptyErrorMessage(), "This is a required field.");
 	}
 
 	@Test
@@ -76,7 +76,7 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_02 - Step 4: Verify whether the validate email error message is correct as expected");
-		verifyEquals(loginPage.getEmailAddressInvalidErrorMessage(),
+		Assert.assertEquals(loginPage.getEmailAddressInvalidErrorMessage(),
 				"Please enter a valid email address. For example johndoe@domain.com.");
 	}
 
@@ -96,7 +96,7 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected");
-		verifyEquals(loginPage.getEmailPasswordIncorrectErrorMessage(), "Invalid login or password.");
+		Assert.assertEquals(loginPage.getEmailPasswordIncorrectErrorMessage(), "Invalid login or password.");
 	}
 
 	@Test(description = "Password less than 6 characters")
@@ -115,7 +115,7 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_04 - Step 4: Verify whether the validate password error message is correct as expected");
-		verifyEquals(loginPage.getPasswordInvalidErrorMessage(),
+		Assert.assertEquals(loginPage.getPasswordInvalidErrorMessage(),
 				"Please enter 6 or more characters without leading or trailing spaces.");
 	}
 
@@ -137,7 +137,7 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_05 - Step 4: Verify whether the validate password error message is correct as expected");
-		verifyEquals(loginPage.getEmailPasswordIncorrectErrorMessage(), "Invalid login or password.");
+		Assert.assertEquals(loginPage.getEmailPasswordIncorrectErrorMessage(), "Invalid login or password.");
 	}
 
 	@Test
@@ -156,11 +156,11 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_06 - Step 4: Verify whether the user name  is correct as expected");
 		// Fail - 1
-		verifyTrue(myDashboardPage.getUserInfoText().contains("automation fullstackk"));
+		Assert.assertTrue(myDashboardPage.getUserInfoText().contains("automation fullstackk"));
 
 		ExtentTestManager.getTest().log(LogStatus.INFO,
 				"Login_06 - Step 5: Verify whether the user email is correct as expected");
-		verifyTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
+		Assert.assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Login_06 - Step 6: Click to logout button");
 		myDashboardPage.getHeaderContainerPage(driver).clickToUserLogoutButton();
