@@ -1,5 +1,6 @@
 package pageObjects.navigation;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
@@ -15,6 +16,7 @@ public class HeaderContainerPageObject extends BasePage {
 		this.driver = driver;
 	}
 
+	@Step("Click to Logout button and navigate to Home Page")
 	public UserHomePageObject clickToUserLogoutButton() {
 		waitForElementClickable(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
 		clickToElement(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
