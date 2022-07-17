@@ -1,0 +1,8 @@
+[INFO ] [2022-07-18 00:04:09,006] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 00:04:09,953] Login_01 - Step 1: Input a valid email address: 'auto_test770009@live.com'
+[INFO ] [2022-07-18 00:04:10,052] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 00:04:10,142] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-18 00:04:11,437] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 00:04:11,489] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 00:04:11,489] Login_01 - Step 5: Verify whether the user email is correct as expected as 'auto_test770009@live.com'
+[INFO ] [2022-07-18 00:04:11,531] --------------------------------PASSED--------------------------------

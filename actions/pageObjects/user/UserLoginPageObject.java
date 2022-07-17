@@ -5,8 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageObjects.navigation.PageGeneratorManager;
-import pageObjects.user.sideBar.UserMyDashboardPageObject;
+import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 import pageUIs.user.LoginPageUI;
+import pageUIs.user.RegisterPageUI;
 
 public class UserLoginPageObject extends BasePage {
     WebDriver driver;
@@ -65,9 +66,10 @@ public class UserLoginPageObject extends BasePage {
     }
 
     @Step("Click to Create Account Button")
-    public void clickToCreateAccountButton() {
+    public UserRegisterPageObject openRegisterPage() {
         waitForElementClickable(driver, LoginPageUI.CREATE_ACCOUNT_BUTTON);
         clickToElement(driver, LoginPageUI.CREATE_ACCOUNT_BUTTON);
+        return PageGeneratorManager.getRegisterPageObject(driver);
     }
 
 }

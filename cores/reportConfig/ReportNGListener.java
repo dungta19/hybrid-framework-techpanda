@@ -42,8 +42,7 @@ public class ReportNGListener extends BaseTest implements ITestListener {
 			Calendar calendar = Calendar.getInstance();
 			SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
 			File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String screenPath = GlobalConstants.REPORTNG_SCREENSHOT + screenshotName + "_"
-					+ formater.format(calendar.getTime()) + ".png";
+			String screenPath = GlobalConstants.REPORTNG_SCREENSHOT + screenshotName + "_" + formater.format(calendar.getTime()) + ".png";
 			FileUtils.copyFile(source, new File(screenPath));
 			return screenPath;
 		} catch (IOException e) {
@@ -62,27 +61,23 @@ public class ReportNGListener extends BaseTest implements ITestListener {
 
 		String screenshotPath = captureScreenshot(webDriver, result.getName());
 		Reporter.getCurrentTestResult();
-		Reporter.log("<br><a target=\"_blank\" href=\"file:///" + screenshotPath + "\">" + "<img src=\"file:///"
-				+ screenshotPath + "\" " + "height='100' width='150'/> " + "</a></br>");
+		Reporter.log("<br><a target=\"_blank\" href=\"file:///" + screenshotPath + "\">" + "<img src=\"file:///" + screenshotPath + "\" " + "height='100' width='150'/> " + "</a></br>");
 		Reporter.setCurrentTestResult(null);
 
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void onTestStart(ITestResult arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
