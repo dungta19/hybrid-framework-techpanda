@@ -1,5 +1,6 @@
 package pageObjects.user;
 
+import com.techpanda.common.Common_01_Register_Cookie;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
@@ -7,7 +8,6 @@ import commons.BasePage;
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 import pageUIs.user.LoginPageUI;
-import pageUIs.user.RegisterPageUI;
 
 public class UserLoginPageObject extends BasePage {
     WebDriver driver;
@@ -72,4 +72,9 @@ public class UserLoginPageObject extends BasePage {
         return PageGeneratorManager.getRegisterPageObject(driver);
     }
 
+    public UserMyDashboardPageObject loginToMyDashboardPageByCookie() {
+        setCookies(driver, Common_01_Register_Cookie.loggedCookies);
+        refreshCurrentPage(driver);
+        return new UserMyDashboardPageObject(driver);
+    }
 }

@@ -17,8 +17,8 @@
     <test name="Run on FIREFOX browser">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="com.techpanda.common.Common_01_Register_End_User"/>
-            <class name="com.techpanda.user.Level_17_Share_Data"/>
+            <!--            <class name="com.techpanda.common.Common_01_Register_Cookie"/>-->
+            <class name="com.techpanda.user.Level_17_Share_Data_Locally"/>
         </classes>
     </test>
 

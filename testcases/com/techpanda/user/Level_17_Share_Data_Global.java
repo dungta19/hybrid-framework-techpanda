@@ -4,7 +4,6 @@ import com.techpanda.common.Common_01_Register_End_User;
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.navigation.PageGeneratorManager;
@@ -13,7 +12,7 @@ import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.UserRegisterPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 
-public class Level_17_Share_Data extends BaseTest {
+public class Level_17_Share_Data_Global extends BaseTest {
     WebDriver driver;
     UserHomePageObject homePage;
     UserLoginPageObject loginPage;
