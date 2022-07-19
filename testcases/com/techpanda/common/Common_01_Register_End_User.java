@@ -59,11 +59,14 @@ public class Common_01_Register_End_User extends BaseTest {
 
         log.info("Pre-condition - Step 10 : Verify whether the user email is correct as expected");
         verifyTrue(myDashboardPage.getUserInfoText().contains(firstName + " " + lastName));
+
+        driver.quit();
+
     }
 
-    @AfterTest
-    public void afterClass() {
-        driver.quit();
-    }
+//    @AfterTest
+//    public void afterClass() {
+//        driver.quit();
+//    }
 
 }

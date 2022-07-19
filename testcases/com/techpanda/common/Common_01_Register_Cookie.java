@@ -67,11 +67,13 @@ public class Common_01_Register_Cookie extends BaseTest {
         verifyTrue(myDashboardPage.getUserInfoText().contains(firstName + " " + lastName));
 
         loggedCookies = myDashboardPage.getAllCookies(driver);
-    }
 
-    @AfterTest
-    public void afterClass() {
         driver.quit();
     }
+
+//    @AfterTest
+//    public void afterClass() {
+//        driver.quit();
+//    }
 
 }

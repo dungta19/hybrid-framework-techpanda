@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -12,115 +13,176 @@ import org.testng.Reporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-	WebDriver driver;
-	protected final Log log;
+    WebDriver driver;
+    protected final Log log;
 
-	protected BaseTest() {
-		log = LogFactory.getLog(getClass());
-	}
+    protected BaseTest() {
+        log = LogFactory.getLog(getClass());
+    }
 
-	public WebDriver getBrowserDriver(String browserName) {
-		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+    public WebDriver getBrowserDriver(String browserName) {
+        BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 
-		switch (browserList) {
-		case FIREFOX:
-			driver = WebDriverManager.firefoxdriver().create();
-			break;
-		case CHROME:
-			driver = WebDriverManager.chromedriver().create();
-			break;
-		case EDGE:
-			driver = WebDriverManager.edgedriver().create();
-			break;
-		case OPERA:
-			driver = WebDriverManager.operadriver().create();
-			break;
+        switch (browserList) {
+            case FIREFOX:
+                driver = WebDriverManager.firefoxdriver().create();
+                break;
+            case CHROME:
+                driver = WebDriverManager.chromedriver().create();
+                break;
+            case EDGE:
+                driver = WebDriverManager.edgedriver().create();
+                break;
+            case OPERA:
+                driver = WebDriverManager.operadriver().create();
+                break;
 
-		default:
-			throw new RuntimeException("Browser is NOT supported");
-		}
+            default:
+                throw new RuntimeException("Browser is NOT supported");
+        }
 
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.get(GlobalConstants.LIVE_USER_URL);
+        driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+        driver.get(GlobalConstants.LIVE_USER_URL);
 
-		return driver;
-	}
+        return driver;
+    }
 
-	public WebDriver getBrowserDriver(String browserName, String urlValue) {
-		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+    public WebDriver getBrowserDriver(String browserName, String urlValue) {
+        BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 
-		switch (browserList) {
-		case FIREFOX:
-			driver = WebDriverManager.firefoxdriver().create();
-			break;
-		case CHROME:
-			driver = WebDriverManager.chromedriver().create();
-			break;
-		case EDGE:
-			driver = WebDriverManager.edgedriver().create();
-			break;
-		case OPERA:
-			driver = WebDriverManager.operadriver().create();
-			break;
+        switch (browserList) {
+            case FIREFOX:
+                driver = WebDriverManager.firefoxdriver().create();
+                break;
+            case CHROME:
+                driver = WebDriverManager.chromedriver().create();
+                break;
+            case EDGE:
+                driver = WebDriverManager.edgedriver().create();
+                break;
+            case OPERA:
+                driver = WebDriverManager.operadriver().create();
+                break;
 
-		default:
-			throw new RuntimeException("Browser is NOT supported");
-		}
+            default:
+                throw new RuntimeException("Browser is NOT supported");
+        }
 
-		driver.get(urlValue);
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+        driver.get(urlValue);
+        driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 
-		return driver;
-	}
+        return driver;
+    }
 
-	protected int getRandomNumber() {
-		Random rand = new Random();
-		return rand.nextInt(999999);
-	}
+    protected int getRandomNumber() {
+        Random rand = new Random();
+        return rand.nextInt(999999);
+    }
 
-	protected boolean verifyTrue(boolean condition) {
-		boolean status = true;
-		try {
-			Assert.assertTrue(condition);
-			log.info("--------------------------------PASSED--------------------------------");
-		} catch (Throwable e) {
-			status = false;
-			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
-			Reporter.getCurrentTestResult().setThrowable(e);
-			log.info("--------------------------------FAILED--------------------------------");
-		}
-		return status;
-	}
+    protected boolean verifyTrue(boolean condition) {
+        boolean status = true;
+        try {
+            Assert.assertTrue(condition);
+            log.info("--------------------------------PASSED--------------------------------");
+        } catch (Throwable e) {
+            status = false;
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+            log.info("--------------------------------FAILED--------------------------------");
+        }
+        return status;
+    }
 
-	protected boolean verifyFalse(boolean condition) {
-		boolean status = true;
-		try {
-			Assert.assertFalse(condition);
-			log.info("--------------------------------PASSED--------------------------------");
-		} catch (Throwable e) {
-			status = false;
-			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
-			Reporter.getCurrentTestResult().setThrowable(e);
-			log.info("--------------------------------FAILED--------------------------------");
-		}
-		return status;
-	}
+    protected boolean verifyFalse(boolean condition) {
+        boolean status = true;
+        try {
+            Assert.assertFalse(condition);
+            log.info("--------------------------------PASSED--------------------------------");
+        } catch (Throwable e) {
+            status = false;
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+            log.info("--------------------------------FAILED--------------------------------");
+        }
+        return status;
+    }
 
-	protected boolean verifyEquals(Object actual, Object expected) {
-		boolean status = true;
-		try {
-			Assert.assertEquals(actual, expected);
-			log.info("--------------------------------PASSED--------------------------------");
-		} catch (Throwable e) {
-			status = false;
-			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
-			Reporter.getCurrentTestResult().setThrowable(e);
-			log.info("--------------------------------FAILED--------------------------------");
-		}
-		return status;
-	}
+    protected boolean verifyEquals(Object actual, Object expected) {
+        boolean status = true;
+        try {
+            Assert.assertEquals(actual, expected);
+            log.info("--------------------------------PASSED--------------------------------");
+        } catch (Throwable e) {
+            status = false;
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+            log.info("--------------------------------FAILED--------------------------------");
+        }
+        return status;
+    }
 
-	public WebDriver getDriverInstance() {
-		return this.driver;
-	}
+    protected void closeBrowserAndDriver() {
+        String cmd = "";
+        try {
+            String osName = System.getProperty("os.name").toLowerCase();
+            log.info("OS name = " + osName);
+
+            String driverInstanceName = driver.toString().toLowerCase();
+            log.info("Driver instance name = " + driverInstanceName);
+
+            if (driverInstanceName.contains("chrome")) {
+                if (osName.contains("window")) {
+                    cmd = "taskkill /F /FI \"IMAGENAME eq chromedriver*\"";
+                } else {
+                    cmd = "pkill chromedriver";
+                }
+            } else if (driverInstanceName.contains("internetexplorer")) {
+                if (osName.contains("window")) {
+                    cmd = "taskkill /F /FI \"IMAGENAME eq IEDriverServer*\"";
+                }
+            } else if (driverInstanceName.contains("firefox")) {
+                if (osName.contains("windows")) {
+                    cmd = "taskkill /F /FI \"IMAGENAME eq geckodriver*\"";
+                } else {
+                    cmd = "pkill geckodriver";
+                }
+            } else if (driverInstanceName.contains("edge")) {
+                if (osName.contains("window")) {
+                    cmd = "taskkill /F /FI \"IMAGENAME eq msedgedriver*\"";
+                } else {
+                    cmd = "pkill msedgedriver";
+                }
+            } else if (driverInstanceName.contains("opera")) {
+                if (osName.contains("window")) {
+                    cmd = "taskkill /F /FI \"IMAGENAME eq operadriver*\"";
+                } else {
+                    cmd = "pkill operadriver";
+                }
+            } else if (driverInstanceName.contains("safari")) {
+                if (osName.contains("mac")) {
+                    cmd = "pkill safaridriver";
+                }
+            }
+
+            if (driver != null) {
+                driver.manage().deleteAllCookies();
+                driver.quit();
+            }
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        } finally {
+            try {
+                Process process = Runtime.getRuntime().exec(cmd);
+                process.waitFor();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public WebDriver getDriverInstance() {
+        return this.driver;
+    }
 }

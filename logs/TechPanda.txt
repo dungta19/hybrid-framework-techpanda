@@ -1,19 +1,16 @@
-[INFO ] [2022-07-18 22:05:26,323] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
-[INFO ] [2022-07-18 22:05:27,273] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
-[INFO ] [2022-07-18 22:05:27,908] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
-[INFO ] [2022-07-18 22:05:28,003] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
-[INFO ] [2022-07-18 22:05:28,097] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test831882@live.com
-[INFO ] [2022-07-18 22:05:28,191] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
-[INFO ] [2022-07-18 22:05:28,280] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
-[INFO ] [2022-07-18 22:05:28,390] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
-[INFO ] [2022-07-18 22:05:29,712] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
-[INFO ] [2022-07-18 22:05:29,761] --------------------------------PASSED--------------------------------
-[INFO ] [2022-07-18 22:05:29,761] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
-[INFO ] [2022-07-18 22:05:46,563] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
-[INFO ] [2022-07-18 22:05:47,659] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test831882@live.com'
-[INFO ] [2022-07-18 22:05:47,748] Pre-condition with Login - Step 2: Input a valid password: '123456'
-[INFO ] [2022-07-18 22:05:47,839] Pre-condition with Login - Step 3: Click to login button
-[INFO ] [2022-07-18 22:05:48,840] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
-[INFO ] [2022-07-18 22:05:48,885] --------------------------------PASSED--------------------------------
-[INFO ] [2022-07-18 22:05:48,885] Pre-condition with Login - Step 5: Verify whether the user email is correct as expected as 'auto_test831882@live.com'
-[INFO ] [2022-07-18 22:05:48,936] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:19:15,718] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:19:16,901] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
+[INFO ] [2022-07-19 21:19:17,654] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
+[INFO ] [2022-07-19 21:19:17,750] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
+[INFO ] [2022-07-19 21:19:17,843] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test803426@live.com
+[INFO ] [2022-07-19 21:19:17,938] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
+[INFO ] [2022-07-19 21:19:18,028] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
+[INFO ] [2022-07-19 21:19:18,135] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
+[INFO ] [2022-07-19 21:19:19,511] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
+[INFO ] [2022-07-19 21:19:19,555] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:19:19,555] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
+[INFO ] [2022-07-19 21:19:36,286] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:19:37,442] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test803426@live.com'
+[INFO ] [2022-07-19 21:19:37,531] Pre-condition with Login - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-19 21:19:37,604] Pre-condition with Login - Step 3: Click to login button
+[INFO ] [2022-07-19 21:19:38,620] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
