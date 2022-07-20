@@ -17,6 +17,7 @@ import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageUIs.jQuery.HomePageUI;
+import pageUIs.user.BasePageUI;
 
 /**
  * BaseTest class is including all general custom methods that can use for all classes
@@ -1049,4 +1050,13 @@ public class BasePage {
         return PageGeneratorManager.getAdminLoginPage(driver);
     }
 
+    public void inputToTextBoxByID(WebDriver driver, String textboxID, String inputValue) {
+        waitForElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+        sendkeyToElement(driver, inputValue, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+    }
+
+    public String getValidationAdviceMessageByLabelName(WebDriver driver, String textboxLabelName) {
+        waitForElementVisible(driver, BasePageUI.DYNAMIC_VALIDATION_ADVICE_MESSAGE_BY_TEXT, textboxLabelName);
+        return getElementText(driver, BasePageUI.DYNAMIC_VALIDATION_ADVICE_MESSAGE_BY_TEXT, textboxLabelName);
+    }
 }
