@@ -1,0 +1,637 @@
+[INFO ] [2022-07-09 22:03:06,346] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 22:03:06,377] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 22:03:06,405] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 22:03:06,640] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 22:03:06,663] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 22:03:06,663] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 22:03:06,686] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:03:06,792] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-09 22:03:06,826] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:03:06,857] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:03:07,089] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-09 22:03:07,108] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:03:07,109] Login_03 - Step 1: Input a never registered email address 'auto_test592316@live.com'
+[INFO ] [2022-07-09 22:03:07,143] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:03:07,176] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:03:08,469] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-09 22:03:08,492] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:03:08,493] Login_04 - Step 1: Input a never registered email address 'auto_test592316@live.com'
+[INFO ] [2022-07-09 22:03:08,525] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-09 22:03:08,553] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:03:08,790] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-09 22:03:08,810] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:03:08,811] Login_05 - Step 1: Input a never registered email address 'auto_test592316@live.com'
+[INFO ] [2022-07-09 22:03:08,848] Login_05 - Step 2: Input a well-formated password but it was never used before '444135'
+[INFO ] [2022-07-09 22:03:08,877] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:03:10,145] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-09 22:03:10,170] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:03:10,171] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-09 22:03:10,202] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:03:10,230] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:03:12,024] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-09 22:03:12,046] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 22:03:12,046] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-09 22:03:12,065] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:03:12,065] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-07-09 22:28:46,373] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 22:28:46,408] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 22:28:46,437] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 22:28:46,677] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 22:28:46,703] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 22:28:46,703] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 22:28:46,723] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:28:46,726] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-09 22:28:46,761] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:28:46,793] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:28:47,029] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-09 22:28:47,051] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:28:47,053] Login_03 - Step 1: Input a never registered email address 'auto_test574899@live.com'
+[INFO ] [2022-07-09 22:28:47,095] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:28:47,130] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:28:48,487] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-09 22:28:48,509] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:28:48,510] Login_04 - Step 1: Input a never registered email address 'auto_test574899@live.com'
+[INFO ] [2022-07-09 22:28:48,544] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-09 22:28:48,579] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:28:48,813] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-09 22:28:48,832] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:28:48,833] Login_05 - Step 1: Input a never registered email address 'auto_test574899@live.com'
+[INFO ] [2022-07-09 22:28:48,872] Login_05 - Step 2: Input a well-formated password but it was never used before '299304'
+[INFO ] [2022-07-09 22:28:48,907] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:28:50,249] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-09 22:28:50,273] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:28:50,274] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-09 22:28:50,308] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:28:50,343] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:28:51,744] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-09 22:28:51,769] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 22:28:51,769] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-09 22:28:51,788] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:28:51,789] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-07-09 22:29:50,687] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 22:29:50,722] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 22:29:50,752] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 22:29:50,993] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 22:29:51,019] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 22:29:51,019] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 22:29:51,042] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:29:51,044] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-09 22:29:51,079] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:29:51,109] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:29:51,340] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-09 22:29:51,361] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:29:51,363] Login_03 - Step 1: Input a never registered email address 'auto_test845314@live.com'
+[INFO ] [2022-07-09 22:29:51,399] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:29:51,432] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:29:52,829] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-09 22:29:52,850] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:29:52,851] Login_04 - Step 1: Input a never registered email address 'auto_test845314@live.com'
+[INFO ] [2022-07-09 22:29:52,886] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-09 22:29:52,922] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:29:53,155] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-09 22:29:53,175] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:29:53,176] Login_05 - Step 1: Input a never registered email address 'auto_test845314@live.com'
+[INFO ] [2022-07-09 22:29:53,214] Login_05 - Step 2: Input a well-formated password but it was never used before '994669'
+[INFO ] [2022-07-09 22:29:53,245] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:29:54,597] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-09 22:29:54,621] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:29:54,622] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-09 22:29:54,655] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-09 22:29:54,692] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-09 22:29:56,188] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-09 22:29:56,215] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 22:29:56,215] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-09 22:29:56,235] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 22:29:56,235] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-07-09 23:10:02,855] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 23:10:02,886] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 23:10:02,914] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 23:10:03,149] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 23:10:03,173] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:10:03,173] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 23:10:03,195] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:10:40,727] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 23:10:40,757] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 23:10:40,786] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 23:10:41,022] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 23:10:41,048] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:10:41,049] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 23:10:41,071] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:12:26,938] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 23:12:26,969] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 23:12:26,996] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 23:12:27,230] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 23:12:27,254] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:12:27,255] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 23:12:27,275] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:13:08,716] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-09 23:13:08,748] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-09 23:13:08,776] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-09 23:13:09,012] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-09 23:13:09,037] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:13:09,037] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-09 23:13:09,058] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:17:12,195] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:17:12,216] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:17:12,628] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:17:13,952] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:17:14,271] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:17:15,605] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:17:17,009] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:17:17,029] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:27:49,302] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:27:49,324] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:27:49,748] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:27:51,252] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:27:51,579] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:27:52,995] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-09 23:27:54,416] --------------------------------FAILED--------------------------------
+[INFO ] [2022-07-09 23:27:54,436] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-10 08:40:04,352] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-10 08:40:04,384] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-10 08:40:04,413] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-10 08:40:04,650] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-10 08:40:43,661] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-10 08:40:43,692] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-10 08:40:43,721] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-10 08:40:43,958] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-10 08:40:44,094] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-10 08:40:44,127] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-10 08:40:44,158] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-10 08:40:44,394] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-10 08:40:44,416] Login_03 - Step 1: Input a never registered email address 'auto_test623605@live.com'
+[INFO ] [2022-07-10 08:40:44,453] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-10 08:40:44,484] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-10 08:40:45,634] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-10 08:40:45,654] Login_04 - Step 1: Input a never registered email address 'auto_test623605@live.com'
+[INFO ] [2022-07-10 08:40:45,685] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-10 08:40:45,719] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-10 08:40:45,952] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 08:40:45,973] Login_05 - Step 1: Input a never registered email address 'auto_test623605@live.com'
+[INFO ] [2022-07-10 08:40:46,008] Login_05 - Step 2: Input a well-formated password but it was never used before '871180'
+[INFO ] [2022-07-10 08:40:46,037] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-10 08:40:47,175] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 08:40:47,202] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-10 08:40:47,238] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-10 08:40:47,278] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-10 08:40:48,514] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-10 10:38:56,456] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-10 10:38:56,489] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-10 10:38:56,518] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-10 10:38:56,751] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-10 10:38:56,886] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-10 10:38:56,917] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-10 10:38:56,948] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:38:57,181] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-10 10:38:57,204] Login_03 - Step 1: Input a never registered email address 'auto_test832873@live.com'
+[INFO ] [2022-07-10 10:38:57,238] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-10 10:38:57,266] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:38:58,681] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-10 10:38:58,700] Login_04 - Step 1: Input a never registered email address 'auto_test832873@live.com'
+[INFO ] [2022-07-10 10:38:58,728] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-10 10:38:58,762] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:38:58,992] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 10:38:59,010] Login_05 - Step 1: Input a never registered email address 'auto_test832873@live.com'
+[INFO ] [2022-07-10 10:38:59,043] Login_05 - Step 2: Input a well-formated password but it was never used before '992887'
+[INFO ] [2022-07-10 10:38:59,072] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:39:00,311] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 10:39:00,336] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-10 10:39:00,368] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-10 10:39:00,400] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:39:01,904] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-10 10:47:00,406] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-10 10:47:00,437] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-10 10:47:00,467] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-10 10:47:00,701] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-10 10:47:00,840] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-10 10:47:00,870] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-10 10:47:00,900] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:47:01,131] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-10 10:47:01,151] Login_03 - Step 1: Input a never registered email address 'auto_test368747@live.com'
+[INFO ] [2022-07-10 10:47:01,182] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-10 10:47:01,219] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:47:02,359] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-10 10:47:02,380] Login_04 - Step 1: Input a never registered email address 'auto_test368747@live.com'
+[INFO ] [2022-07-10 10:47:02,413] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-10 10:47:02,448] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:47:02,681] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 10:47:02,700] Login_05 - Step 1: Input a never registered email address 'auto_test368747@live.com'
+[INFO ] [2022-07-10 10:47:02,734] Login_05 - Step 2: Input a well-formated password but it was never used before '941780'
+[INFO ] [2022-07-10 10:47:02,765] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:47:03,879] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 10:47:03,905] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-10 10:47:03,936] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-10 10:47:03,968] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-10 10:47:05,187] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-10 12:53:55,555] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-10 12:53:55,586] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-10 12:53:55,614] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-10 12:53:55,849] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-10 12:53:55,875] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-10 12:53:55,907] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-10 12:53:55,935] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-10 12:53:56,167] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-10 12:53:56,191] Login_03 - Step 1: Input a never registered email address 'auto_test52044@live.com'
+[INFO ] [2022-07-10 12:53:56,228] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-10 12:53:56,261] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-10 12:53:57,550] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-10 12:53:57,569] Login_04 - Step 1: Input a never registered email address 'auto_test52044@live.com'
+[INFO ] [2022-07-10 12:53:57,602] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-10 12:53:57,629] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-10 12:53:57,863] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 12:53:57,883] Login_05 - Step 1: Input a never registered email address 'auto_test52044@live.com'
+[INFO ] [2022-07-10 12:53:57,917] Login_05 - Step 2: Input a well-formated password but it was never used before '983991'
+[INFO ] [2022-07-10 12:53:57,945] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-10 12:53:59,156] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-10 12:53:59,182] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-10 12:53:59,213] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-10 12:53:59,240] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-10 12:54:00,618] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-16 18:03:48,819] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-16 18:03:48,850] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-16 18:03:48,880] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-16 18:03:49,114] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-16 18:03:49,279] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-16 18:03:49,311] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:03:49,343] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:03:49,579] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-16 18:03:49,602] Login_03 - Step 1: Input a never registered email address 'auto_test430153@live.com'
+[INFO ] [2022-07-16 18:03:49,633] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:03:49,668] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:03:51,096] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-16 18:03:51,118] Login_04 - Step 1: Input a never registered email address 'auto_test430153@live.com'
+[INFO ] [2022-07-16 18:03:51,150] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-16 18:03:51,176] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:03:51,412] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 18:03:51,433] Login_05 - Step 1: Input a never registered email address 'auto_test430153@live.com'
+[INFO ] [2022-07-16 18:03:51,469] Login_05 - Step 2: Input a well-formated password but it was never used before '867058'
+[INFO ] [2022-07-16 18:03:51,498] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:03:52,776] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 18:03:52,798] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-16 18:03:52,837] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:03:52,869] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:03:54,200] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-16 18:41:50,373] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-16 18:41:50,464] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-16 18:41:50,557] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-16 18:41:50,843] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-16 18:41:51,075] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-16 18:41:51,164] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:41:51,255] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:41:51,528] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-16 18:41:51,583] Login_03 - Step 1: Input a never registered email address 'auto_test775179@live.com'
+[INFO ] [2022-07-16 18:41:51,677] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:41:51,767] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:41:53,250] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-16 18:41:53,291] Login_04 - Step 1: Input a never registered email address 'auto_test775179@live.com'
+[INFO ] [2022-07-16 18:41:53,379] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-16 18:41:53,467] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:41:53,742] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 18:41:53,791] Login_05 - Step 1: Input a never registered email address 'auto_test775179@live.com'
+[INFO ] [2022-07-16 18:41:53,878] Login_05 - Step 2: Input a well-formated password but it was never used before '128094'
+[INFO ] [2022-07-16 18:41:53,956] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:41:55,320] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 18:41:55,364] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-16 18:41:55,444] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:41:55,533] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:41:56,933] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-16 18:44:50,193] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-16 18:44:50,278] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-16 18:44:50,373] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-16 18:44:50,660] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-16 18:44:50,880] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-16 18:44:50,976] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:44:51,065] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:44:51,338] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-16 18:44:51,392] Login_03 - Step 1: Input a never registered email address 'auto_test87585@live.com'
+[INFO ] [2022-07-16 18:44:51,484] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:44:51,573] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:44:53,406] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-16 18:44:53,450] Login_04 - Step 1: Input a never registered email address 'auto_test87585@live.com'
+[INFO ] [2022-07-16 18:44:53,545] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-16 18:44:53,637] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:44:53,909] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 18:44:53,948] Login_05 - Step 1: Input a never registered email address 'auto_test87585@live.com'
+[INFO ] [2022-07-16 18:44:54,042] Login_05 - Step 2: Input a well-formated password but it was never used before '753446'
+[INFO ] [2022-07-16 18:44:54,130] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:44:55,463] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 18:44:55,494] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-16 18:44:55,582] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-16 18:44:55,663] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-16 18:44:57,067] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-16 20:07:36,324] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-16 20:07:36,356] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-16 20:07:36,386] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-16 20:07:36,625] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-16 20:07:36,813] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-16 20:07:36,849] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-16 20:07:36,881] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-16 20:07:37,125] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-16 20:07:37,153] Login_03 - Step 1: Input a never registered email address 'auto_test305040@live.com'
+[INFO ] [2022-07-16 20:07:37,189] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-16 20:07:37,220] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-16 20:07:38,488] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-16 20:07:38,509] Login_04 - Step 1: Input a never registered email address 'auto_test305040@live.com'
+[INFO ] [2022-07-16 20:07:38,540] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-16 20:07:38,570] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-16 20:07:38,809] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 20:07:38,834] Login_05 - Step 1: Input a never registered email address 'auto_test305040@live.com'
+[INFO ] [2022-07-16 20:07:38,874] Login_05 - Step 2: Input a well-formated password but it was never used before '380353'
+[INFO ] [2022-07-16 20:07:38,905] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-16 20:07:40,222] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-16 20:07:40,253] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-16 20:07:40,284] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-16 20:07:40,319] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-16 20:07:41,679] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-17 23:40:58,488] Login_01 - Step 1: Input a valid email address: 'auto_test735949@live.com'
+[INFO ] [2022-07-17 23:45:13,078] Login_01 - Step 1: Input a valid email address: 'auto_test744501@live.com'
+[INFO ] [2022-07-17 23:47:47,389] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-17 23:47:48,479] Login_01 - Step 1: Input a valid email address: 'auto_test150756@live.com'
+[INFO ] [2022-07-17 23:47:48,568] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-17 23:47:48,655] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-17 23:47:49,937] Login_01 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-17 23:49:41,857] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-17 23:49:42,757] Login_01 - Step 1: Input a valid email address: 'auto_test126450@live.com'
+[INFO ] [2022-07-17 23:49:42,845] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-17 23:49:42,932] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-17 23:49:44,135] Login_01 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-17 23:54:03,936] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-17 23:54:04,927] Login_01 - Step 1: Input a valid email address: 'auto_test911201@live.com'
+[INFO ] [2022-07-17 23:54:05,019] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-17 23:54:05,106] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-17 23:54:06,418] Login_01 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-17 23:54:06,469] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-17 23:54:06,469] Login_01 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-17 23:54:06,513] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-17 23:54:06,513] Login_01 - Step 6: Click to logout button
+[INFO ] [2022-07-17 23:55:50,525] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-17 23:55:51,470] Login_01 - Step 1: Input a valid email address: 'auto_test968264@live.com'
+[INFO ] [2022-07-17 23:55:51,574] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-17 23:55:51,660] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-17 23:55:53,087] Login_01 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-17 23:55:53,131] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-17 23:55:53,131] Login_01 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-17 23:55:53,175] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-17 23:55:53,175] Login_01 - Step 6: Click to logout button
+[INFO ] [2022-07-18 00:00:37,331] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 00:00:38,375] Login_01 - Step 1: Input a valid email address: 'auto_test668814@live.com'
+[INFO ] [2022-07-18 00:00:38,475] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 00:00:38,567] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-18 00:00:39,941] Login_01 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-18 00:00:39,986] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 00:00:39,987] Login_01 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-18 00:00:40,030] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 00:04:09,006] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 00:04:09,953] Login_01 - Step 1: Input a valid email address: 'auto_test770009@live.com'
+[INFO ] [2022-07-18 00:04:10,052] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 00:04:10,142] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-18 00:04:11,437] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 00:04:11,489] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 00:04:11,489] Login_01 - Step 5: Verify whether the user email is correct as expected as 'auto_test770009@live.com'
+[INFO ] [2022-07-18 00:04:11,531] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 05:25:55,120] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 05:26:02,584] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'null null'
+[INFO ] [2022-07-18 21:09:40,834] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 21:09:47,660] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 21:13:24,754] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 21:13:32,221] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 21:13:32,267] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 21:13:32,268] Login_01 - Step 5: Verify whether the user email is correct as expected as 'auto_test670106@live.com'
+[INFO ] [2022-07-18 21:13:32,313] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 21:28:09,189] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 21:28:16,878] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 21:28:16,933] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 21:28:16,935] Login_01 - Step 5: Verify whether the user email is correct as expected as 'auto_test230551@live.com'
+[INFO ] [2022-07-18 21:28:16,976] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 21:33:11,073] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 21:33:12,165] Login_01 - Step 2 : Login to Application by using cookie and open My Dashboard Page as successfully login
+[INFO ] [2022-07-18 21:33:19,111] Login_01 - Step 3: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 21:33:19,169] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 21:33:19,170] Login_01 - Step 4: Verify whether the user email is correct as expected as 'auto_test474181@live.com'
+[INFO ] [2022-07-18 21:33:19,213] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:05:26,323] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 22:05:27,273] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
+[INFO ] [2022-07-18 22:05:27,908] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
+[INFO ] [2022-07-18 22:05:28,003] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
+[INFO ] [2022-07-18 22:05:28,097] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test831882@live.com
+[INFO ] [2022-07-18 22:05:28,191] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
+[INFO ] [2022-07-18 22:05:28,280] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
+[INFO ] [2022-07-18 22:05:28,390] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
+[INFO ] [2022-07-18 22:05:29,712] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
+[INFO ] [2022-07-18 22:05:29,761] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:05:29,761] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
+[INFO ] [2022-07-18 22:05:46,563] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 22:05:47,659] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test831882@live.com'
+[INFO ] [2022-07-18 22:05:47,748] Pre-condition with Login - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 22:05:47,839] Pre-condition with Login - Step 3: Click to login button
+[INFO ] [2022-07-18 22:05:48,840] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 22:05:48,885] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:05:48,885] Pre-condition with Login - Step 5: Verify whether the user email is correct as expected as 'auto_test831882@live.com'
+[INFO ] [2022-07-18 22:05:48,936] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:18:25,349] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 22:18:26,341] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
+[INFO ] [2022-07-18 22:18:27,006] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
+[INFO ] [2022-07-18 22:18:27,100] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
+[INFO ] [2022-07-18 22:18:27,194] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test874807@live.com
+[INFO ] [2022-07-18 22:18:27,290] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
+[INFO ] [2022-07-18 22:18:27,381] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
+[INFO ] [2022-07-18 22:18:27,487] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
+[INFO ] [2022-07-18 22:18:28,820] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
+[INFO ] [2022-07-18 22:18:28,867] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:18:28,868] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
+[INFO ] [2022-07-18 22:18:45,540] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 22:18:46,878] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test874807@live.com'
+[INFO ] [2022-07-18 22:18:46,974] Pre-condition with Login - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 22:18:47,065] Pre-condition with Login - Step 3: Click to login button
+[INFO ] [2022-07-18 22:18:48,054] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 22:18:48,108] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:18:48,108] Pre-condition with Login - Step 5: Verify whether the user email is correct as expected as 'auto_test874807@live.com'
+[INFO ] [2022-07-18 22:18:48,153] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:23:36,753] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 22:23:37,718] Login_01 - Step 1: Input a valid email address: 'auto_test470457@live.com'
+[INFO ] [2022-07-18 22:23:37,809] Login_01 - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 22:23:37,899] Login_01 - Step 3: Click to login button
+[INFO ] [2022-07-18 22:23:39,170] Login_01 - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 22:23:39,214] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:23:39,215] Login_01 - Step 5: Verify whether the user email is correct as expected as 'auto_test470457@live.com'
+[INFO ] [2022-07-18 22:23:39,257] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:30:17,405] Pre-condition - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-18 22:30:18,296] Pre-condition - Step 1: Input a valid email address: 'auto_test22153@live.com'
+[INFO ] [2022-07-18 22:30:18,394] Pre-condition - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-18 22:30:18,482] Pre-condition - Step 3: Click to login button
+[INFO ] [2022-07-18 22:30:19,704] Pre-condition - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-18 22:30:19,757] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-18 22:30:19,757] Pre-condition - Step 5: Verify whether the user email is correct as expected as 'auto_test22153@live.com'
+[INFO ] [2022-07-18 22:30:19,801] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:15:10,891] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:15:11,814] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
+[INFO ] [2022-07-19 21:15:12,487] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
+[INFO ] [2022-07-19 21:15:12,576] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
+[INFO ] [2022-07-19 21:15:12,669] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test317595@live.com
+[INFO ] [2022-07-19 21:15:12,766] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
+[INFO ] [2022-07-19 21:15:12,855] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
+[INFO ] [2022-07-19 21:15:12,964] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
+[INFO ] [2022-07-19 21:15:14,210] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
+[INFO ] [2022-07-19 21:15:14,247] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:15:14,247] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
+[INFO ] [2022-07-19 21:15:30,817] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:15:31,936] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test317595@live.com'
+[INFO ] [2022-07-19 21:15:32,021] Pre-condition with Login - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-19 21:15:32,108] Pre-condition with Login - Step 3: Click to login button
+[INFO ] [2022-07-19 21:15:34,369] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-19 21:15:34,425] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:15:34,425] Pre-condition with Login - Step 5: Verify whether the user email is correct as expected as 'auto_test317595@live.com'
+[INFO ] [2022-07-19 21:15:34,477] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:15:34,561] OS name = windows 10
+[INFO ] [2022-07-19 21:15:34,561] Driver instance name = firefoxdriver: firefox on windows (9e45ddea-79d7-4c3e-9e98-1f0dbc4339d2)
+[INFO ] [2022-07-19 21:17:40,100] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:17:41,220] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
+[INFO ] [2022-07-19 21:17:42,009] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
+[INFO ] [2022-07-19 21:17:42,100] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
+[INFO ] [2022-07-19 21:17:42,192] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test660820@live.com
+[INFO ] [2022-07-19 21:17:42,288] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
+[INFO ] [2022-07-19 21:17:42,378] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
+[INFO ] [2022-07-19 21:17:42,486] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
+[INFO ] [2022-07-19 21:17:43,751] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
+[INFO ] [2022-07-19 21:17:43,795] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:17:43,795] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
+[INFO ] [2022-07-19 21:18:01,586] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:18:02,681] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test660820@live.com'
+[INFO ] [2022-07-19 21:18:02,768] Pre-condition with Login - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-19 21:18:02,854] Pre-condition with Login - Step 3: Click to login button
+[INFO ] [2022-07-19 21:18:03,942] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-19 21:18:04,080] OS name = windows 10
+[INFO ] [2022-07-19 21:18:04,080] Driver instance name = firefoxdriver: firefox on windows (377e0aae-23ec-4e32-92bb-c9b8be092f95)
+[INFO ] [2022-07-19 21:19:15,718] Pre-condition with Register - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:19:16,901] Pre-condition with Register - Step 02 : Click to CREATE AN ACCOUNT button to navigate to Register Page
+[INFO ] [2022-07-19 21:19:17,654] Pre-condition with Register - Step 03 : Input to first name textbox with value is Tom
+[INFO ] [2022-07-19 21:19:17,750] Pre-condition with Register - Step 04 : Input to last name textbox with value is Mulock
+[INFO ] [2022-07-19 21:19:17,843] Pre-condition with Register - Step 05 : Input to email address textbox with value is auto_test803426@live.com
+[INFO ] [2022-07-19 21:19:17,938] Pre-condition with Register - Step 06 : Input to password textbox with value is 123456
+[INFO ] [2022-07-19 21:19:18,028] Pre-condition with Register - Step 07 : Input to confirm password textbox with value is 123456
+[INFO ] [2022-07-19 21:19:18,135] Pre-condition with Register - Step 08 : click to Register button and navigate to My Dashboard Page
+[INFO ] [2022-07-19 21:19:19,511] Pre-condition with Register - Step 09 : Verify whether the account is successfully registered
+[INFO ] [2022-07-19 21:19:19,555] --------------------------------PASSED--------------------------------
+[INFO ] [2022-07-19 21:19:19,555] Pre-condition with Register - Step 09 : Log out and navigate to Login Page
+[INFO ] [2022-07-19 21:19:36,286] Pre-condition with Login - Step 01 : Click to My Account link to navigate to Login Page
+[INFO ] [2022-07-19 21:19:37,442] Pre-condition with Login - Step 1: Input a valid email address: 'auto_test803426@live.com'
+[INFO ] [2022-07-19 21:19:37,531] Pre-condition with Login - Step 2: Input a valid password: '123456'
+[INFO ] [2022-07-19 21:19:37,604] Pre-condition with Login - Step 3: Click to login button
+[INFO ] [2022-07-19 21:19:38,620] Pre-condition with Login - Step 4: Verify whether the user name  is correct as expected as 'Tom Mulock'
+[INFO ] [2022-07-20 22:03:14,952] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-20 22:03:45,604] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-20 22:04:15,794] Login_03 - Step 1: Input a never registered email address 'auto_test167664@live.com'
+[INFO ] [2022-07-20 22:05:53,225] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-20 22:06:23,402] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-20 22:10:39,893] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-20 22:10:39,983] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-20 22:10:40,078] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-20 22:10:40,378] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-20 22:10:40,427] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-20 22:10:40,516] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-20 22:10:40,622] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:10:40,720] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:10:41,011] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-20 22:10:41,062] Login_03 - Step 1: Input a never registered email address 'auto_test116981@live.com'
+[INFO ] [2022-07-20 22:10:41,156] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:10:41,245] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:10:42,400] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-20 22:10:42,445] Login_04 - Step 1: Input a never registered email address 'auto_test116981@live.com'
+[INFO ] [2022-07-20 22:10:42,531] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-20 22:10:42,623] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:10:42,895] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:10:42,943] Login_05 - Step 1: Input a never registered email address 'auto_test116981@live.com'
+[INFO ] [2022-07-20 22:10:43,032] Login_05 - Step 2: Input a well-formated password but it was never used before '278587'
+[INFO ] [2022-07-20 22:10:43,116] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:10:44,279] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:10:44,320] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-20 22:10:44,408] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:10:44,497] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:10:45,673] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-20 22:10:45,842] OS name = windows 10
+[INFO ] [2022-07-20 22:10:45,842] Driver instance name = firefoxdriver: firefox on windows (25908f30-ba58-4a38-90d2-48492838514d)
+[INFO ] [2022-07-20 22:11:16,056] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-20 22:11:16,134] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-20 22:11:16,225] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-20 22:11:16,514] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-20 22:11:16,563] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-20 22:11:16,636] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-20 22:11:16,712] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:11:16,799] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:11:17,072] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-20 22:11:17,114] Login_03 - Step 1: Input a never registered email address 'auto_test116442@live.com'
+[INFO ] [2022-07-20 22:11:17,195] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:11:17,282] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:11:18,498] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-20 22:11:18,535] Login_04 - Step 1: Input a never registered email address 'auto_test116442@live.com'
+[INFO ] [2022-07-20 22:11:18,626] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-20 22:11:18,722] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:11:18,981] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:11:19,019] Login_05 - Step 1: Input a never registered email address 'auto_test116442@live.com'
+[INFO ] [2022-07-20 22:11:19,110] Login_05 - Step 2: Input a well-formated password but it was never used before '574969'
+[INFO ] [2022-07-20 22:11:19,185] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:11:20,401] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:11:20,448] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-20 22:11:20,535] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:11:20,613] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:11:21,950] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-20 22:11:22,115] OS name = windows 10
+[INFO ] [2022-07-20 22:11:22,115] Driver instance name = firefoxdriver: firefox on windows (3cfb47f8-ba0c-40d2-893e-3345b2a2e207)
+[INFO ] [2022-07-20 22:14:20,873] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-20 22:14:20,957] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-20 22:14:21,050] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-20 22:14:21,338] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-20 22:14:21,392] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-20 22:14:21,474] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-20 22:14:21,573] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:14:21,663] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:14:21,940] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-20 22:14:21,989] Login_03 - Step 1: Input a never registered email address 'auto_test375677@live.com'
+[INFO ] [2022-07-20 22:14:22,082] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:14:22,175] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:14:23,502] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-20 22:14:23,548] Login_04 - Step 1: Input a never registered email address 'auto_test375677@live.com'
+[INFO ] [2022-07-20 22:14:23,639] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-20 22:14:23,739] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:14:24,009] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:14:24,048] Login_05 - Step 1: Input a never registered email address 'auto_test375677@live.com'
+[INFO ] [2022-07-20 22:14:24,142] Login_05 - Step 2: Input a well-formated password but it was never used before '574944'
+[INFO ] [2022-07-20 22:14:24,230] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:14:25,414] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:14:25,458] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-20 22:14:25,546] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:14:25,630] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:14:26,833] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-20 22:14:26,879] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-20 22:14:26,923] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-07-20 22:14:43,529] OS name = windows 10
+[INFO ] [2022-07-20 22:14:43,529] Driver instance name = firefoxdriver: firefox on windows (2b41e579-d43e-4789-be93-57c28db7ee15)
+[INFO ] [2022-07-20 22:17:18,765] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-07-20 22:17:18,850] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-07-20 22:17:18,944] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-07-20 22:17:19,236] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-07-20 22:17:19,289] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-07-20 22:17:19,375] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-07-20 22:17:19,474] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:17:19,565] Login_02 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:17:19,839] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-07-20 22:17:19,890] Login_03 - Step 1: Input a never registered email address 'auto_test215144@live.com'
+[INFO ] [2022-07-20 22:17:19,982] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:17:20,068] Login_03 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:17:21,226] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-07-20 22:17:21,270] Login_04 - Step 1: Input a never registered email address 'auto_test215144@live.com'
+[INFO ] [2022-07-20 22:17:21,371] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-07-20 22:17:21,452] Login_04 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:17:21,724] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:17:21,774] Login_05 - Step 1: Input a never registered email address 'auto_test215144@live.com'
+[INFO ] [2022-07-20 22:17:21,869] Login_05 - Step 2: Input a well-formated password but it was never used before '615775'
+[INFO ] [2022-07-20 22:17:21,959] Login_05 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:17:23,122] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-07-20 22:17:53,277] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-07-20 22:17:53,371] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-07-20 22:17:53,465] Login_06 - Step 3: Click to login button
+[INFO ] [2022-07-20 22:17:55,161] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-07-20 22:17:55,208] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-07-20 22:17:55,255] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-07-20 22:18:12,728] OS name = windows 10
+[INFO ] [2022-07-20 22:18:12,728] Driver instance name = firefoxdriver: firefox on windows (cc461efe-7dfd-4af9-b416-cc2301b70f76)
