@@ -1,12 +1,21 @@
 package commons;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -14,6 +23,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
     WebDriver driver;
+    ChromeOptions chromeOptions;
+    FirefoxOptions firefoxOptions;
     protected final Log log;
 
     protected BaseTest() {
@@ -25,9 +36,13 @@ public class BaseTest {
 
         switch (browserList) {
             case FIREFOX:
+                System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.PROJECT_PATH + "/Firefoxlog.txt");
                 driver = WebDriverManager.firefoxdriver().create();
                 break;
             case CHROME:
+                System.setProperty("webdriver.chrome.args", "--disable-loging");
+                System.setProperty("webdriver.chrome.silentOutput", "true");
                 driver = WebDriverManager.chromedriver().create();
                 break;
             case EDGE:
@@ -36,7 +51,29 @@ public class BaseTest {
             case OPERA:
                 driver = WebDriverManager.operadriver().create();
                 break;
-
+            case H_FIREFOX:
+                WebDriverManager.firefoxdriver().setup();
+                firefoxOptions = new FirefoxOptions();
+                firefoxOptions.setHeadless(true);
+                firefoxOptions.addArguments("--headless");
+                firefoxOptions.addArguments("window-size-1920x1080");
+                driver = new FirefoxDriver(firefoxOptions);
+                break;
+            case H_CHROME:
+                WebDriverManager.chromedriver().setup();
+                chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(true);
+                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("window-size-1920x1080");
+                driver = new ChromeDriver(chromeOptions);
+                break;
+            case COCCOC:
+                WebDriverManager.chromedriver().setup();
+//                System.setProperty("webdriver.chrome.driver", ".\\browserDrivers\\chromedriver.exe");
+                chromeOptions = new ChromeOptions();
+                chromeOptions.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
+                driver = new ChromeDriver(chromeOptions);
+                break;
             default:
                 throw new RuntimeException("Browser is NOT supported");
         }
@@ -184,5 +221,15 @@ public class BaseTest {
 
     public WebDriver getDriverInstance() {
         return this.driver;
+    }
+
+    protected void showBrowserConsoleLogs() {
+        if (driver.toString().contains("chrome")) {
+            LogEntries logs = driver.manage().logs().get("browser");
+            List<LogEntry> logList = logs.getAll();
+            for (LogEntry logging : logList) {
+                log.info("-------------" + logging.getLevel().toString() + "-------------\n" + logging.getMessage());
+            }
+        }
     }
 }

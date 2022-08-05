@@ -14,11 +14,11 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
     </listeners>
 
-    <test name="Run on FIREFOX browser">
-        <parameter name="browser" value="firefox"/>
+    <test name="Run on CHROME browser">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <!--            <class name="com.techpanda.common.Common_01_Register_End_User"/>-->
-            <class name="com.techpanda.user.Level_18_Pattern_Objects"/>
+            <class name="com.techpanda.user.Level_19_Manage_Data"/>
         </classes>
     </test>
 
