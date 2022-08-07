@@ -1,10 +1,13 @@
 package commons;
 
-import java.util.List;
-import java.util.Set;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -17,6 +20,7 @@ import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.navigation.SideBarContainerPageObject;
 import pageObjects.user.UserHomePageObject;
 import pageUIs.jQuery.HomePageUI;
+import pageUIs.saucelab.SauceLabHomePageObjectUI;
 import pageUIs.user.BasePageUI;
 
 /**
@@ -988,6 +992,111 @@ public class BasePage {
         }
         sleepInSecond(2);
 
+    }
+
+    public boolean isDataTextSortedCorrectly(WebDriver driver, String locator, boolean ascending, boolean descending) {
+        List<WebElement> elementList = getListElement(driver, locator);
+
+        ArrayList<String> arrayList = new ArrayList<>();
+        System.out.println("-------------Sorting shown on UI-------------");
+        for (WebElement element : elementList) {
+            arrayList.add(element.getText());
+            System.out.println(element.getText());
+        }
+
+        ArrayList<String> sortedList = new ArrayList<>();
+        for (String child : arrayList) {
+            sortedList.add(child);
+        }
+
+        System.out.println("-------------Sorting by Code-------------");
+        if (ascending) {
+            Collections.sort(sortedList);
+            for (String name : sortedList) {
+                System.out.println(name);
+            }
+        } else if (descending) {
+            Collections.sort(sortedList);
+            Collections.reverse(sortedList);
+            for (String name : sortedList) {
+                System.out.println(name);
+            }
+        }
+        return sortedList.equals(arrayList);
+
+    }
+
+    public boolean isDataFloatSortedCorrectly(WebDriver driver, String locator, boolean ascending, boolean descending) {
+        List<WebElement> elementList = getListElement(driver, locator);
+
+        ArrayList<Float> arrayList = new ArrayList<>();
+        System.out.println("-------------Sorting shown on UI-------------");
+        for (WebElement element : elementList) {
+            arrayList.add(Float.parseFloat(element.getText().replace("$", "")));
+            System.out.println(Float.parseFloat(element.getText().replace("$", "")));
+        }
+
+        ArrayList<Float> sortedList = new ArrayList<>();
+        for (Float child : arrayList) {
+            sortedList.add(child);
+        }
+
+        System.out.println("-------------Sorting by Code-------------");
+        if (ascending) {
+            Collections.sort(sortedList);
+            for (Float name : sortedList) {
+                System.out.println(name);
+            }
+        } else if (descending) {
+            Collections.sort(sortedList);
+            Collections.reverse(sortedList);
+            for (Float name : sortedList) {
+                System.out.println(name);
+            }
+        }
+        return sortedList.equals(arrayList);
+    }
+
+    public boolean isDataDateSortedCorrectly(WebDriver driver, String locator, boolean ascending, boolean descending, String datePattern) {
+        List<WebElement> elementList = getListElement(driver, locator);
+
+        ArrayList<Date> arrayList = new ArrayList<>();
+        System.out.println("-------------Sorting shown on UI-------------");
+        for (WebElement element : elementList) {
+            arrayList.add(convertStringToDate(datePattern, element.getText()));
+            System.out.println(Float.parseFloat(element.getText().replace("$", "")));
+        }
+
+        ArrayList<Date> sortedList = new ArrayList<>();
+        for (Date child : arrayList) {
+            sortedList.add(child);
+        }
+
+        System.out.println("-------------Sorting by Code-------------");
+        if (ascending) {
+            Collections.sort(sortedList);
+            for (Date name : sortedList) {
+                System.out.println(name);
+            }
+        } else if (descending) {
+            Collections.sort(sortedList);
+            Collections.reverse(sortedList);
+            for (Date name : sortedList) {
+                System.out.println(name);
+            }
+        }
+        return sortedList.equals(arrayList);
+    }
+
+    public Date convertStringToDate(String datePattern, String dateInString) {
+        DateFormat format = new SimpleDateFormat(datePattern, Locale.ENGLISH);
+        Date date = null;
+        try {
+            date = format.parse(dateInString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 
     /**
