@@ -9,5 +9,6 @@ public class PageGeneratorManager {
 
     public static SauceLabHomePageObject getSauceLabHomePage(WebDriver driver) {
         return new SauceLabHomePageObject(driver);
+        
     }
 }

@@ -14,6 +14,7 @@ public class SauceLabLoginPageObject extends BasePage {
     public void enterToUserNameTextBox(String userName) {
         waitForElementVisible(driver, GlobalConstants.SL_USER_NAME_TEXT_BOX);
         sendkeyToElement(driver, GlobalConstants.SL_USER_NAME_TEXT_BOX, userName);
+        
     }
 
     public void enterToPasswordTextBox(String password) {

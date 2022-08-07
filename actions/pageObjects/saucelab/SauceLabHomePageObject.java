@@ -14,6 +14,7 @@ public class SauceLabHomePageObject extends BasePage {
     public void sortItemByText(String valueToSellect) {
         waitForElementVisible(driver, SauceLabHomePageObjectUI.SAUCELAB_SORT_DROPDOWN);
         selectItemInDefaultDropDown(driver, SauceLabHomePageObjectUI.SAUCELAB_SORT_DROPDOWN, valueToSellect);
+        
     }
 
     public boolean isProductNamesSortedAscending() {

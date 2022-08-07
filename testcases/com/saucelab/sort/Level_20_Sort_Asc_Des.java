@@ -20,10 +20,8 @@ public class Level_20_Sort_Asc_Des extends BaseTest {
     @BeforeClass
     public void beforeClass(String browser, String url) {
         driver = getBrowserDriver(browser, url);
-
         userName = "standard_user";
         password = "secret_sauce";
-
         saucelabUserLoginPage = PageGeneratorManager.getSauceLabLoginPage(driver);
         saucelabUserLoginPage.enterToUserNameTextBox(userName);
         saucelabUserLoginPage.enterToPasswordTextBox(password);
