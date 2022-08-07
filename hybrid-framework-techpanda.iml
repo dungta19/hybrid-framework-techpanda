@@ -470,5 +470,6 @@
     <orderEntry type="library" name="allureReport" level="project" />
     <orderEntry type="library" name="allure-java-commons-2.13.5" level="project" />
     <orderEntry type="library" name="libFaker" level="project" />
+    <orderEntry type="library" name="libJackson" level="project" />
   </component>
 </module>

@@ -13,7 +13,7 @@ import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 import ultilities.DataHelper;
 
-public class Level_19_Manage_Data extends BaseTest {
+public class Level_19_Manage_Data_Faker extends BaseTest {
     WebDriver driver;
     UserHomePageObject homePage;
     UserLoginPageObject loginPage;

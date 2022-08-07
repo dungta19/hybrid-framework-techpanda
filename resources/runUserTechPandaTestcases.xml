@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="false" name="TechPanda">
 
-    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
+    <parameter name="url" value="http://live.techpanda.org/index.php/"></parameter>
 
     <listeners>
         <listener class-name="commons.MethodListener"></listener>
@@ -17,7 +17,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <!--            <class name="com.techpanda.common.Common_01_Register_End_User"/>-->
-            <class name="com.saucelab.sort.Level_20_Sort_Asc_Des"/>
+            <class name="com.techpanda.user.Level_19_Manage_Data_Json"/>
         </classes>
     </test>
 
