@@ -7,11 +7,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.techpanda.data.UserDataMapper;
+
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
-import techpanda.UserDataMapper;
 
 public class Level_19_Manage_Data_Json extends BaseTest {
     WebDriver driver;
