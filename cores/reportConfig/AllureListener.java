@@ -12,48 +12,65 @@ import io.qameta.allure.Attachment;
 
 public class AllureListener implements ITestListener {
 
-    // Screenshot attachments for Allure
-    @Attachment(value = "Screenshot of {0}", type = "image/png")
-    public static byte[] saveScreenshotPNG(String testName, WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
+	private static String getTestMethodName(ITestResult iTestResult) {
+		return iTestResult.getMethod().getConstructorOrMethod().getName();
+	}
 
-    @Override
-    public void onTestFailure(ITestResult iTestResult) {
-        Object testClass = iTestResult.getInstance();
-        WebDriver driver = ((BaseTest) testClass).getDriverInstance();
-        saveScreenshotPNG(iTestResult.getName(), driver);
-    }
+	// Screenshot attachments for Allure
+	@Attachment(value = "Screenshot of {0}", type = "image/png")
+	public static byte[] saveScreenshotPNG(String testName, WebDriver driver) {
+		return (byte[]) ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	}
 
-    @Override
-    public void onStart(ITestContext iTestContext) {
-        // TODO Auto-generated method stub
-    }
+	// Text attachments for Allure
+	@Attachment(value = "Text attachment of {0}", type = "text/plain")
+	public static String saveTextLog(String message) {
+		return message;
+	}
 
-    @Override
-    public void onTestSkipped(ITestResult iTestResult) {
-        // TODO Auto-generated method stub
-    }
+	// HTML attachments for Allure
+	@Attachment(value = "{0}", type = "text/html")
+	public static String attachHtml(String html) {
+		return html;
+	}
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-        // TODO Auto-generated method stub
-    }
+	@Override
+	public void onTestFailure(ITestResult iTestResult) {
+		Object testClass = iTestResult.getInstance();
+		WebDriver driver = ((BaseTest) testClass).getDriverInstance();
+		saveScreenshotPNG(iTestResult.getName(), driver);
+		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
+	}
 
-    @Override
-    public void onFinish(ITestContext arg0) {
-        // TODO Auto-generated method stub
+	@Override
+	public void onStart(ITestContext iTestContext) {
+		// TODO Auto-generated method stub
+	}
 
-    }
+	@Override
+	public void onTestSkipped(ITestResult iTestResult) {
+		// TODO Auto-generated method stub
+	}
 
-    @Override
-    public void onTestStart(ITestResult arg0) {
-        // TODO Auto-generated method stub
-    }
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+		// TODO Auto-generated method stub
+	}
 
-    @Override
-    public void onTestSuccess(ITestResult arg0) {
-        // TODO Auto-generated method stub
-    }
+	@Override
+	public void onFinish(ITestContext arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTestStart(ITestResult arg0) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult arg0) {
+		// TODO Auto-generated method stub
+	}
 
 }

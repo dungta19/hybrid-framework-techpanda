@@ -7,35 +7,33 @@ import commons.BasePage;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 import pageUIs.navigation.HeaderContainerPageUIs;
-import pageUIs.user.MyDashboardPageUI;
 
 public class HeaderContainerPageObject extends BasePage {
-    WebDriver driver;
+	WebDriver driver;
 
-    public HeaderContainerPageObject(WebDriver driver) {
-        this.driver = driver;
-    }
+	public HeaderContainerPageObject(WebDriver driver) {
+		this.driver = driver;
+	}
 
-    @Step("Click to Logout button and navigate to Home Page")
-    public UserHomePageObject clickToUserLogoutButton() {
-        waitForElementClickable(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
-        clickToElement(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
+	@Step("Click to Logout button and navigate to Home Page")
+	public UserHomePageObject clickToUserLogoutButton() {
+		waitForElementClickable(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
+		clickToElement(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
 
-        waitForElementClickable(driver, HeaderContainerPageUIs.LOGOUT_LINK);
-        clickToElement(driver, HeaderContainerPageUIs.LOGOUT_LINK);
+		waitForElementClickable(driver, HeaderContainerPageUIs.LOGOUT_LINK);
+		clickToElement(driver, HeaderContainerPageUIs.LOGOUT_LINK);
 
-        waitForElementUndisplayed(driver, MyDashboardPageUI.LOGOUT_SUCCESS_MESSAGE);
-        return PageGeneratorManager.getUserHomePage(driver);
+		return PageGeneratorManager.getUserHomePage(driver);
 
-    }
+	}
 
-    public UserMyDashboardPageObject clickToMyAccountLink() {
-        waitForElementClickable(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
-        clickToElement(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
+	public UserMyDashboardPageObject clickToMyAccountLink() {
+		waitForElementClickable(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
+		clickToElement(driver, HeaderContainerPageUIs.ACCOUNT_LINK);
 
-        waitForElementClickable(driver, HeaderContainerPageUIs.MY_ACCOUNT_LINK);
-        clickToElement(driver, HeaderContainerPageUIs.MY_ACCOUNT_LINK);
+		waitForElementClickable(driver, HeaderContainerPageUIs.MY_ACCOUNT_LINK);
+		clickToElement(driver, HeaderContainerPageUIs.MY_ACCOUNT_LINK);
 
-        return PageGeneratorManager.getUserMyDashboardPage(driver);
-    }
+		return PageGeneratorManager.getUserMyDashboardPage(driver);
+	}
 }

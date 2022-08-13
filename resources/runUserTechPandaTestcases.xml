@@ -6,18 +6,19 @@
 
     <listeners>
         <listener class-name="commons.MethodListener"></listener>
-        <!--        <listener class-name="reportConfig.ReportNGListener"></listener>-->
-        <!--<listener class-name="reportConfig.ExtentTestListener"></listener>-->
-        <!--<listener class-name="reportConfig.AllureListener"></listener> -->
-        <!--        <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>-->
-        <!--        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>-->
+        <listener class-name="reportConfig.ReportNGListener"></listener>
+        <!-- <listener class-name="reportConfig.ExtentTestListener"></listener> -->
+        <!-- <listener class-name="reportConfig.AllureListener"></listener> -->
+        <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+        <listener class-name="retryConfig.RetryListener"></listener>
     </listeners>
 
     <test name="Run on CHROME browser">
         <parameter name="browser" value="chrome"/>
         <classes>
             <!--            <class name="com.techpanda.common.Common_01_Register_End_User"/>-->
-            <class name="com.techpanda.user.Level_19_Manage_Data_Json"/>
+            <class name="com.techpanda.user.Level_19_Manage_Data_Faker"/>
         </classes>
     </test>
 
