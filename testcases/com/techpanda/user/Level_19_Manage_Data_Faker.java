@@ -117,7 +117,7 @@ public class Level_19_Manage_Data_Faker extends BaseTest {
 		loginPage.clickToLoginButton();
 
 		log.info("Login_05 - Step 4: Verify whether the validate password error message is correct as expected");
-		Assert.assertEquals(loginPage.getEmailPasswordIncorrectErrorMessage(), "Invalid login or password..");
+		Assert.assertEquals(loginPage.getEmailPasswordIncorrectErrorMessage(), "Invalid login or password.");
 	}
 
 	@Test

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="false" name="Guru99">
+
+    <!-- <parameter name="url" value="dev"></parameter> -->
+    <!-- <parameter name="url" value="testing"></parameter> -->
+    <!-- <parameter name="url" value="staging"></parameter> -->
+    <parameter name="url" value="live"></parameter>
+
+    <listeners>
+        <listener class-name="commons.MethodListener"></listener>
+        <listener class-name="reportConfig.ReportNGListener"></listener>
+        <listener class-name="reportConfig.ExtentTestListener"></listener>
+        <!-- <listener class-name="reportConfig.AllureListener"></listener> -->
+        <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+        <listener class-name="retryConfig.RetryListener"></listener>
+    </listeners>
+
+    <test name="Run on CHROME browser">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.guru.environments.Level_21_Multi_Environments_External_Library"/>
+        </classes>
+    </test>
+
+</suite>

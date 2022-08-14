@@ -10,10 +10,12 @@ import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -24,6 +26,10 @@ public class BaseTest {
 	ChromeOptions chromeOptions;
 	FirefoxOptions firefoxOptions;
 	protected final Log log;
+
+	public enum EnvList {
+		DEV, TESTING, STAGING, LIVE;
+	}
 
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
@@ -39,9 +45,12 @@ public class BaseTest {
 			driver = WebDriverManager.firefoxdriver().create();
 			break;
 		case CHROME:
+			WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.args", "--disable-loging");
 			System.setProperty("webdriver.chrome.silentOutput", "true");
-			driver = WebDriverManager.chromedriver().create();
+			chromeOptions = new ChromeOptions();
+//			chromeOptions.addExtensions(new File(GlobalConstants.PROJECT_PATH + "/browserExtension/UltraSurf_1_6_8_0.crx"));
+			driver = new ChromeDriver(chromeOptions);
 			break;
 		case EDGE:
 			driver = WebDriverManager.edgedriver().create();
@@ -67,7 +76,6 @@ public class BaseTest {
 			break;
 		case COCCOC:
 			WebDriverManager.chromedriver().setup();
-//                System.setProperty("webdriver.chrome.driver", ".\\browserDrivers\\chromedriver.exe");
 			chromeOptions = new ChromeOptions();
 			chromeOptions.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
 			driver = new ChromeDriver(chromeOptions);
@@ -101,6 +109,53 @@ public class BaseTest {
 
 		default:
 			throw new RuntimeException("Browser is NOT supported");
+		}
+
+		driver.get(urlValue);
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+
+		return driver;
+	}
+
+	public WebDriver getBrowserDriverByLocalDrivers(String browserName, String urlValue) {
+
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+
+		switch (browserList) {
+		case FIREFOX:
+			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
+				System.setProperty("webdriver.gecko.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/geckodriver.exe");
+			} else {
+				System.setProperty("webdriver.gecko.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/geckodriver");
+			}
+			driver = new FirefoxDriver();
+			break;
+		case CHROME:
+			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
+				System.setProperty("webdriver.chrome.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/chromedriver.exe");
+			} else {
+				System.setProperty("webdriver.chrome.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/chromedriver");
+			}
+			driver = new ChromeDriver();
+			break;
+		case EDGE:
+			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
+				System.setProperty("webdriver.edge.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/msedgedriver.exe");
+			} else {
+				System.setProperty("webdriver.edge.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/msedgedriver");
+			}
+			driver = new EdgeDriver();
+			break;
+		case OPERA:
+			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
+				System.setProperty("webdriver.opera.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/operadriver.exe");
+			} else {
+				System.setProperty("webdriver.opera.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/operadriver");
+			}
+			driver = new OperaDriver();
+			break;
+		default:
+			throw new RuntimeException("Browser is NOT supported/programmed in this framework");
 		}
 
 		driver.get(urlValue);
@@ -229,5 +284,28 @@ public class BaseTest {
 				log.info("-------------" + logging.getLevel().toString() + "-------------\n" + logging.getMessage());
 			}
 		}
+	}
+
+	private String getEnvironment(String envName) {
+		EnvList envNames = EnvList.valueOf(envName.toUpperCase());
+		String url = null;
+		switch (envNames) {
+		case DEV:
+			url = GlobalConstants.DEV_GURU;
+			break;
+		case TESTING:
+			url = GlobalConstants.TESTING_GURU;
+			break;
+		case STAGING:
+			url = GlobalConstants.STAGING_GURU;
+			break;
+		case LIVE:
+			url = GlobalConstants.PRO_GURU;
+			break;
+
+		default:
+			throw new RuntimeException("The environment is not supported/programmed!!");
+		}
+		return url;
 	}
 }
