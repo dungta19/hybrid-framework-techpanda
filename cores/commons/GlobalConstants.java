@@ -52,4 +52,14 @@ public class GlobalConstants {
 	public static final String TESTING_GURU = "https://demo.guru99.com/v2/";
 	public static final String STAGING_GURU = "https://demo.guru99.com/v3/";
 	public static final String PRO_GURU = "https://demo.guru99.com/v4/";
+
+	/* Browserstack Cloud testing */
+	public static final String BROWSER_USERNAME = "dungta_Rly675";
+	public static final String BROWSER_ACCESS_KEY = "CaWpw98gYZrbAqvoPhdx";
+	public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME + ":" + BROWSER_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
+	/* Saucelabs Cloud testing */
+	public static final String SAUCELABS_USERNAME = "oauth-ttdung1901-89210";
+	public static final String SAUCELABS_ACCESS_KEY = "b3fed453-ae68-48c2-81c8-5862cdaddcf3";
+	public static final String SAUCELABS_URL = "https://" + SAUCELABS_USERNAME + ":" + SAUCELABS_ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 }

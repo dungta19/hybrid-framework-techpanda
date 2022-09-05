@@ -1,17 +1,12 @@
 package com.guru.environments;
 
-import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.navigation.PageGeneratorManager;
-import pageObjects.user.UserHomePageObject;
-import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
-import ultilities.DataHelper;
+
+import commons.BaseTest;
 
 public class Level_21_Multi_Environments_Java_Project extends BaseTest {
 	WebDriver driver;

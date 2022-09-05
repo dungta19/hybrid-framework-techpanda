@@ -1,44 +1,14 @@
-1659366016066	geckodriver	INFO	Listening on 127.0.0.1:3149
-1659366016648	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofilekD148i"
-1659366016907	Marionette	INFO	Marionette enabled
-1659366016911	Marionette	INFO	Listening on port 62730
-Read port: 62730
-1659366017150	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofilekD148i\\search.json.mozlz4", (void 0)))
+1662308173413	geckodriver	INFO	Listening on 127.0.0.1:10888
+1662308174040	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofileuj2rRe"
+1662308174303	Marionette	INFO	Marionette enabled
+1662308174307	Marionette	INFO	Listening on port 50689
+Read port: 50689
+1662308174521	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofileuj2rRe\\search.json.mozlz4", (void 0)))
 JavaScript error: , line 0: uncaught exception: undefined
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://pagead2.googlesyndication.com/bg/zRsni2KaYpGlbzf8qPigYhDu91QLoFuK7JLW1IaqgGI.js line 2 > eval line 7617 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous meJavassage for:" "httSp:/crip/livet er.terocr: hpanresource:d/a.org"
-/gre/modulecs/onsoLloginManagerPare.warn: Lento.jsm,g line 136: TiypenRecipeError: s: "getRecipes: fallingg RecipeManagerb ack to a synchronis null
-ous message JforavaScri:pt " "httperro://livr: resourcee.techp://gre/modules/LogianMannda.agerPoarrent.jsm, line 136: TypeError: gRecipeManag"
-ger is null
-JavaScript warning: https://pagead2.googlesyndication.com/bg/zRsni2KaYpGlbzf8qPigYhDu91QLoFuK7JLW1IaqgGI.js line 2 > eval line 6423 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous messaJge for:" "http://live.tecavaScrihpt error: panda.org"r
-esource://gre/modulcones/Lsole.warn: LoginRecipes: "geotRecipegs: falliinMng banack agerPareto ant.j synsm, chrolinenous me 13ssa6: Tyge peError:for gR:" "ecipehttp:/Mana/livger e.teis nulchpal
-nda.org"J
-avaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://pagead2.googlesyndication.com/bg/zRsni2KaYpGlbzf8qPigYhDu91QLoFuK7JLW1IaqgGI.js line 2 > eval line 757 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpandJa.org"avaS
-cript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"JavaScript err
-or: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRconsolecipe.weManaarn:g erLoginRecipe is s: "gnulletR
-ecipJavaScries:pt erro falr: resourcelin:g ba//gcrek to a synchrono/modulesus mess/Logage foinManagerPar:"rent. "httjsm,p://live. line 1tec36:hpanda TypeErr.orgor:"
- gRecipeManager is null
-JavaScript warning: https://pagead2.googlesyndication.com/bg/zRsni2KaYpGlbzf8qPigYhDu91QLoFuK7JLW1IaqgGI.js line 2 > eval line 4952 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://pagead2.googlesyndication.com/bg/zRsni2KaYpGlbzf8qPigYhDu91QLoFuK7JLW1IaqgGI.js line 2 > eval line 4853 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-console.warn: LoginRecipes: "getRecipes: falling back JavtoaScrip ta synchronous message  for:" "http://lierror: resource://ve.techgparndae/m.org"odule
-s/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://pagead2.googlesyndication.com/bg/zRsni2KaYpGlbzf8qPigYhDu91QLoFuK7JLW1IaqgGI.js line 2 > eval line 1772 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-1659366045908	Marionette	INFO	Stopped listening on port 62730
-[Parent 10560, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://live.techpanda.org."
+JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 3224 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 4277 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 6947 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 7810 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1662308188542	Marionette	INFO	Stopped listening on port 50689

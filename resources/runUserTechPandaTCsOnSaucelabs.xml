@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="false" name="TechPanda">
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="retryConfig.RetryListener" />
+	</listeners>
+
+	<test name="Run on FIREFOX browser">
+		<parameter name="url" value="http://live.techpanda.org/index.php/" />
+		<parameter name="osName" value="Windows 10" />
+		<parameter name="browser" value="Firefox" />
+		<classes>
+			<class name="com.techpanda.cloud.Level_22_Manage_Data_Faker_Saucelabs" />
+		</classes>
+	</test>
+
+	<test name="Run on CHROME browser">
+		<parameter name="url" value="http://live.techpanda.org/index.php/" />
+		<parameter name="osName" value="macOS 11.00" />
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.techpanda.cloud.Level_22_Manage_Data_Faker_Saucelabs" />
+		</classes>
+	</test>
+
+</suite>

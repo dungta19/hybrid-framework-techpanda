@@ -1,6 +1,8 @@
 package commons;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -16,6 +18,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -33,6 +37,47 @@ public class BaseTest {
 
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
+	}
+
+	public WebDriver getBrowserDriverBrowserstack(String browserName, String url, String osName, String osVersion) {
+		DesiredCapabilities capability = new DesiredCapabilities();
+
+		capability.setCapability("os", osName);
+		capability.setCapability("os_version", osVersion);
+		capability.setCapability("browser", browserName);
+		capability.setCapability("browser_version", "latest");
+		capability.setCapability("project", "TechPanda");
+		capability.setCapability("name", "Run on " + osName + " | " + osVersion + " | " + browserName + " latest");
+
+		try {
+			driver = new RemoteWebDriver(new URL(GlobalConstants.BROWSER_STACK_URL), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.get(url);
+
+		return driver;
+	}
+
+	public WebDriver getBrowserDriverSaucelabs(String browserName, String url, String osName) {
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setCapability("platformName", osName);
+		capability.setCapability("browserName", browserName);
+		capability.setCapability("browserVersion", "latest");
+		capability.setCapability("name", "Run on " + osName + " | " + browserName + " latest");
+
+		try {
+			driver = new RemoteWebDriver(new URL(GlobalConstants.SAUCELABS_URL), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.get(url);
+
+		return driver;
 	}
 
 	public WebDriver getBrowserDriver(String browserName) {
@@ -286,6 +331,7 @@ public class BaseTest {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private String getEnvironment(String envName) {
 		EnvList envNames = EnvList.valueOf(envName.toUpperCase());
 		String url = null;
