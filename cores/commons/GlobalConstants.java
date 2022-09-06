@@ -62,4 +62,9 @@ public class GlobalConstants {
 	public static final String SAUCELABS_USERNAME = "oauth-ttdung1901-89210";
 	public static final String SAUCELABS_ACCESS_KEY = "b3fed453-ae68-48c2-81c8-5862cdaddcf3";
 	public static final String SAUCELABS_URL = "https://" + SAUCELABS_USERNAME + ":" + SAUCELABS_ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+
+	/* Lambda Cloud testing */
+	public static final String LAMBDA_USERNAME = "ttdung1901";
+	public static final String LAMBDA_ACCESS_KEY = "SaU0K3KdZqmArCWGQqV4AcfVtwoh442JIDU859yoNpl0nhDjpR";
+	public static final String LAMBDA_URL = "https://" + LAMBDA_USERNAME + ":" + LAMBDA_ACCESS_KEY + "@hub.lambdatest.com/wd/hub";
 }

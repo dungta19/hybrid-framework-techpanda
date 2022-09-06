@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.navigation.PageGeneratorManager;
@@ -23,10 +24,10 @@ public class Level_22_Manage_Data_Faker_Saucelabs extends BaseTest {
 	String invalidEmail;
 	String randomPassword;
 
-	@Parameters({ "browser", "url", "osName" })
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
 	@BeforeClass
-	public void beforeClass(String browserName, String url, String osName) {
-		driver = getBrowserDriverSaucelabs(browserName, url, osName);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		dataTesting = DataHelper.getDataHelper();
 

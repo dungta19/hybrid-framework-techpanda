@@ -7,6 +7,7 @@ import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -23,70 +24,69 @@ import pageObjects.user.navigations.sideBar.MyWishlistPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
-    WebDriver driver;
-    UserHomePageObject homePage;
-    UserLoginPageObject loginPage;
-    UserMyDashboardPageObject myDashboardPage;
-    UserRegisterPageObject registerPage;
-    AccountInfoPageObject myAccountinforPage;
-    MyWishlistPageObject myWishlistPage;
-    MyOrdersPageObject myOrdersPage;
-    BillingAgreementsPageObject billingAgreementsPage;
-    MyDownloadableProductsPageObject myDownloadableProductsPage;
+	WebDriver driver;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
+	UserRegisterPageObject registerPage;
+	AccountInfoPageObject myAccountinforPage;
+	MyWishlistPageObject myWishlistPage;
+	MyOrdersPageObject myOrdersPage;
+	BillingAgreementsPageObject billingAgreementsPage;
+	MyDownloadableProductsPageObject myDownloadableProductsPage;
 
-    @Parameters({"browser"})
-    @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowserDriver(browserName);
-        homePage = PageGeneratorManager.getUserHomePage(driver);
-    }
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@BeforeClass
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+	}
 
-    @Test
-    public void Login_06_Valid_Email_And_Password() {
-        loginPage = homePage.openLoginPage();
-        loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
-        loginPage.inputToPasswordTextbox("123456789");
+	@Test
+	public void Login_06_Valid_Email_And_Password() {
+		loginPage = homePage.openLoginPage();
+		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
+		loginPage.inputToPasswordTextbox("123456789");
 
-        myDashboardPage = loginPage.clickToLoginButton();
-        assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
-    }
+		myDashboardPage = loginPage.clickToLoginButton();
+		assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
+	}
 
-    @Test
-    public void Login_07_Update_Account_Information() {
-        myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+	@Test
+	public void Login_07_Update_Account_Information() {
+		myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-        myAccountinforPage.enterToFirstNameTextBox("WebDriver" + getRandomNumber());
-        myAccountinforPage.enterToLastNameTextBox("Testing" + getRandomNumber());
-        myAccountinforPage.enterToEmailAddressTextBox("automationfullstack@gmail.net");
+		myAccountinforPage.enterToFirstNameTextBox("WebDriver" + getRandomNumber());
+		myAccountinforPage.enterToLastNameTextBox("Testing" + getRandomNumber());
+		myAccountinforPage.enterToEmailAddressTextBox("automationfullstack@gmail.net");
 
-        myAccountinforPage.enterToPasswordTextBox("123456789");
-        myDashboardPage = myAccountinforPage.clickToSaveButton();
+		myAccountinforPage.enterToPasswordTextBox("123456789");
+		myDashboardPage = myAccountinforPage.clickToSaveButton();
 
-        Assert.assertTrue(myDashboardPage.isAccountInformationMessageSavedDisplayed());
+		Assert.assertTrue(myDashboardPage.isAccountInformationMessageSavedDisplayed());
 
-    }
+	}
 
-    @Test
-    public void Switch_Page() {
-        myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+	@Test
+	public void Switch_Page() {
+		myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-        myWishlistPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyWishlistLink();
+		myWishlistPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyWishlistLink();
 
-        myOrdersPage = myWishlistPage.getSideBarMyAccountPage(driver).clickToMyOrdersLink();
+		myOrdersPage = myWishlistPage.getSideBarMyAccountPage(driver).clickToMyOrdersLink();
 
-        billingAgreementsPage = myOrdersPage.getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
+		billingAgreementsPage = myOrdersPage.getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
 
-        myDownloadableProductsPage = billingAgreementsPage.getSideBarMyAccountPage(driver)
-                .clickToMyDownloadableProductsLink();
+		myDownloadableProductsPage = billingAgreementsPage.getSideBarMyAccountPage(driver).clickToMyDownloadableProductsLink();
 
-        myAccountinforPage = myDownloadableProductsPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDownloadableProductsPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-        myDashboardPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyDashboardLink();
-    }
+		myDashboardPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyDashboardLink();
+	}
 
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
+	}
 
 }

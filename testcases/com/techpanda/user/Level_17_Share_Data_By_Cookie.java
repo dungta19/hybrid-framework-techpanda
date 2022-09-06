@@ -5,6 +5,7 @@ import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.navigation.PageGeneratorManager;
@@ -20,10 +21,10 @@ public class Level_17_Share_Data_By_Cookie extends BaseTest {
 	UserMyDashboardPageObject myDashboardPage;
 	UserRegisterPageObject registerPage;
 
-	@Parameters({ "browser" })
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 		log.info("Login_01 - Step 01 : Click to My Account link to navigate to Login Page");

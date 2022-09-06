@@ -1,14 +1,22 @@
-1662308173413	geckodriver	INFO	Listening on 127.0.0.1:10888
-1662308174040	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofileuj2rRe"
-1662308174303	Marionette	INFO	Marionette enabled
-1662308174307	Marionette	INFO	Listening on port 50689
-Read port: 50689
-1662308174521	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofileuj2rRe\\search.json.mozlz4", (void 0)))
+1662480252535	geckodriver	INFO	Listening on 127.0.0.1:6584
+1662480253143	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofilechdfBo"
+1662480253440	Marionette	INFO	Marionette enabled
+1662480253444	Marionette	INFO	Listening on port 51144
+Read port: 51144
+1662480253732	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ttdun\\AppData\\Local\\Temp\\rust_mozprofilechdfBo\\search.json.mozlz4", (void 0)))
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 292: NS_ERROR_FAILURE: Should pass a non-null uri
+console.error: services.settings: 
+  main/query-stripping Signature failed  InvalidSignatureError: Invalid content signature (main/query-stripping)
+console.error: services.settings: 
+  main/query-stripping local data was corrupted
+console.warn: services.settings: main/query-stripping Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/query-stripping Signature failed again InvalidSignatureError: Invalid content signature (main/query-stripping)
 JavaScript error: , line 0: uncaught exception: undefined
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://live.techpanda.org."
-JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 3224 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 4277 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 6947 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-JavaScript warning: https://pagead2.googlesyndication.com/bg/JRDtgcUl_7OUjJ4QO8bVbwNuRTRqDUxuSBYCwiPHS6U.js line 2 > eval line 7810 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-1662308188542	Marionette	INFO	Stopped listening on port 50689
+JavaScript warning: https://pagead2.googlesyndication.com/bg/CgETvhyXIYksjpVuZOiCWYZFr3TNicAtz6hsjYVMHCQ.js line 2 > eval line 517 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/CgETvhyXIYksjpVuZOiCWYZFr3TNicAtz6hsjYVMHCQ.js line 2 > eval line 6456 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/CgETvhyXIYksjpVuZOiCWYZFr3TNicAtz6hsjYVMHCQ.js line 2 > eval line 5920 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/CgETvhyXIYksjpVuZOiCWYZFr3TNicAtz6hsjYVMHCQ.js line 2 > eval line 7638 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1662480267335	Marionette	INFO	Stopped listening on port 51144

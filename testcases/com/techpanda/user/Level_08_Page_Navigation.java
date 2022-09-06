@@ -6,6 +6,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -30,79 +31,78 @@ import pageObjects.user.navigations.sideBar.MyWishlistPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 
 public class Level_08_Page_Navigation extends BaseTest {
-    WebDriver driver;
-    UserHomePageObject homePage;
-    UserLoginPageObject loginPage;
-    UserMyDashboardPageObject myDashboardPage;
-    UserRegisterPageObject registerPage;
-    AccountInfoPageObject myAccountinforPage;
-    MyWishlistPageObject myWishlistPage;
-    MyOrdersPageObject myOrdersPage;
-    BillingAgreementsPageObject billingAgreementsPage;
-    MyDownloadableProductsPageObject myDownloadableProductsPage;
-    AboutUsPageObject aboutUsPage;
-    ContactUsPageObject contactUsPage;
-    CustomerServicePageObject customerServicePage;
-    SiteMapPageObject siteMapPage;
-    SearchTermsPageObject searchTermsPage;
-    AdvancedSearchPageObject advancedSearchPage;
-    PrivacyPolicyPageObject privacyPolicyPage;
-    MyAccountPageObject myAccountPage;
+	WebDriver driver;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
+	UserRegisterPageObject registerPage;
+	AccountInfoPageObject myAccountinforPage;
+	MyWishlistPageObject myWishlistPage;
+	MyOrdersPageObject myOrdersPage;
+	BillingAgreementsPageObject billingAgreementsPage;
+	MyDownloadableProductsPageObject myDownloadableProductsPage;
+	AboutUsPageObject aboutUsPage;
+	ContactUsPageObject contactUsPage;
+	CustomerServicePageObject customerServicePage;
+	SiteMapPageObject siteMapPage;
+	SearchTermsPageObject searchTermsPage;
+	AdvancedSearchPageObject advancedSearchPage;
+	PrivacyPolicyPageObject privacyPolicyPage;
+	MyAccountPageObject myAccountPage;
 
-    @Parameters({"browser"})
-    @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowserDriver(browserName);
-        homePage = PageGeneratorManager.getUserHomePage(driver);
-    }
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@BeforeClass
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+	}
 
-    @Test
-    public void TC_01_SideBarContainer_Page_Navigator() {
-        loginPage = homePage.getFooterContainerPage(driver).openLoginPage();
-        loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
-        loginPage.inputToPasswordTextbox("123456789");
+	@Test
+	public void TC_01_SideBarContainer_Page_Navigator() {
+		loginPage = homePage.getFooterContainerPage(driver).openLoginPage();
+		loginPage.inputToEmailAddressTextbox("automationfullstack@gmail.net");
+		loginPage.inputToPasswordTextbox("123456789");
 
-        myDashboardPage = loginPage.clickToLoginButton();
-        assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
+		myDashboardPage = loginPage.clickToLoginButton();
+		assertTrue(myDashboardPage.getUserInfoText().contains("automationfullstack@gmail.net"));
 
-        myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDashboardPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-        myWishlistPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyWishlistLink();
+		myWishlistPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyWishlistLink();
 
-        myOrdersPage = myWishlistPage.getSideBarMyAccountPage(driver).clickToMyOrdersLink();
+		myOrdersPage = myWishlistPage.getSideBarMyAccountPage(driver).clickToMyOrdersLink();
 
-        billingAgreementsPage = myOrdersPage.getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
+		billingAgreementsPage = myOrdersPage.getSideBarMyAccountPage(driver).clickToBillingAgreementsLink();
 
-        myDownloadableProductsPage = billingAgreementsPage.getSideBarMyAccountPage(driver)
-                .clickToMyDownloadableProductsLink();
+		myDownloadableProductsPage = billingAgreementsPage.getSideBarMyAccountPage(driver).clickToMyDownloadableProductsLink();
 
-        myAccountinforPage = myDownloadableProductsPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
+		myAccountinforPage = myDownloadableProductsPage.getSideBarMyAccountPage(driver).clickToMyAccountInfoLink();
 
-        myDashboardPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyDashboardLink();
-    }
+		myDashboardPage = myAccountinforPage.getSideBarMyAccountPage(driver).clickToMyDashboardLink();
+	}
 
-    @Test
-    public void TC_02_FooterContainer_Page_Navigator() {
-        aboutUsPage = myDashboardPage.getFooterContainerPage(driver).openAboutUsPage();
+	@Test
+	public void TC_02_FooterContainer_Page_Navigator() {
+		aboutUsPage = myDashboardPage.getFooterContainerPage(driver).openAboutUsPage();
 
-        contactUsPage = aboutUsPage.getFooterContainerPage(driver).openContactUsPage();
+		contactUsPage = aboutUsPage.getFooterContainerPage(driver).openContactUsPage();
 
-        customerServicePage = contactUsPage.getFooterContainerPage(driver).openCustomerServicePage();
+		customerServicePage = contactUsPage.getFooterContainerPage(driver).openCustomerServicePage();
 
-        privacyPolicyPage = customerServicePage.getFooterContainerPage(driver).openPrivacyPolicyPage();
+		privacyPolicyPage = customerServicePage.getFooterContainerPage(driver).openPrivacyPolicyPage();
 
-        siteMapPage = privacyPolicyPage.getFooterContainerPage(driver).openSiteMapPage();
+		siteMapPage = privacyPolicyPage.getFooterContainerPage(driver).openSiteMapPage();
 
-        searchTermsPage = siteMapPage.getFooterContainerPage(driver).openSearchTermsPage();
+		searchTermsPage = siteMapPage.getFooterContainerPage(driver).openSearchTermsPage();
 
-        advancedSearchPage = searchTermsPage.getFooterContainerPage(driver).openAdvancedSearchPage();
+		advancedSearchPage = searchTermsPage.getFooterContainerPage(driver).openAdvancedSearchPage();
 
-        myAccountPage = advancedSearchPage.getFooterContainerPage(driver).openMyAccountPage();
-    }
+		myAccountPage = advancedSearchPage.getFooterContainerPage(driver).openMyAccountPage();
+	}
 
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
+	}
 
 }

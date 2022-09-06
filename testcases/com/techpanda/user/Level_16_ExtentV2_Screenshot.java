@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 //import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -20,23 +21,23 @@ import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 //import reportConfig.ExtentTestManager;
 
 public class Level_16_ExtentV2_Screenshot extends BaseTest {
-    WebDriver driver;
-    UserHomePageObject homePage;
-    UserLoginPageObject loginPage;
-    UserMyDashboardPageObject myDashboardPage;
-    UserRegisterPageObject registerPage;
-    String incorrectEmail = "auto_test" + getRandomNumber() + "@live.com";
-    String invalidEmail = "123@456.789";
-    String randomPassword = getRandomNumber() + "";
+	WebDriver driver;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
+	UserRegisterPageObject registerPage;
+	String incorrectEmail = "auto_test" + getRandomNumber() + "@live.com";
+	String invalidEmail = "123@456.789";
+	String randomPassword = getRandomNumber() + "";
 
-    @Parameters({"browser"})
-    @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowserDriver(browserName);
-        homePage = PageGeneratorManager.getUserHomePage(driver);
-    }
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@BeforeClass
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+	}
 
-    @Test
+	@Test
 //	public void Login_01_Empty_Email_Password(Method method) {
 //		ExtentTestManager.startTest(method.getName(), "Login_01_Empty_Email_Password");
 //		loginPage = homePage.openLoginPage();
@@ -177,9 +178,9 @@ public class Level_16_ExtentV2_Screenshot extends BaseTest {
 //
 //	}
 
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
+	}
 
 }

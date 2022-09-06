@@ -1,17 +1,19 @@
 package com.techpanda.common;
 
-import commons.BaseTest;
+import java.util.Set;
+
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import commons.BaseTest;
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.UserRegisterPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
-
-import java.util.Set;
 
 public class Common_01_Register_Cookie extends BaseTest {
 	WebDriver driver;
@@ -23,10 +25,10 @@ public class Common_01_Register_Cookie extends BaseTest {
 	public static String firstName, lastName;
 	public static Set<Cookie> loggedCookies;
 
-	@Parameters({ "browser" })
-	@BeforeTest
-	public void Login_01_Valid_Email_And_Password(String browserName) {
-		driver = getBrowserDriver(browserName);
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@BeforeClass
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 		firstName = "Tom";

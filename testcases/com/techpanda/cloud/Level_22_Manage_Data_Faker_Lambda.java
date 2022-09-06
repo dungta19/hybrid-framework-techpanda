@@ -1,4 +1,4 @@
-package com.techpanda.user;
+package com.techpanda.cloud;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 import ultilities.DataHelper;
 
-public class Level_19_Manage_Data_Faker extends BaseTest {
+public class Level_22_Manage_Data_Faker_Lambda extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
@@ -40,15 +40,12 @@ public class Level_19_Manage_Data_Faker extends BaseTest {
 	public void Login_01_Empty_Email_Password() {
 		loginPage = homePage.openLoginPage();
 		log.info("Login_01 - Step 1: Input an empty value to email address textbox ");
-//        loginPage.inputToEmailAddressTextbox("");
 		loginPage.inputToTextBoxByID(driver, "email", "");
 
 		log.info("Login_01 - Step 2: Input an empty value to password textbox ");
-//        loginPage.inputToPasswordTextbox("");
 		loginPage.inputToTextBoxByID(driver, "pass", "");
 
 		log.info("Login_01 - Step 3: Click to login button ");
-		// Do NOT use Pattern Object for any specific functionals
 		loginPage.clickToLoginButton();
 
 		log.info("Login_01 - Step 4: Verify whether the validate email error message is correct as expected ");

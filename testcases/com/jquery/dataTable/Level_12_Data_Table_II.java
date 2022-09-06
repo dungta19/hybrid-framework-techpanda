@@ -3,6 +3,7 @@ package com.jquery.dataTable;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -14,10 +15,10 @@ public class Level_12_Data_Table_II extends BaseTest {
 	WebDriver driver;
 	HomePageObject homePage;
 
-	@Parameters({ "browser", "URL2" })
+	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName, url);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
 		homePage = PageGeneratorManager.getHomePage(driver);
 
 	}

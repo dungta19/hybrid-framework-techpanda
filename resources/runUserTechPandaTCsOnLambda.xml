@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="false" name="TechPanda">
-	<parameter name="envName" value="saucelabs" />
+	<parameter name="envName" value="lambda" />
 
 	<listeners>
 		<listener class-name="commons.MethodListener" />
@@ -16,16 +16,16 @@
 		<parameter name="osName" value="Windows 10" />
 		<parameter name="browser" value="Firefox" />
 		<classes>
-			<class name="com.techpanda.cloud.Level_22_Manage_Data_Faker_Saucelabs" />
+			<class name="com.techpanda.cloud.Level_22_Manage_Data_Faker_Lambda" />
 		</classes>
 	</test>
 
 	<test name="Run on CHROME browser">
 		<parameter name="url" value="http://live.techpanda.org/index.php/" />
-		<parameter name="osName" value="macOS 11.00" />
+		<parameter name="osName" value="MacOS Monterey" />
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.techpanda.cloud.Level_22_Manage_Data_Faker_Saucelabs" />
+			<class name="com.techpanda.cloud.Level_22_Manage_Data_Faker_Lambda" />
 		</classes>
 	</test>
 
