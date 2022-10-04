@@ -38,10 +38,10 @@ public class Level_09_Switch_Role extends BaseTest {
 	String userURL;
 	String adminURL;
 
-	@Parameters({ "browser", "envName", "osName", "osVersion" })
+	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, userURL, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 	}
 

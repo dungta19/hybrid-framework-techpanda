@@ -29,7 +29,7 @@ public class CloudFactoryLambda {
 		capability.setCapability("name", "Run on " + osName + " | " + browserName + " latest");
 
 		try {
-			driver = new RemoteWebDriver(new URL(GlobalConstants.LAMBDA_URL), capability);
+			driver = new RemoteWebDriver(new URL(GlobalConstants.getGlobalConstants().getLamdaUrl()), capability);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

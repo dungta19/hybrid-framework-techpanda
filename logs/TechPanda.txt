@@ -1,0 +1,87 @@
+[INFO ] [2022-10-03 21:20:05,598] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-10-03 21:20:05,809] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-10-03 21:20:05,864] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-10-03 21:20:05,935] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-10-03 21:20:06,012] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-10-03 21:20:06,035] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-10-03 21:20:06,099] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-10-03 21:20:06,136] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-10-03 21:20:06,208] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-10-03 21:20:06,218] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-10-03 21:20:06,268] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-10-03 21:20:06,331] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-10-03 21:20:06,343] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:06,443] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:06,458] Login_02 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:06,532] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-10-03 21:20:06,553] Login_02 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:06,595] Login_03 - Step 1: Input a never registered email address 'donovan.cruickshank@hotmail.com'
+[INFO ] [2022-10-03 21:20:06,629] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-10-03 21:20:06,690] Login_03 - Step 1: Input a never registered email address 'jan.murazik@yahoo.com'
+[INFO ] [2022-10-03 21:20:06,733] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:06,811] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:06,863] Login_03 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:06,931] Login_03 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:07,965] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-10-03 21:20:08,021] Login_04 - Step 1: Input a never registered email address 'donovan.cruickshank@hotmail.com'
+[INFO ] [2022-10-03 21:20:08,046] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-10-03 21:20:08,099] Login_04 - Step 1: Input a never registered email address 'jan.murazik@yahoo.com'
+[INFO ] [2022-10-03 21:20:08,246] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-10-03 21:20:08,325] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-10-03 21:20:08,371] Login_04 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:08,451] Login_04 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:08,452] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-10-03 21:20:08,501] Login_05 - Step 1: Input a never registered email address 'donovan.cruickshank@hotmail.com'
+[INFO ] [2022-10-03 21:20:08,527] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-10-03 21:20:08,581] Login_05 - Step 1: Input a never registered email address 'jan.murazik@yahoo.com'
+[INFO ] [2022-10-03 21:20:08,630] Login_05 - Step 2: Input a well-formated password but it was never used before '!yJ#1UA$'
+[INFO ] [2022-10-03 21:20:08,703] Login_05 - Step 2: Input a well-formated password but it was never used before 'ueDy9!67'
+[INFO ] [2022-10-03 21:20:08,755] Login_05 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:08,819] Login_05 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:09,836] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-10-03 21:20:09,888] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-10-03 21:20:09,901] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-10-03 21:20:09,964] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-10-03 21:20:10,107] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:10,199] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:10,235] Login_06 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:10,329] Login_06 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:11,350] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-10-03 21:20:11,405] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-10-03 21:20:11,471] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-10-03 21:20:11,522] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-10-03 21:20:11,540] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-10-03 21:20:11,672] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-10-03 21:20:12,408] OS name = windows 10
+[INFO ] [2022-10-03 21:20:12,408] Driver instance name = chromedriver: chrome on windows (647f846825e00c5042bf7cad2f8e9321)
+[INFO ] [2022-10-03 21:20:13,012] OS name = windows 10
+[INFO ] [2022-10-03 21:20:13,012] Driver instance name = edgedriver: msedge on windows (f868950c03af74fe5f00141db45671fd)
+[INFO ] [2022-10-03 21:20:18,524] Login_01 - Step 1: Input an empty value to email address textbox 
+[INFO ] [2022-10-03 21:20:18,618] Login_01 - Step 2: Input an empty value to password textbox 
+[INFO ] [2022-10-03 21:20:18,714] Login_01 - Step 3: Click to login button 
+[INFO ] [2022-10-03 21:20:19,001] Login_01 - Step 4: Verify whether the validate email error message is correct as expected 
+[INFO ] [2022-10-03 21:20:19,044] Login_01 - Step 5: Verify whether the validate password error message is correct as expected 
+[INFO ] [2022-10-03 21:20:19,088] Login_02 - Step 1: Input an invalid email address '123@456.789'
+[INFO ] [2022-10-03 21:20:19,182] Login_02 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:19,271] Login_02 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:19,551] Login_02 - Step 4: Verify whether the validate email error message is correct as expected
+[INFO ] [2022-10-03 21:20:19,600] Login_03 - Step 1: Input a never registered email address 'annabelle.ratke@hotmail.com'
+[INFO ] [2022-10-03 21:20:19,696] Login_03 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:19,783] Login_03 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:21,066] Login_03 - Step 4: Verify whether the validate email/password error message is correct as expected
+[INFO ] [2022-10-03 21:20:21,112] Login_04 - Step 1: Input a never registered email address 'annabelle.ratke@hotmail.com'
+[INFO ] [2022-10-03 21:20:21,196] Login_04 - Step 2: Input a password less than 6 characters
+[INFO ] [2022-10-03 21:20:21,273] Login_04 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:21,545] Login_04 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-10-03 21:20:21,589] Login_05 - Step 1: Input a never registered email address 'annabelle.ratke@hotmail.com'
+[INFO ] [2022-10-03 21:20:21,680] Login_05 - Step 2: Input a well-formated password but it was never used before '*UCbdd*s'
+[INFO ] [2022-10-03 21:20:21,766] Login_05 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:23,018] Login_05 - Step 4: Verify whether the validate password error message is correct as expected
+[INFO ] [2022-10-03 21:20:23,058] Login_06 - Step 1: Input a valid email address
+[INFO ] [2022-10-03 21:20:23,152] Login_06 - Step 2: Input a valid password
+[INFO ] [2022-10-03 21:20:23,234] Login_06 - Step 3: Click to login button
+[INFO ] [2022-10-03 21:20:24,478] Login_06 - Step 4: Verify whether the user name  is correct as expected
+[INFO ] [2022-10-03 21:20:24,522] Login_06 - Step 5: Verify whether the user email is correct as expected
+[INFO ] [2022-10-03 21:20:24,567] Login_06 - Step 6: Click to logout button
+[INFO ] [2022-10-03 21:20:25,734] OS name = windows 10
+[INFO ] [2022-10-03 21:20:25,734] Driver instance name = firefoxdriver: firefox on windows (2b872a15-ecca-41c0-9a5f-ac803c60a8e1)

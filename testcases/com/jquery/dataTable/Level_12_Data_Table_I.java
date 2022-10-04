@@ -16,10 +16,10 @@ public class Level_12_Data_Table_I extends BaseTest {
 	WebDriver driver;
 	HomePageObject homePage;
 
-	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		homePage = PageGeneratorManager.getHomePage(driver);
 
 	}

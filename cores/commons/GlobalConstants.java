@@ -2,69 +2,59 @@ package commons;
 
 import java.io.File;
 
+import lombok.Getter;
+
+@Getter
 public class GlobalConstants {
-	// System information
-	public static final String PROJECT_PATH = System.getProperty("user.dir");
-	public static final String OS_NAME = System.getProperty("os.name");
-	public static final String JAVA_VERSION = System.getProperty("java.version");
+	private static GlobalConstants globalInstance;
 
-	// Application information USER
-	public static final String DEV_USER_URL = "http://dev.techpanda.org/";
-	public static final String STAGING_USER_URL = "http://staging.techpanda.org/";
-	public static final String LIVE_USER_URL = "http://live.techpanda.org/";
+	private GlobalConstants() {
 
-	// Application information ADMIN
-	public static final String DEV_ADMIN_URL = "http://dev.techpanda.org/index.php/backendlogin";
-	public static final String STAGING_ADMIN_URL = "http://staging.techpanda.org/index.php/backendlogin";
-	public static final String LIVE_ADMIN_URL = "http://live.techpanda.org/index.php/backendlogin";
+	}
 
-	public static final String ADMIN_USERNAME = "user01";
-	public static final String ADMIN_PASSWORD = "guru99com";
+	public static synchronized GlobalConstants getGlobalConstants() {
+		if (globalInstance == null) {
+			globalInstance = new GlobalConstants();
+		}
+		return globalInstance;
+	}
 
-	// Wait Timeout information
-	public static final long SHORT_TIMEOUT = 10;
-	public static final long LONG_TIMEOUT = 30;
-
-	// Download/ Upload files
-	public static final String UPLOAD_PATH = PROJECT_PATH + "/uploadFiles/";
-	public static final String DOWNLOAD_PATH = PROJECT_PATH + "/downloadFiles/";
-	public static final String REPORTNG_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGFailureScreenShots" + File.separator;
-
-	// Retry Case failed
-	public static final int RETRY_NUMBER = 3;
-
-	// Browser Logs
-	public static final String BROWSER_LOG_PATH = PROJECT_PATH + "/browserLogs/";
-	public static final String BROWSER_EXTENSION_PATH = PROJECT_PATH + "/browserExtensions/";
-
-	// HTML Report Folder
-	public static final String REPORTNG_PATH = PROJECT_PATH + "/htmlReprtNG/";
-	public static final String EXTENT_PATH = PROJECT_PATH + "/htmlExtent/";
-	public static final String ALLURE_PATH = PROJECT_PATH + "/htmlAllure/";
-
-	// SauceLab Page
-	public static final String SL_USER_NAME_TEXT_BOX = "id=user-name";
-	public static final String SL_PASSWORD_TEXT_BOX = "id=password";
-	public static final String SL_LOGIN_BUTTON = "id=login-button";
-
-	// Guru99 Page
-	public static final String DEV_GURU = "https://demo.guru99.com/v1/";
-	public static final String TESTING_GURU = "https://demo.guru99.com/v2/";
-	public static final String STAGING_GURU = "https://demo.guru99.com/v3/";
-	public static final String PRO_GURU = "https://demo.guru99.com/v4/";
-
-	/* Browserstack Cloud testing */
-	public static final String BROWSER_USERNAME = "dungta_Rly675";
-	public static final String BROWSER_ACCESS_KEY = "CaWpw98gYZrbAqvoPhdx";
-	public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME + ":" + BROWSER_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
-
-	/* Saucelabs Cloud testing */
-	public static final String SAUCELABS_USERNAME = "oauth-ttdung1901-89210";
-	public static final String SAUCELABS_ACCESS_KEY = "b3fed453-ae68-48c2-81c8-5862cdaddcf3";
-	public static final String SAUCELABS_URL = "https://" + SAUCELABS_USERNAME + ":" + SAUCELABS_ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
-
-	/* Lambda Cloud testing */
-	public static final String LAMBDA_USERNAME = "ttdung1901";
-	public static final String LAMBDA_ACCESS_KEY = "SaU0K3KdZqmArCWGQqV4AcfVtwoh442JIDU859yoNpl0nhDjpR";
-	public static final String LAMBDA_URL = "https://" + LAMBDA_USERNAME + ":" + LAMBDA_ACCESS_KEY + "@hub.lambdatest.com/wd/hub";
+	private final String projectPath = System.getProperty("user.dir");
+	private final String osName = System.getProperty("os.name");
+	private final String javaVersion = System.getProperty("java.version");
+	private final String devUserUrl = "http://dev.techpanda.org/";
+	private final String stagingUserUrl = "http://staging.techpanda.org/";
+	private final String liveUserUrl = "http://live.techpanda.org/";
+	private final String devAdminUrl = "http://dev.techpanda.org/index.php/backendlogin";
+	private final String stagingAdminUrl = "http://staging.techpanda.org/index.php/backendlogin";
+	private final String liveAdminUrl = "http://live.techpanda.org/index.php/backendlogin";
+	private final String adminUsername = "user01";
+	private final String adminPassword = "guru99com";
+	private final long shortTimeout = 10;
+	private final long longTimeout = 30;
+	private final String uploadPath = projectPath + "/uploadFiles/";
+	private final String downloadPath = projectPath + "/downloadFiles/";
+	private final String reportNGScreenshoot = projectPath + File.separator + "ReportNGFailureScreenShots" + File.separator;
+	private final int RETRY_NUMBER = 3;
+	private final String browserLogPath = projectPath + "/browserLogs/";
+	private final String browserExtensionPath = projectPath + "/browserExtensions/";
+	private final String reportNGPath = projectPath + "/htmlReprtNG/";
+	private final String extentPath = projectPath + "/htmlExtent/";
+	private final String allurePath = projectPath + "/htmlAllure/";
+	private final String saucelabUserNameTextbox = "id=user-name";
+	private final String saucelabPasswordTextbox = "id=password";
+	private final String saucelabLoginButton = "id=login-button";
+	private final String devGuru = "https://demo.guru99.com/v1/";
+	private final String testingGuru = "https://demo.guru99.com/v2/";
+	private final String stagingGuru = "https://demo.guru99.com/v3/";
+	private final String productGuru = "https://demo.guru99.com/v4/";
+	private final String browserUserName = "dungta_Rly675";
+	private final String browserAccessKey = "CaWpw98gYZrbAqvoPhdx";
+	private final String browserStackUrl = "https://" + browserUserName + ":" + browserAccessKey + "@hub-cloud.browserstack.com/wd/hub";
+	private final String saucelabsUserName = "oauth-ttdung1901-89210";
+	private final String saucelabsAccessKey = "b3fed453-ae68-48c2-81c8-5862cdaddcf3";
+	private final String saucelabsUrl = "https://" + saucelabsUserName + ":" + saucelabsAccessKey + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+	private final String lamdaUsername = "ttdung1901";
+	private final String lamdaAcessKey = "SaU0K3KdZqmArCWGQqV4AcfVtwoh442JIDU859yoNpl0nhDjpR";
+	private final String lamdaUrl = "https://" + lamdaUsername + ":" + lamdaAcessKey + "@hub.lambdatest.com/wd/hub";
 }

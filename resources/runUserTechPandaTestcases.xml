@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="false" name="TechPanda">
+<suite parallel="tests" name="TechPanda" thread-count="3">
 
     <parameter name="url" value="http://live.techpanda.org/index.php/"></parameter>
 
@@ -21,5 +21,21 @@
             <class name="com.techpanda.user.Level_19_Manage_Data_Faker"/>
         </classes>
     </test>
+    
+    <test name="Run on FIREFOX browser">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <!--            <class name="com.techpanda.common.Common_01_Register_End_User"/>-->
+            <class name="com.techpanda.user.Level_19_Manage_Data_Faker"/>
+        </classes>
+    </test>
+    
+    <test name="Run on EDGE browser">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <!--            <class name="com.techpanda.common.Common_01_Register_End_User"/>-->
+            <class name="com.techpanda.user.Level_19_Manage_Data_Faker"/>
+        </classes>
+    </test>
 
-</suite>
+</suite> 

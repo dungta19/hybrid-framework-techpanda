@@ -25,10 +25,10 @@ public class Common_01_Register_Cookie extends BaseTest {
 	public static String firstName, lastName;
 	public static Set<Cookie> loggedCookies;
 
-	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 		firstName = "Tom";

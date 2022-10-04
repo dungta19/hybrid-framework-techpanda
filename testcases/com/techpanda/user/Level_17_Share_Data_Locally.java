@@ -22,10 +22,10 @@ public class Level_17_Share_Data_Locally extends BaseTest {
 	private String userEmail, userPassword;
 	private String firstName, lastName;
 
-	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 		firstName = "Tom";

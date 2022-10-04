@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="TechPanda" thread-count="3">
+	<parameter name="envName" value="docker" />
+		<parameter name="url" value="http://live.techpanda.org/index.php/" />
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="retryConfig.RetryListener" />
+	</listeners>
+	
+	<test name="Run on CHROME browser">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ipAddress" value="192.168.1.3" />
+		<parameter name="portNumber" value="4444" />
+		<classes>
+			<class name="com.techpanda.grid.Level_22_Manage_Data_Faker_Grid_I_Local" />
+		</classes>
+	</test>
+	
+	<test name="Run on FIREFOX browser">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="ipAddress" value="192.168.1.3" />
+		<parameter name="portNumber" value="4444" />
+		<classes>
+			<class name="com.techpanda.grid.Level_22_Manage_Data_Faker_Grid_I_Local" />
+		</classes>
+	</test>
+	
+</suite>

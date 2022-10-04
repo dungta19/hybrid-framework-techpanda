@@ -24,10 +24,11 @@ public class Level_19_Manage_Data_Faker extends BaseTest {
 	String invalidEmail;
 	String randomPassword;
 
-	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
+	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, @Optional("localhost") String ipAddress,
+			@Optional("4444") String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		dataTesting = DataHelper.getDataHelper();
 

@@ -1,4 +1,4 @@
-package com.techpanda.user;
+package com.techpanda.grid;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
@@ -8,49 +8,44 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import com.techpanda.data.UserDataMapper;
-
 import pageObjects.navigation.PageGeneratorManager;
 import pageObjects.user.UserHomePageObject;
 import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
+import ultilities.DataHelper;
 
-public class Level_19_Manage_Data_Json extends BaseTest {
+public class Level_22_Manage_Data_Faker_Grid_II_Browserstack extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
 	UserMyDashboardPageObject myDashboardPage;
-	UserDataMapper userdataMapper;
+	DataHelper dataTesting;
 	String incorrectEmail;
 	String invalidEmail;
-	String password;
+	String randomPassword;
 
 	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
 	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
 		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
-		userdataMapper = UserDataMapper.getUserData("Account.json");
+		dataTesting = DataHelper.getDataHelper();
 
-		incorrectEmail = userdataMapper.getUserEmail();
+		incorrectEmail = dataTesting.getEmailAddress();
 		invalidEmail = "123@456.789";
-		password = userdataMapper.getUserPassword();
+		randomPassword = dataTesting.getPassword();
 	}
 
 	@Test
 	public void Login_01_Empty_Email_Password() {
 		loginPage = homePage.openLoginPage();
 		log.info("Login_01 - Step 1: Input an empty value to email address textbox ");
-//        loginPage.inputToEmailAddressTextbox("");
 		loginPage.inputToTextBoxByID(driver, "email", "");
 
 		log.info("Login_01 - Step 2: Input an empty value to password textbox ");
-//        loginPage.inputToPasswordTextbox("");
 		loginPage.inputToTextBoxByID(driver, "pass", "");
 
 		log.info("Login_01 - Step 3: Click to login button ");
-		// Do NOT use Pattern Object for any specific functionals
 		loginPage.clickToLoginButton();
 
 		log.info("Login_01 - Step 4: Verify whether the validate email error message is correct as expected ");
@@ -113,8 +108,8 @@ public class Level_19_Manage_Data_Json extends BaseTest {
 		log.info("Login_05 - Step 1: Input a never registered email address '" + incorrectEmail + "'");
 		loginPage.inputToTextBoxByID(driver, "email", incorrectEmail);
 
-		log.info("Login_05 - Step 2: Input a well-formated password but it was never used before '" + password + "'");
-		loginPage.inputToTextBoxByID(driver, "pass", password);
+		log.info("Login_05 - Step 2: Input a well-formated password but it was never used before '" + randomPassword + "'");
+		loginPage.inputToTextBoxByID(driver, "pass", randomPassword);
 
 		log.info("Login_05 - Step 3: Click to login button");
 		loginPage.clickToLoginButton();

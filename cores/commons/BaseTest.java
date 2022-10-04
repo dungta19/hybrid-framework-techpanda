@@ -25,9 +25,10 @@ import factoryBrowser.CloudFactoryLambda;
 import factoryBrowser.CloudFactorySauceLabs;
 import factoryBrowser.EnvList;
 import factoryBrowser.LocalFactory;
+import factoryBrowser.LocalFactoryDocker;
 
 public class BaseTest {
-	WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	ChromeOptions chromeOptions;
 	FirefoxOptions firefoxOptions;
 	protected final Log log;
@@ -36,29 +37,32 @@ public class BaseTest {
 		log = LogFactory.getLog(getClass());
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String url, String envName, String osName, String osVersion) {
+	protected WebDriver getBrowserDriver(String browserName, String url, String envName, String osName, String osVersion, String ipAddress, String portNumber) {
 		switch (envName.toLowerCase()) {
 		case "local":
-			driver = new LocalFactory(browserName).createDriver();
+			driver.set(new LocalFactory(browserName).createDriver());
+			break;
+		case "docker":
+			driver.set(new LocalFactoryDocker(browserName, ipAddress, portNumber).createDriver());
 			break;
 		case "browserstack":
-			driver = new CloudFactoryBrowserstack(browserName, osName, osVersion).createDriver();
+			driver.set(new CloudFactoryBrowserstack(browserName, osName, osVersion).createDriver());
 			break;
 		case "saucelabs":
-			driver = new CloudFactorySauceLabs(browserName, osName).createDriver();
+			driver.set(new CloudFactorySauceLabs(browserName, osName).createDriver());
 			break;
 		case "lambda":
-			driver = new CloudFactoryLambda(browserName, osName).createDriver();
+			driver.set(new CloudFactoryLambda(browserName, osName).createDriver());
 			break;
 		default:
-			driver = new LocalFactory(browserName).createDriver();
+			driver.set(new LocalFactory(browserName).createDriver());
 		}
 
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get(url);
+		driver.get().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
+		driver.get().manage().window().maximize();
+		driver.get().get(url);
 
-		return driver;
+		return driver.get();
 	}
 
 	public WebDriver getBrowserDriverLocalByBrowserDrivers(String browserName, String urlValue) {
@@ -67,45 +71,45 @@ public class BaseTest {
 
 		switch (browserList) {
 		case FIREFOX:
-			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
-				System.setProperty("webdriver.gecko.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/geckodriver.exe");
+			if (GlobalConstants.getGlobalConstants().getOsName().startsWith("Windows")) {
+				System.setProperty("webdriver.gecko.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/geckodriver.exe");
 			} else {
-				System.setProperty("webdriver.gecko.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/geckodriver");
+				System.setProperty("webdriver.gecko.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/geckodriver");
 			}
-			driver = new FirefoxDriver();
+			driver.set(new FirefoxDriver());
 			break;
 		case CHROME:
-			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
-				System.setProperty("webdriver.chrome.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/chromedriver.exe");
+			if (GlobalConstants.getGlobalConstants().getOsName().startsWith("Windows")) {
+				System.setProperty("webdriver.chrome.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/chromedriver.exe");
 			} else {
-				System.setProperty("webdriver.chrome.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/chromedriver");
+				System.setProperty("webdriver.chrome.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/chromedriver");
 			}
-			driver = new ChromeDriver();
+			driver.set(new ChromeDriver());
 			break;
 		case EDGE:
-			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
-				System.setProperty("webdriver.edge.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/msedgedriver.exe");
+			if (GlobalConstants.getGlobalConstants().getOsName().startsWith("Windows")) {
+				System.setProperty("webdriver.edge.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/msedgedriver.exe");
 			} else {
-				System.setProperty("webdriver.edge.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/msedgedriver");
+				System.setProperty("webdriver.edge.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/msedgedriver");
 			}
-			driver = new EdgeDriver();
+			driver.set(new EdgeDriver());
 			break;
 		case OPERA:
-			if (GlobalConstants.OS_NAME.startsWith("Windows")) {
-				System.setProperty("webdriver.opera.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/operadriver.exe");
+			if (GlobalConstants.getGlobalConstants().getOsName().startsWith("Windows")) {
+				System.setProperty("webdriver.opera.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/operadriver.exe");
 			} else {
-				System.setProperty("webdriver.opera.driver", GlobalConstants.PROJECT_PATH + "/browserDrivers/operadriver");
+				System.setProperty("webdriver.opera.driver", GlobalConstants.getGlobalConstants().getProjectPath() + "/browserDrivers/operadriver");
 			}
-			driver = new OperaDriver();
+			driver.set(new OperaDriver());
 			break;
 		default:
 			throw new RuntimeException("Browser is NOT supported/programmed in this framework");
 		}
 
-		driver.get(urlValue);
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.get().get(urlValue);
+		driver.get().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
 
-		return driver;
+		return driver.get();
 	}
 
 	protected int getRandomNumber() {
@@ -161,7 +165,7 @@ public class BaseTest {
 			String osName = System.getProperty("os.name").toLowerCase();
 			log.info("OS name = " + osName);
 
-			String driverInstanceName = driver.toString().toLowerCase();
+			String driverInstanceName = driver.get().toString().toLowerCase();
 			log.info("Driver instance name = " + driverInstanceName);
 
 			if (driverInstanceName.contains("chrome")) {
@@ -199,8 +203,9 @@ public class BaseTest {
 			}
 
 			if (driver != null) {
-				driver.manage().deleteAllCookies();
-				driver.quit();
+				driver.get().manage().deleteAllCookies();
+				driver.get().quit();
+				driver.remove();
 			}
 		} catch (Exception e) {
 			log.info(e.getMessage());
@@ -217,12 +222,12 @@ public class BaseTest {
 	}
 
 	public WebDriver getDriverInstance() {
-		return this.driver;
+		return driver.get();
 	}
 
 	protected void showBrowserConsoleLogs() {
 		if (driver.toString().contains("chrome")) {
-			LogEntries logs = driver.manage().logs().get("browser");
+			LogEntries logs = driver.get().manage().logs().get("browser");
 			List<LogEntry> logList = logs.getAll();
 			for (LogEntry logging : logList) {
 				log.info("-------------" + logging.getLevel().toString() + "-------------\n" + logging.getMessage());
@@ -236,16 +241,16 @@ public class BaseTest {
 		String url = null;
 		switch (envNames) {
 		case DEV:
-			url = GlobalConstants.DEV_GURU;
+			url = GlobalConstants.getGlobalConstants().getDevGuru();
 			break;
 		case TESTING:
-			url = GlobalConstants.TESTING_GURU;
+			url = GlobalConstants.getGlobalConstants().getTestingGuru();
 			break;
 		case STAGING:
-			url = GlobalConstants.STAGING_GURU;
+			url = GlobalConstants.getGlobalConstants().getStagingGuru();
 			break;
 		case LIVE:
-			url = GlobalConstants.PRO_GURU;
+			url = GlobalConstants.getGlobalConstants().getProductGuru();
 			break;
 
 		default:

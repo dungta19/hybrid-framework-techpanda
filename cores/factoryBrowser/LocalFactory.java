@@ -23,7 +23,7 @@ public class LocalFactory {
 		switch (browserList) {
 		case FIREFOX:
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.PROJECT_PATH + "/Firefoxlog.txt");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.getGlobalConstants().getProjectPath() + "/Firefoxlog.txt");
 			driver = WebDriverManager.firefoxdriver().create();
 			break;
 		case CHROME:

@@ -1,4 +1,4 @@
-package com.techpanda.cloud;
+package com.techpanda.grid;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 import ultilities.DataHelper;
 
-public class Level_22_Manage_Data_Faker_Lambda extends BaseTest {
+public class Level_22_Manage_Data_Faker_Grid_IV_Saucelabs extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
@@ -26,8 +26,8 @@ public class Level_22_Manage_Data_Faker_Lambda extends BaseTest {
 
 	@Parameters({ "browser", "url", "envName", "osName", "osVersion" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, url, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		dataTesting = DataHelper.getDataHelper();
 

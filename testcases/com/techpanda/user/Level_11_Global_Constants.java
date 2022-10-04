@@ -35,13 +35,13 @@ import pageObjects.user.navigations.sideBar.MyWishlistPageObject;
 import pageObjects.user.navigations.sideBar.UserMyDashboardPageObject;
 
 public class Level_11_Global_Constants extends BaseTest {
-	String userURL = GlobalConstants.LIVE_USER_URL;
-	String adminURL = GlobalConstants.LIVE_ADMIN_URL;
+	String userURL = GlobalConstants.getGlobalConstants().getLiveUserUrl();
+	String adminURL = GlobalConstants.getGlobalConstants().getLiveAdminUrl();
 
-	@Parameters({ "browser", "envName", "osName", "osVersion" })
+	@Parameters({ "browser", "url", "envName", "ipAddress", "portNumber", "ipAddress", "portNumber" })
 	@BeforeClass
-	public void beforeClass(@Optional("chrome") String browserName, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion) {
-		driver = getBrowserDriver(browserName, userURL, envName, osName, osVersion);
+	public void beforeClass(@Optional("chrome") String browserName, String url, @Optional("local") String envName, @Optional("Windows") String osName, @Optional("10") String osVersion, String ipAddress, String portNumber) {
+		driver = getBrowserDriver(browserName, url, envName, osName, osVersion, ipAddress, portNumber);
 
 		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 	}
@@ -61,8 +61,8 @@ public class Level_11_Global_Constants extends BaseTest {
 		// User -> Admin
 		adminLoginPage = userHomePage.openAdminLoginPage(driver, adminURL);
 
-		adminLoginPage.inputUserNameTextBox(GlobalConstants.ADMIN_USERNAME);
-		adminLoginPage.inputUserPasswordTextBox(GlobalConstants.ADMIN_PASSWORD);
+		adminLoginPage.inputUserNameTextBox(GlobalConstants.getGlobalConstants().getLiveUserUrl());
+		adminLoginPage.inputUserPasswordTextBox(GlobalConstants.getGlobalConstants().getLiveUserUrl());
 		manageCustomerPage = adminLoginPage.clickToLoginButton();
 		manageCustomerPage.closeIncomingMessagePopup();
 

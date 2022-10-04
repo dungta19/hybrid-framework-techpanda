@@ -952,7 +952,7 @@ public class BasePage {
 	 * @param fileNames
 	 */
 	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
-		String uploadFilePath = GlobalConstants.UPLOAD_PATH;
+		String uploadFilePath = GlobalConstants.getGlobalConstants().getUploadPath();
 		String fullFileName = "";
 
 		for (String file : fileNames) {
@@ -1101,8 +1101,8 @@ public class BasePage {
 	/**
 	 * Timeout presets for Wait methods
 	 */
-	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-	private long shorTimeout = GlobalConstants.SHORT_TIMEOUT;
+	private long longTimeout = GlobalConstants.getGlobalConstants().getLongTimeout();
+	private long shorTimeout = GlobalConstants.getGlobalConstants().getShortTimeout();
 
 	/**
 	 * Call out pages in Side Bar menu
